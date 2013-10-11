@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='GBK'?>
+<tree id="0">
+	<item text="EasyValidation v.3.0" open="1">
+		<item text="用户指南" id="guide" select="1">
+			<userdata name="file">guide.html</userdata>
+			<item text="主要特征" id="mf"/>
+			<item text="支持浏览器" id="browsers"/>
+			<item text="引用文件" id="import"/>
+			<item text="Form绑定" id="bindForm"/>
+			<item text="检查规则" id="ruleIntro"/>
+			<item text="Validation选项" id="validationIntro"/>
+			<item text="添加自己的测试函数" id="addUserFunc"/>
+			<item text="FAQ" id="faq"/>
+		</item>
+		<item text="例子" id="example">
+			<item text="All In One" id="allinone">
+				<userdata name="file">../example/valid.html</userdata>
+			</item>
+		</item>	
+		
+	</item>
+</tree> 

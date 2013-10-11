@@ -1,0 +1,73 @@
+    body {	
+		    color: #000099;
+		    font-size: 9pt;
+		    line-height: 10px;
+		    background-color:	#FFFFFF;
+		    FONT-FAMILY:"Tahoma","Tahoma","MS Shell Dlg";
+    }
+    p {
+	      FONT-FAMILY: "ËÎÌו", "Arial", "Times New Roman"; 
+	      FONT-SIZE: 9pt; 
+	      FONT-WEIGHT: normal;
+	      line-height: 9pt;
+    }
+    table {	
+		    color: #000000;
+		    font-size: 9pt;
+		    FONT-FAMILY:"Tahoma","Tahoma","MS Shell Dlg";
+		    empty-cells: hide;
+    }
+    td {	
+		    color: #003366;
+		    font-size: 9pt;
+    }
+    .tab-1{background-color:#b9cbf7;}
+    .tab-2{background-color:#d3dffa;}
+    .tab-3{background-color:#eaeffd;}
+    .tab-4{background-color:#3399cc;}
+    .tab-5{background-color:#ffffff;
+          word-break:break-all;}
+    A:LINK{
+		    Text-Decoration: none; 
+		    color:#003399;
+		}
+		input{
+		    FONT-SIZE: 9pt; 
+		    HEIGHT: 17px; 
+		    LINE-HEIGHT: normal; 
+		}
+		.buttonface {
+	      BACKGROUND-COLOR: #CCCCFF; 
+	      COLOR: #000080; FONT-SIZE: 9pt
+    }
+		SELECT {
+        SCROLLBAR-ARROW-COLOR: #ffffff;
+        font-family : ËÎÌו,Arial,Sans-serif;
+        font-size : 9pt;
+        font-weight : bold;
+        border-color: red;
+        border: 0px;
+        background-color : #ffffff;
+        border-style : none;
+        border-width : 0px;
+        color : 000000;
+    }
+    TEXTAREA{
+	      font-size:12px;
+	      border: 1px solid #a0a0a0;
+	      background-color:#ffffff;
+	      LINE-HEIGHT: 16px;
+    }
+    .button{
+	     background-color:#d4e4d8;
+     }
+    .button146 {
+       width: 146px;
+     }
+    .button156 {
+       width: 156px;
+     }
+     LI {
+	    FONT-FAMILY: "ËÎÌו", "Arial", "Times New Roman"; FONT-SIZE: 10pt; 
+	    LINE-HEIGHT: normal;
+     }

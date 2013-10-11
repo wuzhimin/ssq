@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="profiler.settings.instrument.empty.methods">true</entry>
+<entry key="ProfilerCPUSettings_version">1.0</entry>
+<entry key="ProfilerCPUSettings_profile_runnables">true</entry>
+<entry key="ProfilerCPUSettings_filter_type">2</entry>
+<entry key="ProfilerMemorySettings_track_every">10</entry>
+<entry key="ProfilerMemorySettings_mode">4</entry>
+<entry key="ProfilerCPUSettings_root_classes">com.wzm.server.dao.base.**
+com.wzm.server.dao.formula.**
+com.wzm.server.dao.ssq.**
+com.wzm.server.entity.base.**
+com.wzm.server.entity.formula.**
+com.wzm.server.entity.ssq.**
+com.wzm.server.service.base.**
+com.wzm.server.service.formula.**
+com.wzm.server.service.ssq.**
+com.wzm.test.**
+com.wzm.util.**
+com.wzm.web.action.**
+com.wzm.web.interceptor.**
+</entry>
+<entry key="ProfilerCPUSettings_filter_value">com.wzm.server.dao.base.*,
+com.wzm.server.dao.formula.*,
+com.wzm.server.dao.ssq.*,
+com.wzm.server.entity.base.*,
+com.wzm.server.entity.formula.*,
+com.wzm.server.entity.ssq.*,
+com.wzm.server.service.base.*,
+com.wzm.server.service.formula.*,
+com.wzm.server.service.ssq.*,
+com.wzm.test.*,
+com.wzm.util.*,
+com.wzm.web.action.*,
+com.wzm.web.interceptor.*</entry>
+<entry key="profiler.settings.istrument.getter.setter.methods">true</entry>
+<entry key="ProfilerMemorySettings_stacktraces">-1</entry>
+<entry key="myeclipse.profiling.mode">0</entry>
+</properties>

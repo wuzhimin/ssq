@@ -1,0 +1,11 @@
+#
+#Tue Nov 25 03:10:23 GMT 2008
+configFile=
+libInstallFolder=
+addLibs2Classpath=false
+addLibs2Project=false
+createConfigFile=false
+keyGenerator=assigned
+version=2.1
+basePersistenceClass=
+useJavaTypes=true

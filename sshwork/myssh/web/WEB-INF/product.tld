@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+
+<taglib>
+  <tlibversion>1.0</tlibversion>
+  <jspversion>1.1</jspversion>
+  <shortname>product</shortname>
+  <uri>product</uri>
+  <info>This is a tag used by spider project</info>
+  <tag>
+    <name>menu</name>
+    <tagclass>com.bh.product.taglibs.MenuTag</tagclass>
+    <bodycontent>jsp</bodycontent>
+  </tag>
+  <tag>
+    <name>framemenu</name>
+    <tagclass>com.bh.product.taglibs.FrameMenuTag</tagclass>
+    <bodycontent>jsp</bodycontent>
+  </tag>
+  <tag>
+    <name>pager</name>
+    <tagclass>com.laodong.pub.product.taglibs.PagerTag</tagclass>
+    <bodycontent>jsp</bodycontent>
+  </tag>
+  <tag>
+    <name>permission</name>
+    <tagclass>com.bh.product.taglibs.PermissionTag</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <info>Check Permission Tag</info>
+    <attribute>
+      <name>url</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>permissionId</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>yes</name>
+    <tagclass>com.bh.product.taglibs.YesTag</tagclass>
+    <info>Permission Check Passed Tag</info>
+  </tag>
+  <tag>
+    <name>no</name>
+    <tagclass>com.bh.product.taglibs.NoTag</tagclass>
+    <info>Permission Check Failed Tag</info>
+  </tag>
+  <tag>
+    <name>tree</name>
+    <tagclass>com.bh.product.taglibs.ProductTag</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <info>Product Tree Tag</info>
+    <attribute>
+      <name>treeName</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+</taglib>
+
+
+
+
+
+
+

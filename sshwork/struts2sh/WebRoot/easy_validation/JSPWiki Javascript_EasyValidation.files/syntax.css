@@ -1,0 +1,51 @@
+BODY {
+	BACKGROUND: white
+}
+.tag {
+	COLOR: blue
+}
+.endtag {
+	COLOR: blue
+}
+.reference {
+	COLOR: black
+}
+.name {
+	FONT-WEIGHT: bold; COLOR: maroon
+}
+.value {
+	COLOR: maroon; FONT-STYLE: italic
+}
+.text {
+	FONT-WEIGHT: bold; COLOR: black
+}
+.reservedWord {
+	FONT-WEIGHT: bold; COLOR: #0054e3
+}
+.identifier {
+	COLOR: black
+}
+.literal {
+	FONT-WEIGHT: bold; COLOR: orange
+}
+.separator {
+	COLOR: navy
+}
+.operator {
+	COLOR: #ff00ff
+}
+.comment {
+	COLOR: green
+}
+.preprocessor {
+	COLOR: purple
+}
+.whitespace {
+	
+}
+.error {
+	COLOR: red
+}
+.unknown {
+	COLOR: orange
+}

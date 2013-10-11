@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+<session-factory>
+	<property name="dialect">
+		org.hibernate.dialect.MySQLDialect
+	</property>
+	<property name="connection.url">
+		jdbc:mysql://localhost:3306/struts2sh?useUnicode=true&amp;characterEncoding=GBK
+	</property>
+	<property name="connection.username">root</property>
+	<property name="connection.password">sa</property>
+	<property name="connection.driver_class">
+		com.mysql.jdbc.Driver
+	</property>
+	<property name="myeclipse.connection.profile">
+		localhost_mysql
+	</property>
+	<property name="show_sql">true</property>
+	<mapping resource="cn/beansoft/scm/entity/Order.hbm.xml" />
+	<mapping resource="cn/beansoft/scm/entity/OrderItem.hbm.xml" />
+	<mapping resource="cn/beansoft/scm/entity/Product.hbm.xml" />
+	<mapping resource="cn/beansoft/scm/entity/Resource.hbm.xml" />
+	<mapping resource="cn/beansoft/scm/entity/Role.hbm.xml" />
+	<mapping resource="cn/beansoft/scm/entity/User.hbm.xml" />
+	<mapping resource="cn/beansoft/scm/entity/Vendor.hbm.xml" />
+	<mapping resource="cn/beansoft/scm/entity/AppConfig.hbm.xml" />
+
+
+</session-factory>
+
+</hibernate-configuration>

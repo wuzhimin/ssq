@@ -1,0 +1,16 @@
+
+<link rel="stylesheet" type="text/css"
+	href="script/resources/css/ext-all.css" />
+<script type="text/javascript" src="script/adapter/ext/ext-base.js">
+</script>
+<script type="text/javascript" src="script/ext-all.js">
+</script>
+<script type="text/javascript">
+Ext.onReady(function() {
+	var d = new Date();
+	var time = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+	Ext.MessageBox.alert('报时', '现在时间是' + time);
+});
+</script>
+
+

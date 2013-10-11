@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="   
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd   
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd   
+            http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd   
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd   
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+	<!-- http invoker -->
+	<bean name="/httpinvokeService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter" >   
+	<!-- class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter"  org.springframework.remoting.caucho.HessianServiceExporter -->                      
+        <property name="service">
+            <ref bean="httpinvokeService1"/>
+        </property>
+        <property name="serviceInterface">
+            <value>com.wzm.invoker.HttpinvokeInterface</value>
+        </property>
+    </bean>
+    
+    <!-- SsqRecordService -->
+    <bean name="/service/ssqRecordService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter" >   
+        <property name="service">
+            <ref bean="ssqRecordService"/>
+        </property>
+        <property name="serviceInterface">
+            <value>com.wzm.server.service.ssq.SsqRecordService</value>
+        </property>
+    </bean>
+    
+    <!-- SsqForcastService -->
+    <bean name="/service/ssqForcastService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter" >   
+        <property name="service">
+            <ref bean="ssqForcastService"/>
+        </property>
+        <property name="serviceInterface">
+            <value>com.wzm.server.service.ssq.SsqForcastService</value>
+        </property>
+    </bean>
+    
+    <!-- FormulaService -->
+    <bean name="/service/formulaService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter" >   
+        <property name="service">
+            <ref bean="formulaService"/>
+        </property>
+        <property name="serviceInterface">
+            <value>com.wzm.server.service.formula.FormulaService</value>
+        </property>
+    </bean>
+    
+    <!-- BaseDao -->
+    <bean name="/dao/baseDao" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter" >   
+        <property name="service">
+            <ref bean="baseDao"/>
+        </property>
+        <property name="serviceInterface">
+            <value>com.wzm.server.dao.base.BaseDao</value>
+        </property>
+    </bean>
+    
+    
+    <bean name="/dao/ssqRecordDao" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter" >   
+        <property name="service">
+            <ref bean="ssqRecordDao"/>
+        </property>
+        <property name="serviceInterface">
+            <value>com.wzm.server.dao.ssq.SsqRecordDao</value>
+        </property>
+    </bean>
+    
+    <bean name="/dao/ssqBaseStatsDao" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter" >   
+        <property name="service">
+            <ref bean="ssqBaseStatsDao"/>
+        </property>
+        <property name="serviceInterface">
+            <value>com.wzm.server.dao.ssq.SsqBaseStatsDao</value>
+        </property>
+    </bean>
+</beans>  

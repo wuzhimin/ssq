@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Tue Nov 25 03:10:24 GMT 2008                         -->
+<hibernate-mapping package="com">
+
+    <class name="Bookinfo" table="bookinfo">
+        <id name="id" column="id" type="java.lang.Integer">
+            <generator class="assigned"/>
+        </id>
+ 
+        <property name="name" column="name" type="java.lang.String" />
+        <property name="author" column="author" type="java.lang.String" />
+        <property name="price" column="price" type="java.lang.Float" />
+        <property name="ms" column="ms" type="java.lang.String" />
+    </class>
+    
+</hibernate-mapping>

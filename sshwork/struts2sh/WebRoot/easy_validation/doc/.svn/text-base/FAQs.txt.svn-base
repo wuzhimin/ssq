@@ -1,0 +1,19 @@
+1. 我的网站现在使用的是UTF-8编码,怎么使用validation_cn.js显示中文会乱码?
+答: validation_cn.js默认是使用GBK编码,使用可以改变文件编码的编辑器以UTF-8编码方式再保存,如保存为validation_cn_UTF-8.js
+
+2. 国际化怎么办?
+答: 动态修改Validator.messageSource即可
+
+3. 日期之间的比较怎么办,如结束日期要大于开始日期
+答: 先使用validate-date-cn验证输入的值是合法的日期,再加上"less-than"的比较即可
+
+4. select的验证
+答: 	将Please Select..的值使用一个空格填充即可
+	<select id="test" name="test" class="required">
+		<option value=" ">Please Select..</option>
+		<option value="val1">Value 1</option>
+		<option value="val2">Value 2</option>
+	</select>
+
+5. 在IE中提示"Unterminated string constant"或是"末结束的字符串常量"错误
+答: 是由于你网页的编码问题,validation_cn.js默认是GBK编码,请转换成与你的网页想适应的编码

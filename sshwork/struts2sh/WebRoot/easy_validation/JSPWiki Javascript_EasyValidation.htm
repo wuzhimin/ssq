@@ -1,0 +1,554 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0067)http://beansoft.java-cn.org/Wiki.jsp?page=Javascript_EasyValidation -->
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>JSPWiki: Javascript_EasyValidation</TITLE><LINK 
+href="JSPWiki Javascript_EasyValidation.files/jspwiki.css" type=text/css 
+rel=stylesheet>
+<SCRIPT type=text/javascript>
+/*
+ *  Chooses a suitable stylesheet based on browser.
+ */
+    var IE4 = (document.all && !document.getElementById) ? true : false;
+    var NS4 = (document.layers) ? true : false;
+    var IE5 = (document.all && document.getElementById) ? true : false;
+    var NS6 = (document.getElementById && !document.all) ? true : false;
+    var IE  = IE4 || IE5;
+    var NS  = NS4 || NS6;
+    var Mac = (navigator.platform.indexOf("Mac") == -1) ? false : true;
+
+    var sheet = "";
+
+    if( NS4 )
+    {
+        sheet = "jspwiki_ns.css";
+    }
+    else if( Mac )
+    {
+        sheet = "jspwiki_mac.css";
+    }
+    else if( IE )
+    {
+        sheet = "jspwiki_ie.css";
+    }
+
+    if( sheet != "" )
+    {
+        document.write("<link rel=\"stylesheet\" href=\"http://beansoft.java-cn.org/templates/star_zh_CN/"+sheet+"\" />");
+    }
+</SCRIPT>
+
+<SCRIPT src="JSPWiki Javascript_EasyValidation.files/search_highlight.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="JSPWiki Javascript_EasyValidation.files/jspwiki-common.js" 
+type=text/javascript></SCRIPT>
+
+<META http-equiv=Content-Type content="text/html; charset=UTF-8"><LINK 
+title="Search JSPWiki" href="Wiki.jsp?page=FindPage" rel=search><LINK title=Help 
+href="Wiki.jsp?page=TextFormattingRules" rel=help><LINK title="Front page" 
+href="Wiki.jsp?page=Main" rel=start><LINK media=print 
+href="JSPWiki Javascript_EasyValidation.files/jspwiki_print.css" type=text/css 
+rel=stylesheet><LINK title="Print friendly" 
+href="JSPWiki Javascript_EasyValidation.files/jspwiki_print.css" type=text/css 
+rel="alternate stylesheet"><LINK title=Standard 
+href="JSPWiki Javascript_EasyValidation.files/jspwiki.css" type=text/css 
+rel="alternate stylesheet"><LINK 
+href="http://beansoft.java-cn.org/templates/star_zh_CN/images/Favicon.png" 
+type=image/png rel=icon><LINK title="RSS feed for the entire site." 
+href="http://beansoft.java-cn.org/rss.xml" type=application/rss+xml 
+rel=alternate><LINK 
+title="RSS feed for page JSPWiki: Javascript_EasyValidation." 
+href="http://beansoft.java-cn.org/rss.jsp?page=Javascript_EasyValidation&amp;mode=wiki" 
+type=application/rss+xml rel=alternate>
+<META content="MSHTML 6.00.2900.2963" name=GENERATOR></HEAD>
+<BODY><!--header start-->
+<DIV id=header><!-- Header is automatically generated from a Wiki page called "Header" -->
+<DIV id=headerRight><SPAN id=editMe><A 
+href="http://beansoft.java-cn.org/Edit.jsp?page=Javascript_EasyValidation">编辑此页</A>&nbsp;&nbsp; 
+<A 
+href="http://beansoft.java-cn.org/Comment.jsp?page=Javascript_EasyValidation">添加评论</A>&nbsp;&nbsp; 
+<A class=pageinfo 
+href="http://beansoft.java-cn.org/PageInfo.jsp?page=Javascript_EasyValidation">页面信息</A> 
+&nbsp;&nbsp; <A class=uploadlink 
+href="http://beansoft.java-cn.org/Upload.jsp?page=Javascript_EasyValidation" 
+target=_new>添加附件</A> </SPAN></DIV>
+<DIV id=headerLeft><A href="http://beansoft.java-cn.org/Wiki.jsp?page=Main"><IMG 
+height=51 alt=JSPWiki src="JSPWiki Javascript_EasyValidation.files/Logo.png" 
+width=84 align=absMiddle border=0></A> <A 
+style="PADDING-LEFT: 20pt; FONT-SIZE: large; TEXT-DECORATION: none" 
+name=Top>Javascript_EasyValidation</A> </DIV><!-- End of automatically generated page --></DIV><!--header end--><!--mainNav start-->
+<DIV id=mainNav><!-- TopMenu is automatically generated from a Wiki page called "TopMenu" --><B><A 
+class=wikipage href="http://beansoft.java-cn.org/Wiki.jsp?page=Main">首页</A></B> 
+| <A class=wikipage href="http://beansoft.java-cn.org/Wiki.jsp?page=News">新闻</A> 
+| <A class=wikipage 
+href="http://beansoft.java-cn.org/Wiki.jsp?page=GuestBook">留言本</A> | <A 
+class=wikipage 
+href="http://beansoft.java-cn.org/Wiki.jsp?page=UserPreferences">个人信息</A> | 
+点击率:66 | 本页源码: <A class=external 
+href="http://beansoft.java-cn.org/jspwiki/Javascript_EasyValidation.txt">Javascript_EasyValidation.txt</A><IMG 
+class=outlink alt="" src="JSPWiki Javascript_EasyValidation.files/out.png"> <!-- End of automatically generated page --></DIV><!--mainNav end--><!--subNav start-->
+<DIV id=subNav>
+<DIV id=menuList><!-- LeftMenu is automatically generated from a Wiki page called "LeftMenu" --><B>开源项目</B><BR>
+<UL>
+  <LI><A class=wikipage 
+  href="http://beansoft.java-cn.org/Wiki.jsp?page=JSPWikiChineseVersion">JSPWiki中文版</A><BR>
+  <UL>
+    <LI><A class=wikipage 
+    href="http://beansoft.java-cn.org/Wiki.jsp?page=JSPWikiTemplate">模版下载</A> 
+    <LI><A class=wikipage 
+    href="http://beansoft.java-cn.org/Wiki.jsp?page=JSPWikiDownload">JSPWiki下载</A><BR>
+    <LI><A class=wikipage 
+    href="http://beansoft.java-cn.org/Wiki.jsp?page=JSPWikiFAQ">问题讨论</A><BR>
+    <LI><A class=wikipage 
+    href="http://beansoft.java-cn.org/Wiki.jsp?page=JSPWikiBuildRun">编译和运行</A><BR>
+    <LI><A class=wikipage 
+    href="http://beansoft.java-cn.org/Wiki.jsp?page=JSPWikiCnDocs">中文文档</A><BR>
+    <LI><A class=wikipage 
+    href="http://beansoft.java-cn.org/Wiki.jsp?page=JSPWikiPluginDev">插件及开发</A><BR>
+    <LI><A class=wikipage 
+    href="http://beansoft.java-cn.org/Wiki.jsp?page=JSPWikiResearch">研究与应用</A><BR></LI></UL></LI></UL>
+<HR>
+<B>技术文章</B><BR><A class=wikipage 
+href="http://beansoft.java-cn.org/Wiki.jsp?page=BlogJavaIndex">BlogJava 
+精华文章</A><BR><A class=wikipage 
+href="http://beansoft.java-cn.org/Wiki.jsp?page=WebAJAX">Web AJAX</A><BR><A 
+class=wikipage 
+href="http://beansoft.java-cn.org/Wiki.jsp?page=Java">Java</A><BR><A 
+class=wikipage 
+href="http://beansoft.java-cn.org/Wiki.jsp?page=JavaFAQ">JavaFAQ</A> 
+<HR>
+用户的页面<BR><A class=wikipage 
+href="http://beansoft.java-cn.org/Wiki.jsp?page=BeanSoft">BeanSoft</A><BR><A 
+class=wikipage 
+href="http://beansoft.java-cn.org/Wiki.jsp?page=Crespo">Crespo</A><BR><A 
+class=wikipage 
+href="http://beansoft.java-cn.org/Wiki.jsp?page=JavaHe">java-he</A><BR><A 
+class=editpage title="Create 'Kernel'" 
+href="http://beansoft.java-cn.org/Edit.jsp?page=Kernel">kernel</A><BR><A 
+class=wikipage 
+href="http://beansoft.java-cn.org/Wiki.jsp?page=Amigoxie">amigoxie</A><BR><A 
+class=wikipage 
+href="http://beansoft.java-cn.org/Wiki.jsp?page=Ant">ant</A><BR><A 
+class=wikipage 
+href="http://beansoft.java-cn.org/Wiki.jsp?page=Pesome">pesome</A><BR><A 
+class=interwiki 
+href="http://beansoft.java-cn.org/Edit.jsp?page=LeftMenu">添加用户</A> 
+<HR>
+<A class=wikipage 
+href="http://beansoft.java-cn.org/Wiki.jsp?page=About">关于本站</A><BR><A 
+class=wikipage 
+href="http://beansoft.java-cn.org/Wiki.jsp?page=Links">网站链接</A><BR><A 
+class=wikipage 
+href="http://beansoft.java-cn.org/Wiki.jsp?page=RecentChanges">最近更新</A><BR><A 
+class=wikipage 
+href="http://beansoft.java-cn.org/Wiki.jsp?page=PageIndex">文章索引</A><BR><A 
+class=wikipage href="http://beansoft.java-cn.org/Wiki.jsp?page=LICENSE">许可协议</A> 
+
+<HR>
+相关页面<BR><A class=wikipage 
+href="http://beansoft.java-cn.org/Wiki.jsp?page=WebAJAX">WebAJAX</A> <!-- End of automatically generated page --></DIV><BR><BR><!-- LeftMenuFooter is automatically generated from a Wiki page called "LeftMenuFooter" -->还没有设置<A 
+class=wikipage 
+href="http://beansoft.java-cn.org/Wiki.jsp?page=UserPreferences">个人信息</A>? 
+<BR><BR>浏览页面跟踪: <BR><!-- End of automatically generated page --><BR><BR>订阅全站 
+RSS:<A href="http://beansoft.java-cn.org/rss.xml"><IMG title="订阅全站 RSS" 
+alt=[RSS] src="JSPWiki Javascript_EasyValidation.files/xml.png" 
+border=0></A><BR>订阅本页 RSS:<A 
+href="http://beansoft.java-cn.org/rss.jsp?page=Javascript_EasyValidation&amp;mode=wiki"><IMG 
+alt=[本页RSS] src="JSPWiki Javascript_EasyValidation.files/xml.png" border=0></A> 
+</DIV><!--subNav end--><!--content start-->
+<DIV id=content>
+<H2 
+id=section-Javascript_EasyValidation-_E6_9C_80_E7_AE_80_E5_8D_95_E7_9A_84_E8_A1_A8_E5_8D_95_E9_AA_8C_E8_AF_81_E6_A1_86_E6_9E_B6EasyValidation>最简单的表单验证框架 
+<B>EasyValidation</B></H2>
+<DIV class=toc>
+<H4>Table of Contents</H4>
+<UL>
+  <LI><A class=wikipage 
+  href="http://beansoft.java-cn.org/Wiki.jsp?page=Javascript_EasyValidation#section-Javascript_EasyValidation-_E6_9C_80_E7_AE_80_E5_8D_95_E7_9A_84_E8_A1_A8_E5_8D_95_E9_AA_8C_E8_AF_81_E6_A1_86_E6_9E_B6EasyValidation">最简单的表单验证框架 
+  EasyValidation</A> 
+  <UL>
+    <LI><A class=wikipage 
+    href="http://beansoft.java-cn.org/Wiki.jsp?page=Javascript_EasyValidation#section-Javascript_EasyValidation-_E4_B8_8B_E8_BD_BD_E4_BB_A3_E7_A0_81_E5_92_8C_E7_A4_BA_E4_BE_8B">下载代码和示例</A> 
+    </LI></UL>
+  <LI><A class=wikipage 
+  href="http://beansoft.java-cn.org/Wiki.jsp?page=Javascript_EasyValidation#section-Javascript_EasyValidation-_E4_B8_BB_E8_A6_81_E7_89_B9_E5_BE_81">主要特征</A> 
+
+  <LI><A class=wikipage 
+  href="http://beansoft.java-cn.org/Wiki.jsp?page=Javascript_EasyValidation#section-Javascript_EasyValidation-_E6_94_AF_E6_8C_81_E6_B5_8F_E8_A7_88_E5_99_A8">支持浏览器</A> 
+
+  <LI><A class=wikipage 
+  href="http://beansoft.java-cn.org/Wiki.jsp?page=Javascript_EasyValidation#section-Javascript_EasyValidation-Helloworld_E7_A4_BA_E4_BE_8B">helloworld示例</A> 
+
+  <UL>
+    <LI>
+    <UL>
+      <LI><A class=wikipage 
+      href="http://beansoft.java-cn.org/Wiki.jsp?page=Javascript_EasyValidation#section-Javascript_EasyValidation-_E9_AA_8C_E8_AF_81_E6_95_88_E6_9E_9C">验证效果</A> 
+      </LI></UL></LI></UL>
+  <LI><A class=wikipage 
+  href="http://beansoft.java-cn.org/Wiki.jsp?page=Javascript_EasyValidation#section-Javascript_EasyValidation-_E6_A3_80_E6_9F_A5_E8_A7_84_E5_88_99">检查规则</A> 
+
+  <LI><A class=wikipage 
+  href="http://beansoft.java-cn.org/Wiki.jsp?page=Javascript_EasyValidation#section-Javascript_EasyValidation-_E7_BC_96_E7_A8_8B_E5_BC_8F_E4_B8_BA_E8_A1_A8_E5_8D_95_E5_A2_9E_E5_8A_A0_E9_AA_8C_E8_AF_81Validation_E9_80_89_E9_A1_B9">编程式为表单增加验证(Validation选项)</A> 
+
+  <LI><A class=wikipage 
+  href="http://beansoft.java-cn.org/Wiki.jsp?page=Javascript_EasyValidation#section-Javascript_EasyValidation-_E6_B7_BB_E5_8A_A0_E8_87_AA_E5_B7_B1_E7_9A_84Validator_E6_B5_8B_E8_AF_95_E5_87_BD_E6_95_B0">添加自己的Validator测试函数</A> 
+
+  <LI><A class=wikipage 
+  href="http://beansoft.java-cn.org/Wiki.jsp?page=Javascript_EasyValidation#section-Javascript_EasyValidation-FAQs">FAQs</A> 
+
+  <LI><A class=wikipage 
+  href="http://beansoft.java-cn.org/Wiki.jsp?page=Javascript_EasyValidation#section-Javascript_EasyValidation-_E5_BC_95_E7_94_A8">引用</A> 
+
+  <LI><A class=wikipage 
+  href="http://beansoft.java-cn.org/Wiki.jsp?page=Javascript_EasyValidation#section-Javascript_EasyValidation-Authors">Authors</A> 
+  </LI></UL></DIV>原始出处: <A class=external 
+href="http://wiki.javascud.org/display/si/Javascript_EasyValidation">http://wiki.javascud.org/display/si/Javascript_EasyValidation</A><IMG 
+class=outlink alt="" src="JSPWiki Javascript_EasyValidation.files/out.png"> 
+<H3 
+id=section-Javascript_EasyValidation-_E4_B8_8B_E8_BD_BD_E4_BB_A3_E7_A0_81_E5_92_8C_E7_A4_BA_E4_BE_8B>下载代码和示例</H3><A 
+class=attachment 
+href="http://beansoft.java-cn.org/attach/Javascript_EasyValidation/EasyValidation3.0.zip">EasyValidation3.0.zip</A><A 
+href="http://beansoft.java-cn.org/PageInfo.jsp?page=Javascript_EasyValidation/EasyValidation3.0.zip"><IMG 
+alt=(info) src="JSPWiki Javascript_EasyValidation.files/attachment_small.png" 
+border=0></A> 
+<H2 
+id=section-Javascript_EasyValidation-_E4_B8_BB_E8_A6_81_E7_89_B9_E5_BE_81>主要特征</H2>
+<UL>
+  <LI>简洁的验证语法 
+  <LI>快速 
+  <LI>无需编写验证提示信息 
+  <LI>支持组合验证 
+  <LI>Ajax支持 
+  <LI>基于prototype.js 
+  <LI>无侵入性 
+  <LI>支持国际化 
+  <LI>易于扩展 
+  <LI>基于标准的Html属性(class)添加验证,易于其它标准的jsp taglib集成 </LI></UL>
+<H2 
+id=section-Javascript_EasyValidation-_E6_94_AF_E6_8C_81_E6_B5_8F_E8_A7_88_E5_99_A8>支持浏览器</H2>
+<UL>
+  <LI>IE 5.x 以上 
+  <LI>Mozilla 1.4 以上 
+  <LI>FireFox 0.9 以上 
+  <LI>Opera 8.5 测试通过 </LI></UL>
+<H2 
+id=section-Javascript_EasyValidation-Helloworld_E7_A4_BA_E4_BE_8B>helloworld示例</H2><B>引用文件</B> 
+<LINK href="JSPWiki Javascript_EasyValidation.files/syntax.css" type=text/css 
+rel=stylesheet><PRE><SPAN class=reservedWord></SPAN><BR><SPAN class=tag>&lt;</SPAN><SPAN class=tag>script</SPAN><SPAN class=tag> </SPAN><SPAN class=tag>src</SPAN><SPAN class=tag>=</SPAN><SPAN class=literal>"</SPAN><SPAN class=literal>prototype.js</SPAN><SPAN class=literal>"</SPAN><SPAN class=tag> </SPAN><SPAN class=tag>type</SPAN><SPAN class=tag>=</SPAN><SPAN class=literal>"</SPAN><SPAN class=literal>text/javascript</SPAN><SPAN class=literal>"</SPAN><SPAN class=tag>&gt;</SPAN><SPAN class=tag>&lt;</SPAN><SPAN class=tag>/</SPAN><SPAN class=tag>script</SPAN><SPAN class=tag>&gt;</SPAN>
+<SPAN class=tag>&lt;</SPAN><SPAN class=tag>script</SPAN><SPAN class=tag> </SPAN><SPAN class=tag>src</SPAN><SPAN class=tag>=</SPAN><SPAN class=literal>"</SPAN><SPAN class=literal>validation_cn.js</SPAN><SPAN class=literal>"</SPAN><SPAN class=tag> </SPAN><SPAN class=tag>type</SPAN><SPAN class=tag>=</SPAN><SPAN class=literal>"</SPAN><SPAN class=literal>text/javascript</SPAN><SPAN class=literal>"</SPAN><SPAN class=tag>&gt;</SPAN><SPAN class=tag>&lt;</SPAN><SPAN class=tag>/</SPAN><SPAN class=tag>script</SPAN><SPAN class=tag>&gt;</SPAN>
+<SPAN class=tag>&lt;</SPAN><SPAN class=tag>link</SPAN><SPAN class=tag> </SPAN><SPAN class=tag>rel</SPAN><SPAN class=tag>=</SPAN><SPAN class=literal>"</SPAN><SPAN class=literal>stylesheet</SPAN><SPAN class=literal>"</SPAN><SPAN class=tag> </SPAN><SPAN class=tag>type</SPAN><SPAN class=tag>=</SPAN><SPAN class=literal>"</SPAN><SPAN class=literal>text/css</SPAN><SPAN class=literal>"</SPAN><SPAN class=tag> </SPAN><SPAN class=tag>href</SPAN><SPAN class=tag>=</SPAN><SPAN class=literal>"</SPAN><SPAN class=literal>style_min.css</SPAN><SPAN class=literal>"</SPAN><SPAN class=tag>/</SPAN><SPAN class=tag>&gt;</SPAN>
+</PRE>
+<UL>
+  <LI>prototype.js是所有的基础 
+  <LI>validation_cn.js真正的验证框架文件 
+  <LI>可以添加style_min.css中的样式声明,也可以把style_min.css中的样式声明引入到你的框架js文件中去. </LI></UL>
+<P><B>表单验证</B> </P>
+<P><LINK href="JSPWiki Javascript_EasyValidation.files/syntax.css" type=text/css 
+rel=stylesheet></P><PRE><SPAN class=reservedWord></SPAN><BR><SPAN class=comment>&lt;!--</SPAN><SPAN class=comment> </SPAN><SPAN class=comment>为form增加required-validate</SPAN><SPAN class=comment> </SPAN><SPAN class=comment>class,标识需要验证form</SPAN><SPAN class=comment> </SPAN><SPAN class=comment>--&gt;</SPAN>
+<SPAN class=tag>&lt;</SPAN><SPAN class=tag>form</SPAN><SPAN class=tag> </SPAN><SPAN class=tag>id</SPAN><SPAN class=operator>=</SPAN><SPAN class=literal>'</SPAN><SPAN class=literal>helloworld</SPAN><SPAN class=literal>'</SPAN><SPAN class=tag> </SPAN><SPAN class=tag>action</SPAN><SPAN class=operator>=</SPAN><SPAN class=literal>"</SPAN><SPAN class=literal>#</SPAN><SPAN class=literal>"</SPAN><SPAN class=tag> </SPAN><SPAN class=tag>class</SPAN><SPAN class=operator>=</SPAN><SPAN class=literal>'</SPAN><SPAN class=literal>required-validate</SPAN><SPAN class=literal>'</SPAN><SPAN class=tag>&gt;</SPAN>
+	helloworld:<SPAN class=tag>&lt;</SPAN><SPAN class=tag>/</SPAN><SPAN class=tag>br</SPAN><SPAN class=tag>&gt;</SPAN>
+	<SPAN class=comment>&lt;!--</SPAN><SPAN class=comment>通过class添加验证:</SPAN><SPAN class=comment> </SPAN><SPAN class=comment>required表示不能为空,min-length-15表示最小长度为15</SPAN><SPAN class=comment> </SPAN><SPAN class=comment>--&gt;</SPAN>
+	<SPAN class=tag>&lt;</SPAN><SPAN class=tag>textarea</SPAN><SPAN class=tag> </SPAN><SPAN class=tag>name</SPAN><SPAN class=operator>=</SPAN><SPAN class=literal>'</SPAN><SPAN class=literal>content</SPAN><SPAN class=literal>'</SPAN><SPAN class=tag> </SPAN><SPAN class=tag>class</SPAN><SPAN class=operator>=</SPAN><SPAN class=literal>'</SPAN><SPAN class=literal>required</SPAN><SPAN class=literal> </SPAN><SPAN class=literal>min-length-15</SPAN><SPAN class=literal>'</SPAN><SPAN class=tag>&gt;</SPAN><SPAN class=tag>&lt;</SPAN><SPAN class=tag>/</SPAN><SPAN class=tag>textarea</SPAN><SPAN class=tag>&gt;</SPAN><SPAN class=tag>&lt;</SPAN><SPAN class=tag>/</SPAN><SPAN class=tag>br</SPAN><SPAN class=tag>&gt;</SPAN>
+	<SPAN class=tag>&lt;</SPAN><SPAN class=tag>input</SPAN><SPAN class=tag> </SPAN><SPAN class=tag>type</SPAN><SPAN class=operator>=</SPAN><SPAN class=literal>'</SPAN><SPAN class=literal>submit</SPAN><SPAN class=literal>'</SPAN><SPAN class=tag> </SPAN><SPAN class=tag>value</SPAN><SPAN class=operator>=</SPAN><SPAN class=literal>'</SPAN><SPAN class=literal>Submit</SPAN><SPAN class=literal>'</SPAN><SPAN class=tag>/</SPAN><SPAN class=tag>&gt;</SPAN> 
+	<SPAN class=tag>&lt;</SPAN><SPAN class=tag>input</SPAN><SPAN class=tag> </SPAN><SPAN class=tag>type</SPAN><SPAN class=operator>=</SPAN><SPAN class=literal>'</SPAN><SPAN class=literal>reset</SPAN><SPAN class=literal>'</SPAN><SPAN class=tag> </SPAN><SPAN class=tag>value</SPAN><SPAN class=operator>=</SPAN><SPAN class=literal>'</SPAN><SPAN class=literal>Reset</SPAN><SPAN class=literal>'</SPAN><SPAN class=tag>/</SPAN><SPAN class=tag>&gt;</SPAN>
+<SPAN class=tag>&lt;</SPAN><SPAN class=tag>/</SPAN><SPAN class=tag>form</SPAN><SPAN class=tag>&gt;</SPAN>
+</PRE>
+<P></P>
+<UL>
+  <LI>要是某个form中的元素被验证可以这样给声明的form中加一个class='required-validate'的属性,框架会在load是自动绑定所有要验证的域. 
+
+  <LI>在要检查的域中通过class属性来声明被检查域的限制条件,例如上面的class='required 
+  min-length-15'表示这是一个非空,并且最小长度是15的域,在编辑域失去焦点时,会自动检查,如果输入不满足上述条件,则产生错误提示. 
+</LI></UL>
+<H4 
+id=section-Javascript_EasyValidation-_E9_AA_8C_E8_AF_81_E6_95_88_E6_9E_9C>验证效果</H4><IMG 
+class=inline alt=validation_helloworld.jpg 
+src="JSPWiki Javascript_EasyValidation.files/validation_helloworld.jpg"> 
+<H2 
+id=section-Javascript_EasyValidation-_E6_A3_80_E6_9F_A5_E8_A7_84_E5_88_99>检查规则</H2>
+<P></P>
+<TABLE class=wikitable border=1>
+  <TBODY>
+  <TR>
+    <TH>验证表达式</TH>
+    <TH>描述</TH>
+    <TH>示例</TH></TR>
+  <TR>
+    <TD>required </TD>
+    <TD>非空域,全部空格也算空 </TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>validate-number </TD>
+    <TD>一个有效数 </TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>validate-digits </TD>
+    <TD>只能包含0-9任意个数字 </TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>validate-alpha </TD>
+    <TD>只能是字母a-z, A-Z </TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>validate-alphanum </TD>
+    <TD>只能是字母和数字的组合</TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>validate-email </TD>
+    <TD>只能是有效的email </TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>validate-url </TD>
+    <TD>只能是有效的url地址 </TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>validate-one-required </TD>
+    <TD>至少有一个被选中,例如一组checkbox, radiobutton,它们最好包含在一个div和span中 </TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>validate-integer </TD>
+    <TD>只能是整数,可以有正负号 </TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>validate-ip </TD>
+    <TD>有效的IP地址 </TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>min-length-$number </TD>
+    <TD>最小长度是$number <B>(</B><B>此处$some</B><B>表示一个特定的值)</B></TD>
+    <TD>最小长度为8: min-length-8</TD></TR>
+  <TR>
+    <TD>max-length-$number </TD>
+    <TD>最大长度是$number </TD>
+    <TD>最大长度为8: max-length-8</TD></TR>
+  <TR>
+    <TD>max-value-$number </TD>
+    <TD>输入域的最大值是$number </TD>
+    <TD>最大值为8.1: max-value-8.1</TD></TR>
+  <TR>
+    <TD>min-value-$number </TD>
+    <TD>输入域的最小值是$number </TD>
+    <TD>最大值为-8.1: max-value--8.1</TD></TR>
+  <TR>
+    <TD>equals-$otherInputId </TD>
+    <TD>必须和某个input field相等,用于密码两次输入验证 </TD>
+    <TD>equals-password</TD></TR>
+  <TR>
+    <TD>less-than-$otherInputId </TD>
+    <TD>小于某个input field less-than-otherInputId,多用于结束日期不能小于开始日期的需求 </TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>great-than-$otherInputId </TD>
+    <TD>大于某个input field less-than-otherInputId </TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>validate-date-$dateFormat </TD>
+    <TD>只能是日期,$dateFormat为日期格式,$dateFormat的可选,默认格式为yyyy-MM-DD </TD>
+    <TD>validate-date-yyyy年MM月dd日</TD></TR>
+  <TR>
+    <TD>validate-file-$type1-$type2-$typeX </TD>
+    <TD>验证文件输入域选择的文件类型只能为声明的$type1 – $typeX中的一种 </TD>
+    <TD>validate-file-png-jpeg</TD></TR>
+  <TR>
+    <TD>float-range-$minValue-$maxValue </TD>
+    <TD>必须是$minValue到$maxValue的一个浮点数 </TD>
+    <TD>1至20: float-range-1-20</TD></TR>
+  <TR>
+    <TD>int-range-$minValue-$maxValue </TD>
+    <TD>必须是$minValue到$maxValue的一个整数 </TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>length-range-$minLength-$maxLength </TD>
+    <TD>输入字符串的长度必须在$minLength到$maxLength之间 </TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>validate-pattern-$RegExp </TD>
+    <TD>通过自定义正则表达式$RegExp来验证输入域的正确性</TD>
+    <TD>vaidate-pattern-/a/gi</TD></TR>
+  <TR>
+    <TD>validate-ajax-$url </TD>
+    <TD>通过ajax来验证输入域,$url为ajax验证提交的地址,错误提示信息将由服务器端返回.<BR>数据示例 <SPAN 
+      style="FONT-FAMILY: monospace; whitespace: pre">&lt;input name="username" 
+      value="badqiu"/&gt;</SPAN>,<BR>提交数据为:<B>username</B>=badqiu&amp;<B>what</B>=username&amp;<B>value</B>=badqiu<BR>what为input的name,value为input的value</TD>
+    <TD>validate-ajax-<A class=external 
+      href="http://localhost/valiate-email.jsp">http://localhost/valiate-email.jsp</A><IMG 
+      class=outlink alt="" 
+    src="JSPWiki Javascript_EasyValidation.files/out.png"></TD></TR>
+  <TR>
+    <TD>validate-chinese </TD>
+    <TD>只能是中文(以下为中国的相关验证) </TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>validate-phone </TD>
+    <TD>有效的电话</TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>validate-mobile-phone </TD>
+    <TD>有效的手机号 </TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>validate-id-number</TD>
+    <TD>验证是否有效的身份证号码</TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>validate-zip</TD>
+    <TD>验证邮政编码</TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>validate-qq</TD>
+    <TD>验证QQ号码</TD>
+    <TD></TD></TR></TBODY></TABLE>
+<P>数据示例 </P>
+<P>&lt;input name="username" 
+value="badqiu"/&gt;,提交数据为:<B>username</B>=badqiu&amp;<B>what</B>=username&amp;<B>value</B>=badqiu<BR>what为input的name,value为input的valuevalidate-ajax-<A 
+class=external 
+href="http://localhost/valiate-email.jsp">http://localhost/valiate-email.jsp</A><IMG 
+class=outlink alt="" src="JSPWiki Javascript_EasyValidation.files/out.png">
+<TABLE class=imageplugin align=absMiddle border=0>
+  <TBODY>
+  <TR>
+    <TD><A href="http://localhost/valiate-email.jsp"><IMG height=7 alt="" 
+      src="" width=7 
+border=0></A></TD></TR></TBODY></TABLE>validate-chinese只能是中文(以下为中国的相关验证) 
+validate-phone有效的电话 validate-mobile-phone有效的手机号 validate-id-number验证是否有效的身份证号码 
+validate-zip验证邮政编码 validate-qq验证QQ号码 
+<H2 
+id=section-Javascript_EasyValidation-_E7_BC_96_E7_A8_8B_E5_BC_8F_E4_B8_BA_E8_A1_A8_E5_8D_95_E5_A2_9E_E5_8A_A0_E9_AA_8C_E8_AF_81Validation_E9_80_89_E9_A1_B9>编程式为表单增加验证(Validation选项)</H2>
+<P></P>
+<UL>
+  <LI>可以手工指定要验证那个form,在指定是可以给定一些选项 </LI></UL>
+<P><LINK href="JSPWiki Javascript_EasyValidation.files/syntax.css" type=text/css 
+rel=stylesheet></P><PRE><SPAN class=reservedWord></SPAN><BR><SPAN class=operator>&lt;</SPAN>script type<SPAN class=operator>=</SPAN><SPAN class=literal>"</SPAN><SPAN class=literal>text/javascript</SPAN><SPAN class=literal>"</SPAN><SPAN class=operator>&gt;</SPAN>
+	<SPAN class=reservedWord>var</SPAN> valid <SPAN class=operator>=</SPAN> <SPAN class=reservedWord>new</SPAN> Validation(<SPAN class=literal>'</SPAN><SPAN class=literal>form-id</SPAN><SPAN class=literal>'</SPAN><SPAN class=operator>,</SPAN> <SPAN class=operator>{</SPAN>onSubmit<SPAN class=operator>:</SPAN><SPAN class=literal>false</SPAN><SPAN class=operator>}</SPAN>)<SPAN class=operator>;</SPAN>
+         <SPAN class=comment>//</SPAN><SPAN class=comment> </SPAN><SPAN class=comment>do</SPAN><SPAN class=comment> </SPAN><SPAN class=comment>something</SPAN><SPAN class=comment> </SPAN><SPAN class=comment>...</SPAN><SPAN class=comment>
+</SPAN>         <SPAN class=reservedWord>var</SPAN> result <SPAN class=operator>=</SPAN> valid<SPAN class=operator>.</SPAN>validate()<SPAN class=operator>;</SPAN>
+<SPAN class=operator>&lt;</SPAN><SPAN class=operator>/</SPAN>script<SPAN class=operator>&gt;</SPAN>
+</PRE><B>创建Valuedation是的参数说明</B> 
+<P></P>
+<UL>
+  <LI>onSubmit – 是否绑定onSubmit函数, default - true 
+  <LI>stopOnFirst – 是否在检查到第一个错误时就停止检查 default- false 
+  <LI>immediate – 是否在被检测域失去焦点时就检查被检查域 default - false 
+  <LI>focusOnError – 是否把焦点移动到发生错误的域上 default - true 
+  <LI>useTitles – 是否使用提示 default - false 
+  <LI>onFormValidate:当form被检测和的回调函数,有两个输入参数 <SPAN 
+  style="FONT-FAMILY: monospace; whitespace: pre">arg[0]</SPAN>-检测form的结果true or 
+  false, <SPAN 
+  style="FONT-FAMILY: monospace; whitespace: pre">arg[1]</SPAN>-form本身的id 
+  <LI>onElementValidate:当没个element被检查后的回调函数,有两个输入参数 <SPAN 
+  style="FONT-FAMILY: monospace; whitespace: pre">arg[0]</SPAN>-检测form的结果true or 
+  false, <SPAN 
+  style="FONT-FAMILY: monospace; whitespace: pre">arg[1]</SPAN>-element本身的id 
+  </LI></UL>
+<H2 
+id=section-Javascript_EasyValidation-_E6_B7_BB_E5_8A_A0_E8_87_AA_E5_B7_B1_E7_9A_84Validator_E6_B5_8B_E8_AF_95_E5_87_BD_E6_95_B0>添加自己的Validator测试函数</H2>增加Validator 
+
+<P><LINK href="JSPWiki Javascript_EasyValidation.files/syntax.css" type=text/css 
+rel=stylesheet></P><PRE><SPAN class=reservedWord></SPAN><BR><SPAN class=comment>/*</SPAN><SPAN class=comment>参数说明</SPAN><SPAN class=comment>
+</SPAN><SPAN class=comment> </SPAN><SPAN class=comment>*</SPAN><SPAN class=comment> </SPAN><SPAN class=comment>v:</SPAN><SPAN class=comment> </SPAN><SPAN class=comment>为需要测试的值</SPAN><SPAN class=comment>
+</SPAN><SPAN class=comment> </SPAN><SPAN class=comment>*</SPAN><SPAN class=comment> </SPAN><SPAN class=comment>elm:</SPAN><SPAN class=comment> </SPAN><SPAN class=comment>为html</SPAN><SPAN class=comment> </SPAN><SPAN class=comment>input</SPAN><SPAN class=comment>
+</SPAN><SPAN class=comment> </SPAN><SPAN class=comment>*</SPAN><SPAN class=comment> </SPAN><SPAN class=comment>args:</SPAN><SPAN class=comment> </SPAN><SPAN class=comment>为有参数的验证表达式传递的参数,如min-length-10,则args[0]为10</SPAN><SPAN class=comment>
+</SPAN><SPAN class=comment> </SPAN><SPAN class=comment>*</SPAN><SPAN class=comment> </SPAN><SPAN class=comment>metadata:</SPAN><SPAN class=comment> </SPAN><SPAN class=comment>为Validator本身</SPAN><SPAN class=comment>
+</SPAN><SPAN class=comment>*/</SPAN>
+Validation<SPAN class=operator>.</SPAN>add(<SPAN class=operator>[</SPAN><SPAN class=literal>'</SPAN><SPAN class=literal>max-value</SPAN><SPAN class=literal>'</SPAN><SPAN class=operator>,</SPAN><SPAN class=reservedWord>function</SPAN>(v<SPAN class=operator>,</SPAN>elm<SPAN class=operator>,</SPAN>args<SPAN class=operator>,</SPAN>metadata) <SPAN class=operator>{</SPAN>
+		<SPAN class=reservedWord>return</SPAN> <SPAN class=literal>parseFloat</SPAN>(v) <SPAN class=operator>&lt;=</SPAN> <SPAN class=literal>parseFloat</SPAN>(args<SPAN class=operator>[</SPAN>0<SPAN class=operator>]</SPAN>)<SPAN class=operator>;</SPAN>
+	<SPAN class=operator>}</SPAN><SPAN class=operator>,</SPAN><SPAN class=operator>{</SPAN>depends <SPAN class=operator>:</SPAN> <SPAN class=operator>[</SPAN><SPAN class=literal>'</SPAN><SPAN class=literal>validate-number</SPAN><SPAN class=literal>'</SPAN><SPAN class=operator>]</SPAN><SPAN class=operator>}</SPAN> <SPAN class=operator>]</SPAN><SPAN class=operator>,</SPAN>
+<SPAN class=operator>}</SPAN>)<SPAN class=operator>;</SPAN>
+<SPAN class=comment>/*</SPAN><SPAN class=comment>
+</SPAN><SPAN class=comment> </SPAN><SPAN class=comment>*</SPAN><SPAN class=comment> </SPAN><SPAN class=comment>增加验证出错的提示信息</SPAN><SPAN class=comment>
+</SPAN><SPAN class=comment> </SPAN><SPAN class=comment>*/</SPAN>
+Validator<SPAN class=operator>.</SPAN>messagesSourceCn <SPAN class=operator>=</SPAN> <SPAN class=operator>[</SPAN>
+<SPAN class=operator>[</SPAN><SPAN class=literal>'</SPAN><SPAN class=literal>max-value</SPAN><SPAN class=literal>'</SPAN> <SPAN class=operator>,</SPAN> <SPAN class=literal>'</SPAN><SPAN class=literal>最大值为%s</SPAN><SPAN class=literal>'</SPAN><SPAN class=operator>]</SPAN><SPAN class=operator>,</SPAN>
+<SPAN class=operator>]</SPAN>
+</PRE>
+<P></P>
+<P><B>Validator的选项:</B> </P>
+<P>depends – 为validator的之间的内部依赖<BR>ignoreEmptyValue – 表明validator是否忽略空值不进行测试 
+<H2 id=section-Javascript_EasyValidation-FAQs>FAQs</H2>
+<P></P>
+<OL>
+  <LI><B>我的网站现在使用的是UTF-8编码,怎么使用validation_cn.js显示中文会乱码?</B><BR></LI></OL>答:validation_cn.js默认是使用GBK编码,使用可以改变文件编码的编辑器以UTF-8编码方式再保存,如保存为validation_cn_UTF-8.js 
+
+<OL>
+  <LI><B>国际化怎么办?</B><BR></LI></OL>答:动态修改Validator.messageSource即可 
+<OL>
+  <LI><B>日期之间的比较怎么办,如结束日期要大于开始日期</B><BR></LI></OL>答:先使用validate-date验证输入的值是合法的日期,再加上"less-than"的比较即可 
+
+<OL>
+  <LI><B>select的验证</B><BR></LI></OL>答:将Please Select..的值使用一个空格填充即可 <LINK 
+href="JSPWiki Javascript_EasyValidation.files/syntax.css" type=text/css 
+rel=stylesheet><PRE><SPAN class=reservedWord></SPAN><BR><SPAN class=tag>&lt;</SPAN><SPAN class=tag>select</SPAN><SPAN class=tag> </SPAN><SPAN class=tag>id</SPAN><SPAN class=operator>=</SPAN><SPAN class=literal>"</SPAN><SPAN class=literal>test</SPAN><SPAN class=literal>"</SPAN><SPAN class=tag> </SPAN><SPAN class=tag>name</SPAN><SPAN class=operator>=</SPAN><SPAN class=literal>"</SPAN><SPAN class=literal>test</SPAN><SPAN class=literal>"</SPAN><SPAN class=tag> </SPAN><SPAN class=tag>class</SPAN><SPAN class=operator>=</SPAN><SPAN class=literal>"</SPAN><SPAN class=literal>required</SPAN><SPAN class=literal>"</SPAN><SPAN class=tag>&gt;</SPAN>
+	<SPAN class=tag>&lt;</SPAN><SPAN class=tag>option</SPAN><SPAN class=tag> </SPAN><SPAN class=tag>value</SPAN><SPAN class=operator>=</SPAN><SPAN class=literal>"</SPAN><SPAN class=literal> </SPAN><SPAN class=literal>"</SPAN><SPAN class=tag>&gt;</SPAN>Please Select..<SPAN class=tag>&lt;</SPAN><SPAN class=tag>/</SPAN><SPAN class=tag>option</SPAN><SPAN class=tag>&gt;</SPAN>
+	<SPAN class=tag>&lt;</SPAN><SPAN class=tag>option</SPAN><SPAN class=tag> </SPAN><SPAN class=tag>value</SPAN><SPAN class=operator>=</SPAN><SPAN class=literal>"</SPAN><SPAN class=literal>val1</SPAN><SPAN class=literal>"</SPAN><SPAN class=tag>&gt;</SPAN>Value 1<SPAN class=tag>&lt;</SPAN><SPAN class=tag>/</SPAN><SPAN class=tag>option</SPAN><SPAN class=tag>&gt;</SPAN>
+	<SPAN class=tag>&lt;</SPAN><SPAN class=tag>option</SPAN><SPAN class=tag> </SPAN><SPAN class=tag>value</SPAN><SPAN class=operator>=</SPAN><SPAN class=literal>"</SPAN><SPAN class=literal>val2</SPAN><SPAN class=literal>"</SPAN><SPAN class=tag>&gt;</SPAN>Value 2<SPAN class=tag>&lt;</SPAN><SPAN class=tag>/</SPAN><SPAN class=tag>option</SPAN><SPAN class=tag>&gt;</SPAN>
+<SPAN class=tag>&lt;</SPAN><SPAN class=tag>/</SPAN><SPAN class=tag>select</SPAN><SPAN class=tag>&gt;</SPAN>
+</PRE>
+<OL>
+  <LI><B>在IE中提示"Unterminated string constant"或是"末结束的字符串常量"错误</B><BR></LI></OL>答: 
+是由于你网页的编码问题,validation_cn.js默认是GBK编码,请转换成与你的网页想适应的编码 
+<H2 id=section-Javascript_EasyValidation-_E5_BC_95_E7_94_A8>引用</H2><A 
+class=external 
+href="http://tetlaw.id.au/view/blog/really-easy-field-validation-with-prototype/">http://tetlaw.id.au/view/blog/really-easy-field-validation-with-prototype/</A><IMG 
+class=outlink alt="" src="JSPWiki Javascript_EasyValidation.files/out.png"> 
+<H2 id=section-Javascript_EasyValidation-Authors>Authors</H2><A class=external 
+href="http://www.blogjava.net/badqiu">badqiu</A><IMG class=outlink alt="" 
+src="JSPWiki Javascript_EasyValidation.files/out.png"><BR><A class=external 
+href="http://ivanl.javaeye.com/">Ivan Li</A><IMG class=outlink alt="" 
+src="JSPWiki Javascript_EasyValidation.files/out.png"> 
+<DIV id=contentInfoBar><BR>
+<DIV class=smallText>
+<H3>附件:</H3>
+<DIV class=zebra-table align=center>
+<TABLE width="90%">
+  <TBODY>
+  <TR>
+    <TD><A class=attachment 
+      href="http://beansoft.java-cn.org/attach/Javascript_EasyValidation/EasyValidation3.0.zip">EasyValidation3.0.zip</A> 
+    </TD>
+    <TD><A class=pageinfo 
+      href="http://beansoft.java-cn.org/PageInfo.jsp?page=Javascript_EasyValidation/EasyValidation3.0.zip"><IMG 
+      alt=EasyValidation3.0.zip相关的信息 
+      src="JSPWiki Javascript_EasyValidation.files/zip.gif" border=0> </A></TD>
+    <TD>52861字节 </TD></TR>
+  <TR>
+    <TD><A class=attachment 
+      href="JSPWiki Javascript_EasyValidation.files/validation_helloworld.jpg">validation_helloworld.jpg</A> 
+    </TD>
+    <TD><A class=pageinfo 
+      href="http://beansoft.java-cn.org/PageInfo.jsp?page=Javascript_EasyValidation/validation_helloworld.jpg"><IMG 
+      alt=validation_helloworld.jpg相关的信息 
+      src="JSPWiki Javascript_EasyValidation.files/jpg.gif" border=0> </A></TD>
+    <TD>14379字节 </TD></TR></TBODY></TABLE></DIV></DIV>
+<HR>
+<BR>
+<TABLE width="100%" border=0>
+  <TBODY>
+  <TR class=smallText>
+    <TD><A 
+      href="http://beansoft.java-cn.org/Wiki.jsp?page=Javascript_EasyValidation#Top">回到顶部</A>&nbsp;&nbsp; 
+      <A 
+      href="http://beansoft.java-cn.org/Edit.jsp?page=Javascript_EasyValidation">编辑此页</A>&nbsp;&nbsp; 
+      <A 
+      href="http://beansoft.java-cn.org/Comment.jsp?page=Javascript_EasyValidation">添加评论</A>&nbsp;&nbsp; 
+      <A class=pageinfo 
+      href="http://beansoft.java-cn.org/PageInfo.jsp?page=Javascript_EasyValidation">页面信息</A> 
+      &nbsp;&nbsp; <A class=uploadlink 
+      href="http://beansoft.java-cn.org/Upload.jsp?page=Javascript_EasyValidation" 
+      target=_new>添加附件</A> <BR></TD></TR>
+  <TR>
+    <TD><I>这个网页最后一次于 <A 
+      href="http://beansoft.java-cn.org/Diff.jsp?page=Javascript_EasyValidation&amp;r1=1&amp;r2=1">2007-04-03 
+      13:12:09 CST </A>,被<A class=wikipage 
+      href="http://beansoft.java-cn.org/Wiki.jsp?page=beansoft">beansoft</A>更新过. 
+      </I></TD></TR></TBODY></TABLE></DIV></DIV><!--content end--><!--footer start-->
+<DIV id=footer><!-- Footer is automatically generated from a Wiki page called "Footer" --><BR 
+clear=all>
+<HR>
+Powered by <A class=external href="http://www.jspwiki.org/">JSPWiki</A><IMG 
+class=outlink alt="" src="JSPWiki Javascript_EasyValidation.files/out.png"> 
+v2.2.33, Resin 3.0.18, <A class=external 
+href="http://sourceforge.net/projects/startemplate">StarTemplate</A><IMG 
+class=outlink alt="" 
+src="JSPWiki Javascript_EasyValidation.files/out.png">_zh_CN v1.0 <A 
+class=interwiki href="http://beansoft.java-cn.org/Edit.jsp?page=Footer">Edit</A> 
+<!-- End of automatically generated page --></DIV><!--footer end--></BODY></HTML>

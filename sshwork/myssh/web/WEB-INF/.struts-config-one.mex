@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/myoffice/xiaoxi.do" location="5856,0" dimension="412,84" />
+  <StrutsActivity path="/program/dzfileworkflow.do" location="4395,867" dimension="622,84" />
+  <StrutsActivity path="/program/tiezijiyiqv/sybj.do" location="3302,1374" dimension="550,84" />
+  <StrutsActivity path="/myoffice/xiaoxi/hfgonghan.jsp" location="0,774" dimension="220,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/addxiaoxi.jsp" location="320,774" dimension="220,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/sffilelist.jsp" location="640,774" dimension="226,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/addsffile.jsp" location="966,774" dimension="220,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/viewsffile.jsp" location="1286,774" dimension="226,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/allgonghanlist.jsp" location="1612,774" dimension="250,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/allgbtongzhilist.jsp" location="1962,774" dimension="262,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/viewgbtongzhi.jsp" location="2324,774" dimension="244,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/hfsffilelist.jsp" location="2668,774" dimension="238,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/bxxiaoxilist.jsp" location="3006,774" dimension="238,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/addgbtongzhi.jsp" location="3344,774" dimension="238,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/hfnewsffile.jsp" location="3682,774" dimension="232,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/hfnewxiaoxi.jsp" location="4014,774" dimension="232,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/hfxinjian.jsp" location="4346,774" dimension="220,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/xiaoxilist.jsp" location="4666,774" dimension="226,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/hfgonghanlist.jsp" location="4992,774" dimension="244,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/gonghanlist.jsp" location="5336,774" dimension="232,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/hfxiaoxilist.jsp" location="5668,774" dimension="238,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/addxinjian.jsp" location="6006,774" dimension="226,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/allsffilelist.jsp" location="6332,774" dimension="244,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/viewxiaoxi.jsp" location="6676,774" dimension="226,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/allxiaoxilist.jsp" location="7002,774" dimension="244,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/bmxiaoxiindex.jsp" location="7346,774" dimension="244,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/gbjslist.jsp" location="7690,774" dimension="214,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/hfnewgonghan.jsp" location="8004,774" dimension="238,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/hfxiaoxi.jsp" location="8342,774" dimension="214,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/allxinjianlist.jsp" location="8656,774" dimension="250,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/hfnewxinjian.jsp" location="9006,774" dimension="238,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/gbtongzhilist.jsp" location="9344,774" dimension="244,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/addgonghan.jsp" location="9688,774" dimension="226,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/hfxinjianlist.jsp" location="10014,774" dimension="244,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/bxgonghanlist.jsp" location="10358,774" dimension="244,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/bxsffilelist.jsp" location="10702,774" dimension="238,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/bxgbtongzhilist.jsp" location="11040,774" dimension="256,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/viewxinjian.jsp" location="11396,774" dimension="232,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/viewgonghan.jsp" location="11728,774" dimension="232,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/bxxinjianlist.jsp" location="12060,774" dimension="244,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/hfsffile.jsp" location="12404,774" dimension="214,48" />
+  <StrutsActivity path="/myoffice/xiaoxi/xinjianlist.jsp" location="12718,774" dimension="232,48" />
+  <StrutsActivity path="/workarea/program/zuzhangban/dzfileworkflow/upddzworkflownode.jsp" location="0,1281" dimension="430,48" />
+  <StrutsActivity path="/workarea/program/zuzhangban/dzfileworkflow/glbmdzworkflowgllist.jsp" location="530,1281" dimension="448,48" />
+  <StrutsActivity path="/workarea/program/zuzhangban/dzfileworkflow/dzworkflowlist.jsp" location="1077,1281" dimension="412,48" />
+  <StrutsActivity path="/workarea/program/zuzhangban/dzfileworkflow/adddzworkflow.jsp" location="1589,1281" dimension="406,48" />
+  <StrutsActivity path="/workarea/program/zuzhangban/dzfileworkflow/auditbmdzworkflowgl.jsp" location="2095,1281" dimension="442,48" />
+  <StrutsActivity path="/workarea/program/zuzhangban/dzfileworkflow/addbmdzworkflowgl.jsp" location="2637,1281" dimension="430,48" />
+  <StrutsActivity path="/workarea/program/zuzhangban/dzfileworkflow/auditdzworkflow.jsp" location="3167,1281" dimension="418,48" />
+  <StrutsActivity path="/workarea/program/zuzhangban/dzfileworkflow/viewdzworkflownode.jsp" location="3685,1281" dimension="436,48" />
+  <StrutsActivity path="/workarea/program/zuzhangban/dzfileworkflow/bmdzworkflowgllist.jsp" location="4222,1281" dimension="436,48" />
+  <StrutsActivity path="/workarea/program/zuzhangban/dzfileworkflow/updbmdzworkflowgl.jsp" location="4758,1281" dimension="430,48" />
+  <StrutsActivity path="/workarea/program/zuzhangban/dzfileworkflow/fabubmdzworkflowgl.jsp" location="5288,1281" dimension="436,48" />
+  <StrutsActivity path="/workarea/program/zuzhangban/dzfileworkflow/viewbmdzworkflowgl.jsp" location="5824,1281" dimension="436,48" />
+  <StrutsActivity path="/workarea/program/zuzhangban/dzfileworkflow/dzworkflownodeupdlist.jsp" location="6360,1281" dimension="454,48" />
+  <StrutsActivity path="/workarea/program/zuzhangban/dzfileworkflow/adddzworkflownode.jsp" location="6914,1281" dimension="430,48" />
+  <StrutsActivity path="/workarea/program/zuzhangban/dzfileworkflow/gldzworkflowlist.jsp" location="7444,1281" dimension="424,48" />
+  <StrutsActivity path="/workarea/program/zuzhangban/dzfileworkflow/upddzworkflow.jsp" location="7968,1281" dimension="406,48" />
+  <StrutsActivity path="/workarea/program/zuzhangban/dzfileworkflow/fabudzworkflow.jsp" location="8474,1281" dimension="412,48" />
+  <StrutsActivity path="/workarea/program/zuzhangban/dzfileworkflow/viewdzworkflow.jsp" location="8986,1281" dimension="412,48" />
+  <StrutsActivity path="/workarea/program/zuzhangban/dzfileworkflow/dzworkflownodelist.jsp" location="9498,1281" dimension="436,48" />
+  <StrutsActivity path="/workarea/program/tiezijiyiqv/zjggdl/sybj/updselfbjinfo.jsp" location="0,1698" dimension="394,48" />
+  <StrutsActivity path="/workarea/program/tiezijiyiqv/zjggdl/sybj/jychlist.jsp" location="494,1698" dimension="364,48" />
+  <StrutsActivity path="/workarea/program/tiezijiyiqv/zjggdl/sybj/viewjych.jsp" location="958,1698" dimension="364,48" />
+  <StrutsActivity path="/workarea/program/tiezijiyiqv/zjggdl/sybj/viewbjinfo.jsp" location="1422,1698" dimension="376,48" />
+  <StrutsActivity path="/workarea/program/tiezijiyiqv/zjggdl/sybj/bjinfolistWithSsbm.jsp" location="1898,1698" dimension="424,48" />
+  <StrutsActivity path="/workarea/program/tiezijiyiqv/zjggdl/sybj/selfbjinfolist.jsp" location="2422,1698" dimension="400,48" />
+  <StrutsActivity path="/workarea/program/tiezijiyiqv/zjggdl/sybj/updbjinfo.jsp" location="2922,1698" dimension="370,48" />
+  <StrutsActivity path="/workarea/program/tiezijiyiqv/zjggdl/sybj/addbjinfo.jsp" location="3392,1698" dimension="370,48" />
+  <StrutsActivity path="/workarea/program/tiezijiyiqv/zjggdl/sybj/chatlist.jsp" location="3862,1698" dimension="364,48" />
+  <StrutsActivity path="/workarea/program/tiezijiyiqv/zjggdl/sybj/viewssqz.jsp" location="4326,1698" dimension="364,48" />
+  <StrutsActivity path="/workarea/program/tiezijiyiqv/zjggdl/sybj/bjinfolist.jsp" location="4790,1698" dimension="376,48" />
+  <StrutsActivity path="/workarea/program/tiezijiyiqv/zjggdl/sybj/ssqzlist.jsp" location="5266,1698" dimension="364,48" />
+  <StrutsActivity path="/workarea/program/tiezijiyiqv/zjggdl/sybj/viewbjinfoWithSsbm.jsp" location="5730,1698" dimension="424,48" />
+  <StrutsActivity path="/workarea/program/tiezijiyiqv/zjggdl/sybj/viewhetong.jsp" location="6254,1698" dimension="376,48" />
+  <StrutsActivity path="/myoffice/myzh.do.do" location="75,1791" dimension="424,84" />
+  <StrutsActivity path="/myoffice/viewzhszmx.jsp" location="0,1975" dimension="184,48" />
+  <StrutsActivity path="/myoffice/myzh.jsp" location="284,1975" dimension="148,48" />
+  <StrutsActivity path="/myoffice/jyqdt/jyqdt.jsp" />
+  <StrutsTransition id="/myoffice/xiaoxi.do,updgbtongzhi,/myoffice/xiaoxi/addgbtongzhi.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5970,84" />
+      <AbsolutePoint location="5970,474" />
+      <AbsolutePoint location="3403,474" />
+      <AbsolutePoint location="3403,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,bmxiaoxiindex,/myoffice/xiaoxi/bmxiaoxiindex.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6108,84" />
+      <AbsolutePoint location="6108,624" />
+      <AbsolutePoint location="7468,624" />
+      <AbsolutePoint location="7468,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,hfxinjianlist,/myoffice/xiaoxi/hfxinjianlist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6190,84" />
+      <AbsolutePoint location="6190,354" />
+      <AbsolutePoint location="10136,354" />
+      <AbsolutePoint location="10136,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/myzh.do.do,viewzhszmx,/myoffice/viewzhszmx.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="287,1833" />
+      <AbsolutePoint location="92,1999" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/myzh.do.do,myzh,/myoffice/myzh.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="287,1833" />
+      <AbsolutePoint location="358,1999" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/program/tiezijiyiqv/sybj.do,addbjinfo,/workarea/program/tiezijiyiqv/zjggdl/sybj/addbjinfo.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3577,1458" />
+      <AbsolutePoint location="3577,1698" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,updxiaoxi,/myoffice/xiaoxi/addxiaoxi.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5870,84" />
+      <AbsolutePoint location="5870,144" />
+      <AbsolutePoint location="375,144" />
+      <AbsolutePoint location="375,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,allxinjianlist,/myoffice/xiaoxi/allxinjianlist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6144,84" />
+      <AbsolutePoint location="6144,504" />
+      <AbsolutePoint location="8781,504" />
+      <AbsolutePoint location="8781,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/program/dzfileworkflow.do,dzworkflownodeupdlist,/workarea/program/zuzhangban/dzfileworkflow/dzworkflownodeupdlist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4815,951" />
+      <AbsolutePoint location="4815,1161" />
+      <AbsolutePoint location="6587,1161" />
+      <AbsolutePoint location="6587,1281" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/program/tiezijiyiqv/sybj.do,updbjinfo,/workarea/program/tiezijiyiqv/zjggdl/sybj/updbjinfo.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3540,1458" />
+      <AbsolutePoint location="3540,1668" />
+      <AbsolutePoint location="3107,1668" />
+      <AbsolutePoint location="3107,1698" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,xinjianlist,/myoffice/xiaoxi/xinjianlist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6263,84" />
+      <AbsolutePoint location="6263,114" />
+      <AbsolutePoint location="12834,114" />
+      <AbsolutePoint location="12834,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/program/dzfileworkflow.do,fabudzworkflow,/workarea/program/zuzhangban/dzfileworkflow/fabudzworkflow.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4939,951" />
+      <AbsolutePoint location="4939,1041" />
+      <AbsolutePoint location="8680,1041" />
+      <AbsolutePoint location="8680,1281" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/program/dzfileworkflow.do,fabubmdzworkflowgl,/workarea/program/zuzhangban/dzfileworkflow/fabubmdzworkflowgl.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4753,951" />
+      <AbsolutePoint location="4753,1221" />
+      <AbsolutePoint location="5506,1221" />
+      <AbsolutePoint location="5506,1281" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,hfgonghanlist,/myoffice/xiaoxi/hfgonghanlist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6035,84" />
+      <AbsolutePoint location="6035,684" />
+      <AbsolutePoint location="5114,684" />
+      <AbsolutePoint location="5114,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,allxiaoxilist,/myoffice/xiaoxi/allxiaoxilist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6099,84" />
+      <AbsolutePoint location="6099,654" />
+      <AbsolutePoint location="7124,654" />
+      <AbsolutePoint location="7124,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/program/tiezijiyiqv/sybj.do,jychlist,/workarea/program/tiezijiyiqv/zjggdl/sybj/jychlist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3357,1458" />
+      <AbsolutePoint location="3357,1518" />
+      <AbsolutePoint location="676,1518" />
+      <AbsolutePoint location="676,1698" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/program/dzfileworkflow.do,addbmdzworkflowgl,/workarea/program/zuzhangban/dzfileworkflow/addbmdzworkflowgl.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4597,951" />
+      <AbsolutePoint location="4597,1161" />
+      <AbsolutePoint location="2852,1161" />
+      <AbsolutePoint location="2852,1281" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,hfxinjian,/myoffice/xiaoxi/hfxinjian.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6007,84" />
+      <AbsolutePoint location="6007,594" />
+      <AbsolutePoint location="4456,594" />
+      <AbsolutePoint location="4456,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,xiaoxilist,/myoffice/xiaoxi/xiaoxilist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6016,84" />
+      <AbsolutePoint location="6016,624" />
+      <AbsolutePoint location="4722,624" />
+      <AbsolutePoint location="4722,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,gonghanlist,/myoffice/xiaoxi/gonghanlist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6044,84" />
+      <AbsolutePoint location="6044,714" />
+      <AbsolutePoint location="5452,714" />
+      <AbsolutePoint location="5452,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,updgonghan,/myoffice/xiaoxi/addgonghan.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6181,84" />
+      <AbsolutePoint location="6181,384" />
+      <AbsolutePoint location="9857,384" />
+      <AbsolutePoint location="9857,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/program/dzfileworkflow.do,upddzworkflow,/workarea/program/zuzhangban/dzfileworkflow/upddzworkflow.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4908,951" />
+      <AbsolutePoint location="4908,1071" />
+      <AbsolutePoint location="8171,1071" />
+      <AbsolutePoint location="8171,1281" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,hfsffilelist,/myoffice/xiaoxi/hfsffilelist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5952,84" />
+      <AbsolutePoint location="5952,414" />
+      <AbsolutePoint location="2787,414" />
+      <AbsolutePoint location="2787,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,hfgonghan,/myoffice/xiaoxi/hfgonghan.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5861,84" />
+      <AbsolutePoint location="5861,114" />
+      <AbsolutePoint location="110,114" />
+      <AbsolutePoint location="110,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/program/tiezijiyiqv/sybj.do,viewhetong,/workarea/program/tiezijiyiqv/zjggdl/sybj/viewhetong.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3833,1458" />
+      <AbsolutePoint location="3833,1488" />
+      <AbsolutePoint location="6442,1488" />
+      <AbsolutePoint location="6442,1698" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/program/dzfileworkflow.do,auditdzworkflow,/workarea/program/zuzhangban/dzfileworkflow/auditdzworkflow.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4628,951" />
+      <AbsolutePoint location="4628,1191" />
+      <AbsolutePoint location="3376,1191" />
+      <AbsolutePoint location="3376,1281" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,hfnewgonghan,/myoffice/xiaoxi/hfnewgonghan.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6126,84" />
+      <AbsolutePoint location="6126,564" />
+      <AbsolutePoint location="8123,564" />
+      <AbsolutePoint location="8123,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/program/dzfileworkflow.do,viewdzworkflownode,/workarea/program/zuzhangban/dzfileworkflow/viewdzworkflownode.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4659,951" />
+      <AbsolutePoint location="4659,1221" />
+      <AbsolutePoint location="3903,1221" />
+      <AbsolutePoint location="3903,1281" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,bxxiaoxilist,/myoffice/xiaoxi/bxxiaoxilist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5961,84" />
+      <AbsolutePoint location="5961,444" />
+      <AbsolutePoint location="3125,444" />
+      <AbsolutePoint location="3125,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,addgonghan,/myoffice/xiaoxi/addgonghan.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6172,84" />
+      <AbsolutePoint location="6172,414" />
+      <AbsolutePoint location="9744,414" />
+      <AbsolutePoint location="9744,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,bxgbtongzhilist,/myoffice/xiaoxi/bxgbtongzhilist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6218,84" />
+      <AbsolutePoint location="6218,264" />
+      <AbsolutePoint location="11168,264" />
+      <AbsolutePoint location="11168,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/program/dzfileworkflow.do,adddzworkflow,/workarea/program/zuzhangban/dzfileworkflow/adddzworkflow.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4535,951" />
+      <AbsolutePoint location="4535,1101" />
+      <AbsolutePoint location="1792,1101" />
+      <AbsolutePoint location="1792,1281" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,allsffilelist,/myoffice/xiaoxi/allsffilelist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6080,84" />
+      <AbsolutePoint location="6080,714" />
+      <AbsolutePoint location="6454,714" />
+      <AbsolutePoint location="6454,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/program/dzfileworkflow.do,bmdzworkflowgllist,/workarea/program/zuzhangban/dzfileworkflow/bmdzworkflowgllist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4690,951" />
+      <AbsolutePoint location="4690,1251" />
+      <AbsolutePoint location="4440,1251" />
+      <AbsolutePoint location="4440,1281" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,hfxiaoxilist,/myoffice/xiaoxi/hfxiaoxilist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6053,84" />
+      <AbsolutePoint location="6053,744" />
+      <AbsolutePoint location="5787,744" />
+      <AbsolutePoint location="5787,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/workarea/program/tiezijiyiqv/zjggdl/sybj/bjinfolist.jsp,null,/program/tiezijiyiqv/sybj.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5072,1698" />
+      <AbsolutePoint location="5072,1578" />
+      <AbsolutePoint location="3723,1578" />
+      <AbsolutePoint location="3723,1458" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,allgbtongzhilist,/myoffice/xiaoxi/allgbtongzhilist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5934,84" />
+      <AbsolutePoint location="5934,354" />
+      <AbsolutePoint location="2093,354" />
+      <AbsolutePoint location="2093,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,bxsffilelist,/myoffice/xiaoxi/bxsffilelist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6208,84" />
+      <AbsolutePoint location="6208,294" />
+      <AbsolutePoint location="10821,294" />
+      <AbsolutePoint location="10821,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,addxinjian,/myoffice/xiaoxi/addxinjian.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6071,84" />
+      <AbsolutePoint location="6071,744" />
+      <AbsolutePoint location="6175,744" />
+      <AbsolutePoint location="6175,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/program/dzfileworkflow.do,gldzworkflowlist,/workarea/program/zuzhangban/dzfileworkflow/gldzworkflowlist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4877,951" />
+      <AbsolutePoint location="4877,1101" />
+      <AbsolutePoint location="7656,1101" />
+      <AbsolutePoint location="7656,1281" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/program/dzfileworkflow.do,auditbmdzworkflowgl,/workarea/program/zuzhangban/dzfileworkflow/auditbmdzworkflowgl.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4566,951" />
+      <AbsolutePoint location="4566,1131" />
+      <AbsolutePoint location="2316,1131" />
+      <AbsolutePoint location="2316,1281" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,addxiaoxi,/myoffice/xiaoxi/addxiaoxi.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5879,84" />
+      <AbsolutePoint location="5879,174" />
+      <AbsolutePoint location="485,174" />
+      <AbsolutePoint location="485,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/program/tiezijiyiqv/sybj.do,viewjych,/workarea/program/tiezijiyiqv/zjggdl/sybj/viewjych.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3393,1458" />
+      <AbsolutePoint location="3393,1548" />
+      <AbsolutePoint location="1140,1548" />
+      <AbsolutePoint location="1140,1698" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,updxinjian,/myoffice/xiaoxi/addxinjian.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6062,84" />
+      <AbsolutePoint location="6062,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/program/dzfileworkflow.do,viewdzworkflow,/workarea/program/zuzhangban/dzfileworkflow/viewdzworkflow.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4970,951" />
+      <AbsolutePoint location="4970,1011" />
+      <AbsolutePoint location="9192,1011" />
+      <AbsolutePoint location="9192,1281" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/program/tiezijiyiqv/sybj.do,viewssqz,/workarea/program/tiezijiyiqv/zjggdl/sybj/viewssqz.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3650,1458" />
+      <AbsolutePoint location="3650,1638" />
+      <AbsolutePoint location="4508,1638" />
+      <AbsolutePoint location="4508,1698" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,viewsffile,/myoffice/xiaoxi/viewsffile.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5916,84" />
+      <AbsolutePoint location="5916,294" />
+      <AbsolutePoint location="1399,294" />
+      <AbsolutePoint location="1399,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,bxxinjianlist,/myoffice/xiaoxi/bxxinjianlist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6245,84" />
+      <AbsolutePoint location="6245,174" />
+      <AbsolutePoint location="12182,174" />
+      <AbsolutePoint location="12182,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/program/dzfileworkflow.do,upddzworkflownode,/workarea/program/zuzhangban/dzfileworkflow/upddzworkflownode.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4411,951" />
+      <AbsolutePoint location="4411,981" />
+      <AbsolutePoint location="215,981" />
+      <AbsolutePoint location="215,1281" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,addsffile,/myoffice/xiaoxi/addsffile.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5906,84" />
+      <AbsolutePoint location="5906,264" />
+      <AbsolutePoint location="1131,264" />
+      <AbsolutePoint location="1131,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/program/dzfileworkflow.do,dzworkflowlist,/workarea/program/zuzhangban/dzfileworkflow/dzworkflowlist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4473,951" />
+      <AbsolutePoint location="4473,1041" />
+      <AbsolutePoint location="1180,1041" />
+      <AbsolutePoint location="1180,1281" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,viewgonghan,/myoffice/xiaoxi/viewgonghan.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6236,84" />
+      <AbsolutePoint location="6236,204" />
+      <AbsolutePoint location="11844,204" />
+      <AbsolutePoint location="11844,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/program/tiezijiyiqv/sybj.do,ssqzlist,/workarea/program/tiezijiyiqv/zjggdl/sybj/ssqzlist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3760,1458" />
+      <AbsolutePoint location="3760,1548" />
+      <AbsolutePoint location="5448,1548" />
+      <AbsolutePoint location="5448,1698" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,viewxinjian,/myoffice/xiaoxi/viewxinjian.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6227,84" />
+      <AbsolutePoint location="6227,234" />
+      <AbsolutePoint location="11512,234" />
+      <AbsolutePoint location="11512,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/program/dzfileworkflow.do,glbmdzworkflowgllist,/workarea/program/zuzhangban/dzfileworkflow/glbmdzworkflowgllist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4442,951" />
+      <AbsolutePoint location="4442,1011" />
+      <AbsolutePoint location="754,1011" />
+      <AbsolutePoint location="754,1281" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/program/tiezijiyiqv/sybj.do,chatlist,/workarea/program/tiezijiyiqv/zjggdl/sybj/chatlist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3613,1458" />
+      <AbsolutePoint location="3613,1668" />
+      <AbsolutePoint location="4044,1668" />
+      <AbsolutePoint location="4044,1698" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/myzh.jsp,null,/myoffice/myzh.do.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="358,1999" />
+      <AbsolutePoint location="287,1833" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/workarea/program/zuzhangban/dzfileworkflow/dzworkflowlist.jsp,null,/program/dzfileworkflow.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1386,1281" />
+      <AbsolutePoint location="1386,1071" />
+      <AbsolutePoint location="4504,1071" />
+      <AbsolutePoint location="4504,951" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,gbjslist,/myoffice/xiaoxi/gbjslist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6117,84" />
+      <AbsolutePoint location="6117,594" />
+      <AbsolutePoint location="7797,594" />
+      <AbsolutePoint location="7797,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,hfnewxinjian,/myoffice/xiaoxi/hfnewxinjian.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6154,84" />
+      <AbsolutePoint location="6154,474" />
+      <AbsolutePoint location="9125,474" />
+      <AbsolutePoint location="9125,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,allgonghanlist,/myoffice/xiaoxi/allgonghanlist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5925,84" />
+      <AbsolutePoint location="5925,324" />
+      <AbsolutePoint location="1737,324" />
+      <AbsolutePoint location="1737,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/myzh.do.do,jyqdt,/myoffice/jyqdt/jyqdt.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="287,1833" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/program/dzfileworkflow.do,viewbmdzworkflowgl,/workarea/program/zuzhangban/dzfileworkflow/viewbmdzworkflowgl.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4784,951" />
+      <AbsolutePoint location="4784,1191" />
+      <AbsolutePoint location="6042,1191" />
+      <AbsolutePoint location="6042,1281" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,addgbtongzhi,/myoffice/xiaoxi/addgbtongzhi.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5980,84" />
+      <AbsolutePoint location="5980,504" />
+      <AbsolutePoint location="3522,504" />
+      <AbsolutePoint location="3522,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/program/dzfileworkflow.do,dzworkflownodelist,/workarea/program/zuzhangban/dzfileworkflow/dzworkflownodelist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5001,951" />
+      <AbsolutePoint location="5001,981" />
+      <AbsolutePoint location="9716,981" />
+      <AbsolutePoint location="9716,1281" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/program/tiezijiyiqv/sybj.do,selfbjinfolist,/workarea/program/tiezijiyiqv/zjggdl/sybj/selfbjinfolist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3503,1458" />
+      <AbsolutePoint location="3503,1638" />
+      <AbsolutePoint location="2622,1638" />
+      <AbsolutePoint location="2622,1698" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,gbtongzhilist,/myoffice/xiaoxi/gbtongzhilist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6163,84" />
+      <AbsolutePoint location="6163,444" />
+      <AbsolutePoint location="9466,444" />
+      <AbsolutePoint location="9466,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/program/tiezijiyiqv/sybj.do,updselfbjinfo,/workarea/program/tiezijiyiqv/zjggdl/sybj/updselfbjinfo.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3320,1458" />
+      <AbsolutePoint location="3320,1488" />
+      <AbsolutePoint location="197,1488" />
+      <AbsolutePoint location="197,1698" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,viewxiaoxi,/myoffice/xiaoxi/viewxiaoxi.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6089,84" />
+      <AbsolutePoint location="6089,684" />
+      <AbsolutePoint location="6789,684" />
+      <AbsolutePoint location="6789,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi/xiaoxilist.jsp,null,/myoffice/xiaoxi.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4835,774" />
+      <AbsolutePoint location="4835,654" />
+      <AbsolutePoint location="6025,654" />
+      <AbsolutePoint location="6025,84" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/program/tiezijiyiqv/sybj.do,viewbjinfo,/workarea/program/tiezijiyiqv/zjggdl/sybj/viewbjinfo.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3430,1458" />
+      <AbsolutePoint location="3430,1578" />
+      <AbsolutePoint location="1610,1578" />
+      <AbsolutePoint location="1610,1698" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,hfnewxiaoxi,/myoffice/xiaoxi/hfnewxiaoxi.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5998,84" />
+      <AbsolutePoint location="5998,564" />
+      <AbsolutePoint location="4130,564" />
+      <AbsolutePoint location="4130,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,hfxiaoxi,/myoffice/xiaoxi/hfxiaoxi.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6135,84" />
+      <AbsolutePoint location="6135,534" />
+      <AbsolutePoint location="8449,534" />
+      <AbsolutePoint location="8449,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,sffilelist,/myoffice/xiaoxi/sffilelist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5888,84" />
+      <AbsolutePoint location="5888,204" />
+      <AbsolutePoint location="753,204" />
+      <AbsolutePoint location="753,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/program/tiezijiyiqv/sybj.do,bjinfolist,/workarea/program/tiezijiyiqv/zjggdl/sybj/bjinfolist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3687,1458" />
+      <AbsolutePoint location="3687,1608" />
+      <AbsolutePoint location="4884,1608" />
+      <AbsolutePoint location="4884,1698" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,bxgonghanlist,/myoffice/xiaoxi/bxgonghanlist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6199,84" />
+      <AbsolutePoint location="6199,324" />
+      <AbsolutePoint location="10480,324" />
+      <AbsolutePoint location="10480,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,updsffile,/myoffice/xiaoxi/addsffile.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5897,84" />
+      <AbsolutePoint location="5897,234" />
+      <AbsolutePoint location="1021,234" />
+      <AbsolutePoint location="1021,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,hfnewsffile,/myoffice/xiaoxi/hfnewsffile.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5989,84" />
+      <AbsolutePoint location="5989,534" />
+      <AbsolutePoint location="3798,534" />
+      <AbsolutePoint location="3798,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/program/dzfileworkflow.do,updbmdzworkflowgl,/workarea/program/zuzhangban/dzfileworkflow/updbmdzworkflowgl.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4722,951" />
+      <AbsolutePoint location="4722,1251" />
+      <AbsolutePoint location="4973,1251" />
+      <AbsolutePoint location="4973,1281" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,hfsffile,/myoffice/xiaoxi/hfsffile.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6254,84" />
+      <AbsolutePoint location="6254,144" />
+      <AbsolutePoint location="12511,144" />
+      <AbsolutePoint location="12511,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/program/dzfileworkflow.do,adddzworkflownode,/workarea/program/zuzhangban/dzfileworkflow/adddzworkflownode.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4846,951" />
+      <AbsolutePoint location="4846,1131" />
+      <AbsolutePoint location="7129,1131" />
+      <AbsolutePoint location="7129,1281" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/myoffice/xiaoxi.do,viewgbtongzhi,/myoffice/xiaoxi/viewgbtongzhi.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5943,84" />
+      <AbsolutePoint location="5943,384" />
+      <AbsolutePoint location="2446,384" />
+      <AbsolutePoint location="2446,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/program/tiezijiyiqv/sybj.do,viewbjinfoWithSsbm,/workarea/program/tiezijiyiqv/zjggdl/sybj/viewbjinfoWithSsbm.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3797,1458" />
+      <AbsolutePoint location="3797,1518" />
+      <AbsolutePoint location="5942,1518" />
+      <AbsolutePoint location="5942,1698" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/program/tiezijiyiqv/sybj.do,bjinfolistWithSsbm,/workarea/program/tiezijiyiqv/zjggdl/sybj/bjinfolistWithSsbm.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3467,1458" />
+      <AbsolutePoint location="3467,1608" />
+      <AbsolutePoint location="2110,1608" />
+      <AbsolutePoint location="2110,1698" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

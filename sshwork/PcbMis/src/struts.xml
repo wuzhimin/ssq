@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.objectFactory" value="spring"></constant>
+	<constant name="struts.custom.i18n.resources" value="message"></constant>
+	<package name="pcb" extends="struts-default" namespace="/pcb">
+	 <action name="add" class="addBean" method="add">
+	   <result name="success">/add.jsp</result>
+	 </action>
+	 <action name="delete" class="addBean" method="delete">
+	   <result name="success" type="redirect">queryList.action</result>
+	 </action>
+	 <action name="update" class="addBean" method="update">
+	   <result name="success" type="redirect">queryList.action</result>
+	 </action>
+	 <action name="query" class="addBean" method="query">
+	   <result name="success">/singlequery.jsp</result>
+	 </action>
+	 <action name="queryList" class="addBean" method="queryList">
+	   <result name="success">/list.jsp</result>
+	   <result name="pagertaglib">/googlepage1.jsp</result>
+	 </action> 
+	 <action name="pagerTaglib" class="addBean" method="pagerTaglib">
+	   <result name="success">/list.jsp</result>
+	   <result name="pagertaglib">/googlepage.jsp</result>
+	 </action>
+	  <action name="queryAlarm" class="addBean" method="query">
+	   <result name="success">/modify.jsp</result>
+	 </action>
+	 <!-- 视图 -->
+	  <action name="queryViewList" class="viewBean" method="queryList">
+	   <result name="success">/viewlist.jsp</result>
+	 </action>
+	 <action name="queryView" class="viewBean" method="query">
+	   <result name="success">/viewlist.jsp</result>
+	 </action>
+	</package>
+</struts>    

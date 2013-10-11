@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<tree>
+	<tree text="搜索用户" action="user_search.jsp" target="body" icon="../images/icons/search.gif" />
+	<tree text="添加新用户" action="user_add.jsp" target="body" icon="../images/icons/plus.gif" />
+	<tree text="浏览所有用户" action="../admin/listUser.action" target="body" icon="../images/icons/list.gif" />
+</tree>

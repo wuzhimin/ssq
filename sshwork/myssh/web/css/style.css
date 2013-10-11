@@ -1,0 +1,198 @@
+BODY {
+	FONT-FAMILY: "宋体"; FONT-SIZE: 75%
+}
+BODY.nobg {
+	BACKGROUND: white; FONT-FAMILY: "宋体"; FONT-SIZE: 75%
+}
+.topic9b {
+	COLOR: #000000; FONT-FAMILY: "宋体"; FONT-SIZE: 10.5pt; FONT-WEIGHT: bold; LINE-HEIGHT: 15px; vertcal-align: top
+}
+.topic9b:link {
+	COLOR: #000000; FONT-FAMILY: "宋体"; FONT-SIZE: 10.5pt; FONT-WEIGHT: bold; LINE-HEIGHT: 15px; vertcal-align: top
+}
+.topic9b:visited {
+	COLOR: #000000; FONT-FAMILY: "宋体"; FONT-SIZE: 10.5pt; FONT-WEIGHT: bold; LINE-HEIGHT: 15px; vertcal-align: top
+}
+.topic9b:hover {
+	COLOR: #730c34; FONT-FAMILY: "宋体"; FONT-SIZE: 10.5pt; FONT-WEIGHT: bold; LINE-HEIGHT: 15px; vertcal-align: top
+}
+.body9 {
+	COLOR: #000000; FONT-FAMILY: "宋体"; FONT-SIZE: 10.5pt; LINE-HEIGHT: 24px; vertcal-align: top
+}
+TD {
+	FONT-SIZE: 9pt
+}
+.p9 {
+	FONT-SIZE: 12px; LINE-HEIGHT: 120%
+}
+.div1 {
+	BORDER-BOTTOM: windowframe 1px solid; BORDER-LEFT: buttonface 1px solid; BORDER-RIGHT: windowframe 1px solid; BORDER-TOP: buttonface 1px solid
+}
+.div2 {
+	BORDER-BOTTOM: buttonshadow 1px solid; BORDER-LEFT: window 1px solid; BORDER-RIGHT: buttonshadow 1px solid; BORDER-TOP: window 1px solid
+}
+.Mover {
+	BACKGROUND-COLOR: highlight; COLOR: highlighttext; CURSOR: default; FONT-SIZE: 12px
+}
+.Mout {
+	BACKGROUND-COLOR: buttonface; COLOR: buttontext; CURSOR: default; FONT-SIZE: 12px
+}
+.white9 {
+	COLOR: #ffffff; FONT-FAMILY: "宋体"; FONT-SIZE: 9pt
+}
+.white9:link {
+	COLOR: #ffffff; FONT-FAMILY: "宋体"; FONT-SIZE: 9pt
+}
+.white9:visited {
+	COLOR: #ffffff; FONT-FAMILY: "宋体"; FONT-SIZE: 9pt
+}
+.white9:hover {
+	COLOR: #ccffff; FONT-FAMILY: "宋体"; FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+.w9 {
+	COLOR: #ffffff; FONT-FAMILY: "宋体"; FONT-SIZE: 9pt
+}
+.w9:link {
+	COLOR: #ffffff; FONT-FAMILY: "宋体"; FONT-SIZE: 9pt
+}
+.w9:visited {
+	COLOR: #ffffff; FONT-FAMILY: "宋体"; FONT-SIZE: 9pt
+}
+.w9:hover {
+	COLOR: #ccffff; FONT-FAMILY: "宋体"; FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+.w9a {
+	COLOR: #ffffff; FONT-FAMILY: "宋体"; FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+.w9a:link {
+	COLOR: #ffffff; FONT-FAMILY: "宋体"; FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+.w9a:visited {
+	COLOR: #ffffff; FONT-FAMILY: "宋体"; FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+.w9a:hover {
+	COLOR: #ccffff; FONT-FAMILY: "宋体"; FONT-SIZE: 9pt
+}
+TABLE.ubb {
+	BORDER-BOTTOM: #a9a9a9 1px solid; BORDER-LEFT: #a9a9a9 1px solid; BORDER-RIGHT: #a9a9a9 1px solid; BORDER-TOP: #a9a9a9 1px solid; FONT-SIZE: 10.5pt
+}
+TD.ubb {
+	BORDER-BOTTOM: #a9a9a9 1px solid; BORDER-LEFT: #a9a9a9 1px solid; BORDER-RIGHT: #a9a9a9 1px solid; BORDER-TOP: #a9a9a9 1px solid; FONT-SIZE: 10.5pt
+}
+INPUT.buttonface {
+	BACKGROUND-COLOR: #d2e9ff; COLOR: #000080; FONT-SIZE: 9pt
+}
+INPUT.dialogbotton {
+	BACKGROUND-COLOR: rgb(255,204,51); COLOR: rgb(0,0,128); FONT-SIZE: 9pt
+}
+SELECT {
+	COLOR: navy; FONT-SIZE: 9pt
+}
+.pageHead {
+	COLOR: #336699; FONT-SIZE: 10.5pt; FONT-WEIGHT: bold
+}
+.p9 {
+	FONT-SIZE: 9pt
+}
+.p10 {
+	FONT-SIZE: 10.5pt; LINE-HEIGHT: 14pt
+}
+.p914 {
+	FONT-SIZE: 12px; LINE-HEIGHT: 14pt
+}
+.p915 {
+	FONT-SIZE: 12px; LINE-HEIGHT: 15pt
+}
+.p11 {
+	FONT-SIZE: 14px
+}
+.p1116 {
+	FONT-SIZE: 14px; LINE-HEIGHT: 16pt
+}
+.p1117 {
+	FONT-SIZE: 14px; LINE-HEIGHT: 17pt
+}
+.p12 {
+	FONT-SIZE: 14px
+}
+.p1217 {
+	FONT-SIZE: 14px; LINE-HEIGHT: 17pt
+}
+.p1218 {
+	FONT-SIZE: 14px; LINE-HEIGHT: 18pt
+}
+.p15 {
+	LINE-HEIGHT: 18pt
+}
+.p8t {
+	FONT-SIZE: 8pt
+}
+.border {
+	BORDER-BOTTOM: #333333 1px solid; BORDER-LEFT: #333333 1px solid; BORDER-RIGHT: #333333 1px solid; BORDER-TOP: #333333 1px solid
+}
+A.title:link {
+	COLOR: navy; TEXT-DECORATION: none
+}
+A.title:visited {
+	COLOR: #3366cc; TEXT-DECORATION: none
+}
+A.title:hover {
+	COLOR: red; TEXT-DECORATION: underline
+}
+A.board:link {
+	COLOR: navy; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 8pt; TEXT-DECORATION: none
+}
+A.board:visited {
+	COLOR: #3366cc; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 8pt; TEXT-DECORATION: none
+}
+A.board:hover {
+	COLOR: red; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 8pt; TEXT-DECORATION: underline
+}
+A.author:link {
+	COLOR: navy; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 8pt; TEXT-DECORATION: none
+}
+A.author:visited {
+	COLOR: #3366cc; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 8pt; TEXT-DECORATION: none
+}
+A.author:hover {
+	COLOR: red; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 8pt; TEXT-DECORATION: underline
+}
+A {
+	COLOR: navy; TEXT-DECORATION: none
+}
+A:link {
+	COLOR: navy; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #3366cc; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: red; TEXT-DECORATION: none
+}
+A.black9:link {
+	COLOR: black; TEXT-DECORATION: none
+}
+A.black9:visited {
+	COLOR: black; TEXT-DECORATION: none
+}
+A.black9:hover {
+	COLOR: red; TEXT-DECORATION: underline
+}
+A.al {
+	COLOR: navy; TEXT-DECORATION: none
+}
+A.al:link {
+	COLOR: navy; TEXT-DECORATION: none
+}
+A.al:visited {
+	COLOR: #3366cc; TEXT-DECORATION: none
+}
+A.al:hover {
+	COLOR: red; TEXT-DECORATION: underline
+}
+LI {
+	FONT-SIZE: 9pt
+}
+UL {
+	FONT-SIZE: 9pt
+}

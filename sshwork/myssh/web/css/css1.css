@@ -1,0 +1,65 @@
+.body {
+	font-family: "宋体";
+	font-size: 9px;
+	font-style: normal;
+	line-height: normal;
+	background-position: center;
+	align: center;
+}
+.title {
+    background-color: #ffffcc;
+	font-family: "黑体";
+	font-size: 24px;
+	font-style: normal;
+	color: #000000;
+	text-align: center;
+}
+.headeraddon {
+    background-color: #ffffcc;
+	font-family: "楷体_GB2312";
+	font-size: 12px;
+	font-weight: bold;
+	color: #000000;
+	align: left;
+}
+.columnheader {
+	font-family: "宋体";
+	color: #000000;
+	background-color: #99ffff;
+	font-size: 12px;
+	font-style: bold;
+}
+.row1 {
+	font-family: "宋体";
+	background-color: #ffffff;
+	color: #000000;
+	font-size: 12px;
+
+
+}
+.row2 {
+	background-color: #ffffff;
+	font-family: "宋体";
+	font-size: 12px;
+	color: #000000;
+
+
+}
+.footer {
+	font-family: "黑体";
+	font-size: 16px;
+	display: table-footer-group;
+
+}
+.num {
+	font-family: "宋体";
+	font-size: 12px;
+	text-align: right;
+
+}
+.string {
+	font-family: "宋体";
+	font-size: 12px;
+	text-align: center;
+
+}

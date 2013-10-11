@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd"
+	default-autowire="byName"
+	default-lazy-init="true"
+	>
+
+	<!-- 启用注解的事务支持 -->
+	<tx:annotation-driven transaction-manager="transactionManager"
+		proxy-target-class="true" />
+
+	<!-- 声明一个 Hibernate 3 的 事务管理器供代理类自动管理事务用 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation"
+			value="classpath:hibernate.cfg.xml">
+		</property>
+	</bean>
+
+	<!-- 基础DAO -->
+	<bean id="BaseDAO" class="cn.beansoft.scm.dao.BaseDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<!-- 基础 Action Support -->
+	<bean abstract="true" id="BaseAction" class="cn.beansoft.scm.action.BaseActionSupport">
+		<property name="baseDAO">
+			<ref bean="BaseDAO" />
+		</property>
+	</bean>
+
+	<!--  用户 DAO -->
+	<bean id="UserDAO" class="cn.beansoft.scm.dao.UserDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<!--  用户管理类 -->
+	<bean id="UserManager" class="cn.beansoft.scm.biz.UserManager">
+		<property name="dao">
+			<ref bean="UserDAO" />
+		</property>
+	</bean>
+
+	<!--  用户 Action 模块 -->
+	<bean id="UserAction" parent="BaseAction" class="cn.beansoft.scm.action.UserAction">
+		<property name="userManager">
+			<ref bean="UserManager" />
+		</property>
+	</bean>
+
+	<!-- 管理员 Action 模块 -->
+	<bean id="AdminAction" parent="UserAction"
+		class="cn.beansoft.scm.action.AdminAction">
+	</bean>
+
+	<!--  供应商 -->
+	<bean id="VendorDAO" class="cn.beansoft.scm.dao.VendorDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<!--  供应商管理类 -->
+	<bean id="VendorManager" class="cn.beansoft.scm.biz.VendorManager">
+		<property name="dao">
+			<ref bean="VendorDAO" />
+		</property>
+	</bean>
+
+	<!-- 供应商 Struts Action -->
+	<bean id="VendorAction" class="cn.beansoft.scm.action.VendorAction" parent="BaseAction">
+		<property name="vendorManager">
+			<ref bean="VendorManager" />
+		</property>
+	</bean>
+
+	<!-- 商品 DAO -->
+	<bean id="ProductDAO" class="cn.beansoft.scm.dao.ProductDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<!--  商品管理类 -->
+	<bean id="ProductManager"
+		class="cn.beansoft.scm.biz.ProductManager">
+		<property name="dao">
+			<ref bean="ProductDAO" />
+		</property>
+	</bean>
+
+	<!-- 商品 Struts Action -->
+	<bean id="ProductAction" parent="BaseAction"
+		class="cn.beansoft.scm.action.ProductAction">
+		<property name="vendorManager">
+			<ref bean="VendorManager" />
+		</property>
+		<property name="productManager">
+			<ref bean="ProductManager" />
+		</property>
+	</bean>
+
+	<!--  订单项 DAO -->
+	<bean id="OrderItemDAO" class="cn.beansoft.scm.dao.OrderItemDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<!--  订单 DAO -->
+	<bean id="OrderDAO" class="cn.beansoft.scm.dao.OrderDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+
+	<!-- 订单业务类 -->
+	<bean id="OrderManager" class="cn.beansoft.scm.biz.OrderManager">
+		<property name="orderDao">
+			<ref bean="OrderDAO" />
+		</property>
+		<property name="orderItemDao">
+			<ref bean="OrderItemDAO" />
+		</property>
+	</bean>
+
+
+	<!-- 购物车 Struts Action -->
+	<bean id="CartAction" class="cn.beansoft.scm.action.CartAction" parent="BaseAction">
+		<property name="vendorManager">
+			<ref bean="VendorManager" />
+		</property>
+		<property name="productManager">
+			<ref bean="ProductManager" />
+		</property>
+		<property name="orderManager">
+			<ref bean="OrderManager" />
+		</property>
+	</bean>
+
+
+	<!--  用户角色 DAO -->
+	<bean id="RoleDAO" class="cn.beansoft.scm.dao.RoleDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<!--  资源访问许可 DAO -->
+	<bean id="ResourceDAO" class="cn.beansoft.scm.dao.ResourceDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<!--  订单 Action -->
+	<bean id="OrderAction" parent="CartAction" class="cn.beansoft.scm.action.OrderAction" >
+	</bean>
+</beans>

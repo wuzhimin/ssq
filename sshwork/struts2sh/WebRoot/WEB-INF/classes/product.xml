@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	
+	<package name="product" namespace="/product" extends="struts-default">
+        
+         <!-- 转向添加页面 -->
+        <action name="toadd" class="ProductAction" method="toAddPage">
+        	<result>/product/add.jsp</result>
+        </action>
+        
+         <!-- 添加 -->
+        <action name="add" class="ProductAction" method="add">
+        	<result name="input">/product/toadd.action</result>
+        	<result name="success">/message.jsp</result>
+        </action>
+        
+         <!-- 列表 -->
+        <action name="list" class="ProductAction" method="list">
+             <result>/product/list.jsp</result>
+             <result name="ajax">/product/list_ajax.jsp</result>
+        </action>
+        
+         <!-- 根据ID查看信息 -->
+        <action name="findById" class="ProductAction" method="findById">
+             <result>/product/viewInfoById.jsp</result>
+        </action>
+        
+         <!-- 根据名字和库存查找商品列表 -->
+        <action name="findByName" class="ProductAction" method="findProductByName">
+             <result>/product/list.jsp</result>
+             <result name="ajax">/product/list_ajax.jsp</result>
+        </action>
+        
+         <!-- 根据名字查找商品库存 -->
+        <action name="findByNameShowAmount" class="ProductAction" method="findProductByName">
+             <result>/product/list_amount.jsp</result>
+        </action>         
+
+        <!-- 根据审核显示页面 -->
+        <action name="findListByAudited" class="ProductAction" method="findAllByAudited">
+             <result >/operator/product_list_audit.jsp</result>
+        </action>
+
+        <!-- 根据ID进行审核 -->
+        <action name="audit_by_id" class="ProductAction" method="auditById">
+             <result>/message_new_win.jsp</result>
+        </action>
+	</package>	
+
+</struts>

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/si/!svn/ver/26/validation/trunk/test/for_ajax_test
+END
+empty.html
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/si/!svn/ver/4/validation/trunk/test/for_ajax_test/empty.html
+END
+failedMessage.html
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/si/!svn/ver/4/validation/trunk/test/for_ajax_test/failedMessage.html
+END

@@ -1,0 +1,237 @@
+BODY {
+	FONT-SIZE: 12px; COLOR: #333333; LINE-HEIGHT: 150%
+}
+TD {
+	FONT-SIZE: 12px; COLOR: #333333; LINE-HEIGHT: 150%
+}
+A {
+	COLOR: #333333; LINE-HEIGHT: 150%
+}
+A {
+	TEXT-DECORATION: none
+}
+.foot {
+	COLOR: #7f7f7f
+}
+.foot P A {
+	COLOR: #7f7f7f
+}
+.foot CENTER A {
+	COLOR: #7f7f7f
+}
+FORM {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+.sysHand {
+	CURSOR: hand
+}
+.sysBr {
+	TABLE-LAYOUT: fixed; OVERFLOW: hidden; TEXT-OVERFLOW: ellipsis; WORD-WRAP: break-word
+}
+.sysBr180 {
+	TABLE-LAYOUT: fixed; OVERFLOW: hidden; WIDTH: 180px; TEXT-OVERFLOW: ellipsis; WORD-WRAP: break-word
+}
+.sysBr210 {
+	TABLE-LAYOUT: fixed; OVERFLOW: hidden; WIDTH: 210px; TEXT-OVERFLOW: ellipsis; WORD-WRAP: break-word
+}
+.sysBr476 {
+	TABLE-LAYOUT: fixed; OVERFLOW: hidden; WIDTH: 476px; TEXT-OVERFLOW: ellipsis; WORD-WRAP: break-word
+}
+.sysBr500 {
+	TABLE-LAYOUT: fixed; OVERFLOW: hidden; WIDTH: 500px; TEXT-OVERFLOW: ellipsis; WORD-WRAP: break-word
+}
+.sysLeft {
+	FLOAT: left
+}
+.sysBoth {
+	CLEAR: both
+}
+.sysW770 {
+	WIDTH: 770px
+}
+.box_1 {
+	WIDTH: 210px; TEXT-ALIGN: left
+}
+.box_1 .margin {
+	PADDING-LEFT: 3px
+}
+.box_2 {
+	TEXT-ALIGN: center
+}
+.box_2 .margin {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px
+}
+.logo {
+	PADDING-LEFT: 5px
+}
+.man {
+	MARGIN: 0px 5px
+}
+.dashed {
+	BORDER-BOTTOM: #6a6a6a 1px dashed
+}
+.line {
+	HEIGHT: 2px
+}
+
+.banner TABLE {
+	BORDER-RIGHT: #000 1px solid; BORDER-TOP: #000 1px solid; BACKGROUND: #fff; FILTER: alpha(opacity=70); BORDER-LEFT: #000 1px solid; LINE-HEIGHT: 30px; BORDER-BOTTOM: #000 1px solid; moz-opacity: 0.7
+}
+.banner .title {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; MARGIN-LEFT: 100px
+}
+.banner .title TD {
+	FONT-SIZE: 16px
+}
+.banner .link {
+	MARGIN-TOP: 5px; MARGIN-LEFT: 130px
+}
+.banner .link A {
+	COLOR: #000
+}
+
+.menu .home {
+	COLOR: #000
+}
+.menu .text {
+	COLOR: #fff
+}
+.menu A {
+	COLOR: #fff; FONT-FAMILY: Arial,Serif
+}
+.menu .text A {
+	FONT-SIZE: 12px
+}
+.zone {
+	WIDTH: 210px
+}
+.calendar {
+	WIDTH: 210px
+}
+
+.label {
+	WIDTH: 210px
+}
+.photo {
+	WIDTH: 210px
+}
+
+.photo .image {
+	OVERFLOW: hidden; WIDTH: 200px
+}
+
+.photo .infoText {
+	PADDING-RIGHT: 0px; BORDER-TOP: #6a6a6a 1px dashed; PADDING-LEFT: 0px; PADDING-BOTTOM: 4px; MARGIN: 8px 0px; PADDING-TOP: 4px; BORDER-BOTTOM: #6a6a6a 1px dashed; TEXT-ALIGN: center
+}
+.photo TABLE {
+	COLOR: #333333
+}
+.callboard {
+	WIDTH: 210px
+}
+.callboard TABLE {
+	FONT-SIZE: 12px; WIDTH: 100%
+}
+.callboard .title {
+	PADDING-LEFT: 6px; FONT-WEIGHT: bold; COLOR: #ffffff; HEIGHT: 22px
+}
+.callboard .bold TD {
+	FONT-WEIGHT: bold; HEIGHT: 24px
+}
+.callboard .up {
+	BACKGROUND: url(column_bar1.gif)
+}
+
+.callboard .mid IMG {
+	MARGIN-LEFT: 2px
+}
+
+.links {
+	WIDTH: 210px
+}
+.links .up {
+	BACKGROUND: url(column_bar1.gif); COLOR: #fff; HEIGHT: 24px
+}
+
+.links .text {
+	PADDING-LEFT: 6px; FONT-WEIGHT: bold; COLOR: #fff; PADDING-TOP: 2px; HEIGHT: 22px
+}
+
+.links .wd {
+	WIDTH: 200px
+}
+.links .wd TR {
+	HEIGHT: 22px
+}
+
+.links .dashed {
+	COLOR: #333333; BORDER-BOTTOM: #9a9a9a 1px dashed
+}
+
+.links .a {
+	COLOR: #333333
+}
+.links .desc {
+	COLOR: #999999
+}
+.links .ico {
+	COLOR: #333333
+}
+.links .circletitle {
+	FONT-SIZE: 12px; WIDTH: 190px; COLOR: #830c0c; BACKGROUND-COLOR: #ffffff
+}
+.add {
+	PADDING-RIGHT: 6px; LINE-HEIGHT: 30px; PADDING-TOP: 7px; HEIGHT: 30px; TEXT-ALIGN: right
+}
+
+.add .text {
+	FONT-WEIGHT: bold; COLOR: #cd3f3f; FONT-FAMILY: "Courier New", "Courier", "monospace"
+}
+.add IMG {
+	MARGIN-RIGHT: 6px
+}
+.add A {
+	MARGIN-TOP: 0px; MARGIN-LEFT: 0px; MARGIN-RIGHT: 0px; PADDING-TOP: 4px
+}
+.sort {
+	COLOR: #333
+}
+.sort TD {
+	PADDING-RIGHT: 14px; PADDING-LEFT: 14px; PADDING-BOTTOM: 14px; PADDING-TOP: 14px
+}
+.sort A {
+	PADDING-RIGHT: 14px; PADDING-LEFT: 14px; PADDING-BOTTOM: 14px; COLOR: #333; PADDING-TOP: 14px
+}
+.sort SPAN {
+	FONT-WEIGHT: bold
+}
+.aList .up {
+	COLOR: #000000
+}
+.aList .down {
+	COLOR: #000000
+}
+.article .up {
+	COLOR: #000000
+}
+.article .down {
+	COLOR: #333333
+}
+.comment .up {
+	COLOR: #000000
+}
+.comment .down {
+	COLOR: #000000
+}
+.comment .iUp {
+	COLOR: #000000
+}
+.comment .iDown {
+	COLOR: #000000
+}
+.feeds .up {
+	COLOR: #000000
+}
+.feeds .down {
+	COLOR: #000000
+}

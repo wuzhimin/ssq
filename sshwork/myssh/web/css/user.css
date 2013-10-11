@@ -1,0 +1,26 @@
+BODY {
+  COLOR: black;
+  FONT-FAMILY: "ËÎÌו";
+  FONT-SIZE: 9pt;
+}
+TABLE {
+  color: #000000;
+  font-size: 9pt;
+  FONT-FAMILY: "ËÎÌו", "Arial", "Times New Roman";
+  FONT-WEIGHT: normal
+}
+THEAD {
+  color: darkblue;
+  font-size: 2pt;
+  font-weight: bold;
+  background-color: #FDE3BE;
+}
+A:visited {
+	COLOR: #000000; FONT-SIZE: 2pt; TEXT-DECORATION: underline
+}
+A:active {
+	COLOR: #CC0000; FONT-SIZE: 2pt; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #CC0000; FONT-SIZE: 2pt; TEXT-DECORATION: none
+}

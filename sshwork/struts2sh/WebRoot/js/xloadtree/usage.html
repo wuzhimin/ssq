@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+
+<html>
+<head>
+<title>XLoadTree Usage (WebFX)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="local/webfxlayout.js"></script>
+</head>
+<body>
+<!-- WebFX Layout Include -->
+<script type="text/javascript">
+
+var articleMenu= new WebFXMenu;
+articleMenu.left  = 384;
+articleMenu.top   = 86;
+articleMenu.width = 140;
+articleMenu.add(new WebFXMenuItem("Introduction", "xloadtree.html"));
+articleMenu.add(new WebFXMenuItem("Usage", "usage.html"));
+articleMenu.add(new WebFXMenuItem("API", "api.html"));
+articleMenu.add(new WebFXMenuItem("Implementation", "implementation.html"));
+articleMenu.add(new WebFXMenuItem("Demo", "demo.html"));
+articleMenu.add(new WebFXMenuSeparator);
+articleMenu.add(new WebFXMenuItem("Download", "http://webfx.eae.net/download/xloadtree111.zip"));
+webfxMenuBar.add(new WebFXMenuButton("Article Menu", null, null, articleMenu));
+
+webfxLayout.writeTitle("XLoadTree");
+webfxLayout.writeMenu();
+webfxLayout.writeDesignedByEdger();
+
+</script>
+<div class="webfx-main-body">
+<!-- end WebFX Layout Includes -->
+
+<h2>Usage 用法</h2>
+
+<p>The usage of the XLoadTree is almost identical to the xTree so if
+you do not remember how that is done take a look at the
+<a href="/dhtml/xtree/usage.html">xTree usage</a>. Anywhere the original xTree
+accepts a <code>WebFXTree</code> you can use a <code>WebFXLoadTree</code> and
+the same applies to <code>WebFXTreeItem</code> and <code>WebFXLoadTreeItem</code>.</p>
+<p>XLoadTree 的用法几乎和 xTree 相同, 所以您记不得如何做的时候不要忘了看一下 <a href="/dhtml/xtree/usage.html">xTree 用法. </a>任何原来的 <code>WebFXTree</code> 可以使用 xTree 的地方都可以使用 <code>WebFXLoadTree</code>, 这个规则也同样适用于<code>WebFXTreeItem</code> 和 <code>WebFXLoadTreeItem</code>.</p>
+<p>Taking the first example in the xTree usage and instead of using a
+<code>WebFXTreeItem</code> for the second tree item we use the load counterpart.</p>
+<p>让我们看看第一个 xTree 用法的例子, 注意我们在第二个树节点的地方使用了对应的可载入树节点代替了 <code>WebFXTreeItem</code>.</p>
+<pre>
+var tree = new WebFXTree("Root");
+tree.add(new WebFXTreeItem("Tree Item 1"));
+<strong>tree.add(new WebFXLoadTreeItem("Tree Item 2", "tree.xml"));</strong>
+tree.add(new WebFXTreeItem("Tree Item 3"));
+document.write(tree);
+</pre>
+
+<p>The code above should result in something looking like this:</p>
+<p>上面的代码将会产生如下结果:</p>
+<p>
+<img src="article-images/tree1.png" alt="The code above gives a tree like this" />
+</p>
+
+<p>When Tree Item 2 is expanded the file <a href="tree.xml">tree.xml</a> is loaded
+and during the load a dummy tree item is inserted to show that the subcontent is
+loading. This looks something like this:</p>
+<p>当 Tree Item 2 被展开的时候文件 <a href="tree.xml">tree.xml</a> 被载入, 在加载的时候插入一个临时的树节点来显示子节点正在被载入中. 看起来就像这样:</p>
+<p>
+<img src="article-images/tree2.png" alt="The same tree while loading the subtree" />
+</p>
+
+<h3>The XML format XML 文件格式</h3>
+
+<p>To be able to transform the xml file to an xTree the xml file must be of a certain
+format. Below is the xml code from the file <a href="tree.xml">tree.xml</a>:</p>
+<p>要想从 xml 文件转换成 xTree, xml 文件必须符合一个固定的格式. 下面是文件 <a href="tree.xml">tree.xml</a> 中的 xml 代码:</p>
+<pre>
+&lt;?xml version="1.0"?&gt;
+
+&lt;tree&gt;
+   &lt;tree text="Loaded Item 1" action="href://webfx.eae.net" /&gt;
+   &lt;tree text="Loaded Item 2"&gt;
+      &lt;tree text="Loaded Item 2.1" action="javascript:alert(2.1)" /&gt;
+      &lt;tree text="Load &amp;quot;tree1.xml&amp;quot;" src="tree1.xml" /&gt;
+   &lt;/tree&gt;
+   &lt;tree text="Loaded Item 3" /&gt;
+&lt;/tree&gt;
+</pre>
+
+<p>When this xml file has been loaded and inserted into the tree it looks something like
+this:</p>
+<p>当这个 xml 文件加载并且插入到树中后它看起来就像这样:</p>
+<p>
+<img src="article-images/tree3.png" alt="The tree after the loading is complete" />
+</p>
+
+<p>Notice how the XML structure can contain nested tree items and tree items that
+points to other xml files. Notice also the top level tree item that is used to contain
+all the tree items that are supposed to be inserted into the current
+<code>WebFXLoadTreeItem</code>.</p>
+<p>注意 XML 的结构, 它可以包含嵌套的子节点以及指向其它xml文件的子节点. 也请留意最顶端的树节点被用来包含所有的假定为要插入当前<code>WebFXLoadTreeItem</code>的所有子节点.</p>
+<p>To see what xml attributes are supported on the tree items see the
+<a href="api.html">api</a> page.</p>
+<p>要了解树节点支持什么样的 xml 属性, 请浏览 <a href="api.html">api</a> 页. </p>
+<p><a href="xloadtree.html">介绍</a><br />
+  <a href="usage.html">使用说明</a><br />
+  <a href="api.html">API</a><br />
+  <a href="implementation.html">实现</a><br />
+  <a href="demo.html">演示</a><br />
+  <a href="http://webfx.eae.net/download/xloadtree111.zip">下载</a> </p>
+
+<p class="author">作者: Erik Arvidsson<br />
+中文翻译: <a href="mailto:beansoft@126.com">BeanSoft</a> </p>
+
+<!-- end webfx-main-body -->
+</div>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+.article {
+	MARGIN-BOTTOM: 2px; WIDTH: 550px; TEXT-ALIGN: center
+}
+.article .text {
+	FONT-SIZE: 14px; LINE-HEIGHT: 1.5
+}
+.article .text P {
+	MARGIN: 0px; FONT-FAMILY: 'ËÎÌו', 'Courier New'
+}
+.article .text DIV {
+	MARGIN-BOTTOM: 0px; FONT-FAMILY: 'ËÎÌו', 'Courier New'
+}
+.article .text TD {
+	LINE-HEIGHT: 1.5
+}
+.article .path {
+	TEXT-INDENT: 12px; HEIGHT: 30px
+}
+.article .dashed {
+	BORDER-BOTTOM: #6a6a6a 1px dashed
+}
+.article .form {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+.article TABLE {
+	FONT-SIZE: 12px; WIDTH: 100%
+}
+.article .title {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; WIDTH: 525px; COLOR: #000; TEXT-INDENT: 26px; LINE-HEIGHT: 30px; FONT-FAMILY: Helvetica,monospace; WHITE-SPACE: nowrap
+}
+.article .up {
+	BACKGROUND: url(column_bar1.gif) no-repeat center 50%
+}
+
+.article .author {
+	COLOR: #606060; HEIGHT: 24px; TEXT-ALIGN: right
+}
+.article .time {
+	FONT-SIZE: 11px
+}
+.article .aBody TABLE {
+	PADDING-LEFT: 2px; WIDTH: 530px; COLOR: #000
+}
+.article .aSize {
+	HEIGHT: 20px
+}
+.article .aSize A {
+	COLOR: #606060
+}
+.article .itemBox {
+	TEXT-ALIGN: center
+}
+.article .itemBox TABLE {
+	WIDTH: 530px; COLOR: #000
+}
+.article .text {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 2px; PADDING-BOTTOM: 18px; OVERFLOW: hidden; WIDTH: 500px; WORD-BREAK: break-all; PADDING-TOP: 14px
+}
+.article .text FONT {
+	
+}
+.article .text A {
+	COLOR: #000033; TEXT-DECORATION: underline
+}
+.article .function {
+	HEIGHT: 30px; TEXT-ALIGN: right
+}
+.article .function TD {
+	COLOR: #000
+}
+.article .function A {
+	COLOR: #000
+}
+.article .page A {
+	MARGIN: 0px 5px
+}
+.article .page SPAN {
+	FONT-WEIGHT: bold; MARGIN: 0px 5px; COLOR: red
+}

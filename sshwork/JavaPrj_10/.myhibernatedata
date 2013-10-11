@@ -1,0 +1,22 @@
+#
+#Sat Aug 16 11:07:17 CST 2008
+genBasicCompId=false
+sessionFactoryName=com.sanqing.hb.HibernateSessionFactory
+profile=
+daoSFId=sessionFactory
+version=3.1
+jndiPath=
+detectM2M=true
+reStrategyClass=
+springDaoFile=src/applicationContext.xml
+useJavaTypes=true
+keyGenerator=native
+libInstallFolder=WebRoot/WEB-INF/lib
+addLibs2Project=false
+genVersionTag=false
+sessionFactoryId=
+basePersistenceClass=
+reSettingsFile=
+configFile=/JavaPrj_10/src/hibernate.cfg.xml
+createConfigFile=true
+addLibs2Classpath=false

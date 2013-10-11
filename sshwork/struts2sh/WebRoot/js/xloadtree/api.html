@@ -1,0 +1,370 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+<title>XLoadTree API (WebFX)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="local/webfxlayout.js"></script>
+</head>
+<body>
+<!-- WebFX Layout Include -->
+<script type="text/javascript">
+
+var articleMenu= new WebFXMenu;
+articleMenu.left  = 384;
+articleMenu.top   = 86;
+articleMenu.width = 140;
+articleMenu.add(new WebFXMenuItem("Introduction", "xloadtree.html"));
+articleMenu.add(new WebFXMenuItem("Usage", "usage.html"));
+articleMenu.add(new WebFXMenuItem("API", "api.html"));
+articleMenu.add(new WebFXMenuItem("Implementation", "implementation.html"));
+articleMenu.add(new WebFXMenuItem("Demo", "demo.html"));
+articleMenu.add(new WebFXMenuSeparator);
+articleMenu.add(new WebFXMenuItem("Download", "http://webfx.eae.net/download/xloadtree111.zip"));
+webfxMenuBar.add(new WebFXMenuButton("Article Menu", null, null, articleMenu));
+
+webfxLayout.writeTitle("XLoadTree");
+webfxLayout.writeMenu();
+webfxLayout.writeDesignedByEdger();
+
+</script>
+<div class="webfx-main-body">
+<!-- end WebFX Layout Includes -->
+
+<h2>WebFXLoadTree</h2>
+
+<p>This object type is used to create the actual tree root and can be used
+to populate the tree with tree items loaded from an xml file.</p>
+<p>这个对象类型用来创建实际的树的根节点, 并且可以被用来向树添加从一个 xml 文件中定义的树节点.</p>
+<p>The <code>WebFXLoadTree</code> extends <code>WebFXTree</code> (see the
+<a href="/dhtml/xtree/api.html">xTree API</a>) so all properties and methods
+provided by <code>WebFXTree</code> are available.</p>
+<p><code>WebFXLoadTree </code>继承自 <code>WebFXTree</code> (请阅读 <a href="/dhtml/xtree/api.html">xTree API</a>) , 因此<code>WebFXTree</code>提供的所有的属性和方法都可用.</p>
+<h3>Constructor 构造器</h3>
+
+<pre>new WebFXLoadTree(sText, sXmlSrc, sAction, sBehavior, sIcon, sOpenIcon)</pre>
+
+<table>
+<thead><tr>
+	<td>Name <br />
+	  名称 </td>
+	<td>Description<br />
+	  描述</td>
+</tr></thead>
+<tbody>
+<tr>
+	<td>sText</td>
+	<td>The text label for the tree root.<br />
+	  树的根节点的文本标签.</td>
+</tr>
+<tr>
+	<td>sXmlSrc</td>
+	<td>The source for the xml file to load when expanded.<br />
+	  当展开时要加载的xml文件的源路径.</td>
+</tr>
+<tr>
+	<td>sAction</td>
+	<td>Optional. The action (uri) associated with the tree root.<br />
+	  可选. 根节点关联的操作(uri地址). </td>
+</tr>
+<tr>
+	<td>sBehavior</td>
+	<td>Optional. The behavior of the tree. Valid values are <code>"classic"</code> and
+		<code>"explorer"</code>. When the value is set to <code>"explorer"</code>
+		the default icon for an empty item is the same as the folder icon.<br />
+		可选. 树的表现方式. 可用的值包括 <code>&quot;classic&quot;</code> 和 <code>&quot;explorer&quot;. 当值为 &quot;explorer&quot; 时空节点默认的图标和文件夹图标一样.</code></td>
+</tr>
+<tr>
+	<td>sIcon</td>
+	<td>Optional. The icon image to use for this item. In case this item is a folder this
+		will be used when the folder is closed.<br />
+		可选. 节点所使用的图标文件. 如果这个节点是个<code>文件夹</code>, 这个值将在节点被关闭的时候使用.</td>
+</tr>
+<tr>
+	<td>sOpenIcon</td>
+	<td>Optional. The icon image to use for this item when it is opened. This is only
+		used for folder items that are opened/expanded.<br />
+		可选. 节点打开时使用的图标文件. 这个值仅仅对文件夹节点被打开或者展开的时候有效.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Properties 属性</h3>
+
+<table>
+<thead><tr>
+	<td>Name<br />
+	  名称</td>
+	<td>Description<br />
+	  描述</td>
+</tr></thead>
+<tbody>
+<tr>
+	<td colspan="2">All properties from <code>WebFXTree</code>.<br />
+	  <code>WebFXTree</code> 的所有属性. </td>
+</tr>
+<tr>
+	<td>src</td>
+	<td>The source to the xml file that decribes the sub trees. Notice that this is
+		read-only after the xml file has started to load so any changes done to the
+		source are only valid before the loading of the first file.<br />
+		描述子树的xml文件的源路径. 注意这个值将在 xml 文件开始载入后变为只读, 所以任何对这个值的修改只在第一个文件载入之前生效.</td>
+</tr>
+<tr>
+	<td>loading</td>
+	<td>Read only. A boolean flag which is true if the xml file has started loading and not yet
+		finished.<br />
+		只读. 布尔变量, xml 文件开始加载但是尚未加载完的时候为 true.</td>
+</tr>
+<tr>
+	<td>loaded</td>
+	<td>Read only. A boolean flag which is true if the xml file has been loaded.<br />
+	  只读. 布尔变量, xml 文件加载完成的时候为 true. </td>
+</tr>
+<tr>
+	<td>errorText</td>
+	<td>Read only String. If the loading for any reason failed the reason can be found in
+		the <code>errorText</code> property. If no error occured this is <code>""</code>
+		(an empty string).<br />
+		只读字符串. 如果加载因为任何原因失败, 这个原因可以在 errorText 属性中找到. 如果没有错误它的值时 &quot;&quot;(空字符串). </td>
+</tr>
+</tbody>
+</table>
+
+<h3>Methods 方法</h3>
+
+<table>
+<thead><tr>
+	<td>Name<br />
+	  名称</td>
+	<td>Description<br />
+	  描述</td>
+</tr></thead>
+<tbody>
+<tr>
+	<td>reload()</td>
+	<td>Reloads the XML file from the server and recreates the children of this node.<br />
+	  重新从服务器载入 XML 文件, 并重建这个节点的子节点. </td>
+</tr>
+<tr>
+	<td colspan="2">All methods from <code>WebFXTree</code>. 所有继承自 <code>WebFXTree</code> 的方法. </td>
+</tr>
+</tbody>
+</table>
+
+<h2>WebFXLoadTreeItem</h2>
+
+<p>This object type is used to create tree items that can be added to the tree
+root, or to other tree items to create sub folders in the tree. When an
+<code>WebFXLoadTreeItem</code> is expanded an xml file is loaded that is then
+used to populate the item with child items.</p>
+<p>这个对象类型用来创建可以加入树根节点的树节点, 或者可以作为子目录添加到别的树节点. 当一个 <code>WebFXLoadTreeItem</code> 节点被展开的时候, 将会加载用于填充子节点的 xml 文件.</p>
+<p>The <code>WebFXLoadTreeItem</code> extends <code>WebFXTreeItem</code> (see the
+<a href="/dhtml/xtree/api.html">xTree API</a>) so all properties and methods
+provided by <code>WebFXTreeItem</code> are available.</p>
+<p><code>WebFXLoadTreeItem</code> 继承自 <code>WebFXTreeItem</code> (请查看 <a href="/dhtml/xtree/api.html">xTree API</a>), 因此<code>WebFXTreeItem</code>提供的所有的属性和方法都可用.</p>
+<h3>Constructor 构造器</h3>
+
+<pre>new WebFXLoadTreeItem(sText, sXmlSrc, sAction, eParent, sIcon, sOpenIcon)</pre>
+
+<table>
+<thead><tr>
+	<td>Name<br />
+	  名称</td>
+	<td>Description<br />
+	  描述</td>
+</tr></thead>
+<tbody>
+<tr>
+	<td>sText</td>
+	<td>The text label for the tree item.<br />
+	  树节点的文本标签.</td>
+</tr>
+<tr>
+	<td>sXmlSrc</td>
+	<td>The source for the xml file to load when expanded.<br />
+	  当展开时要加载的xml文件的源路径.</td>
+</tr>
+<tr>
+	<td>sAction</td>
+	<td>Optional. The action (uri) associated with the tree item.<br />
+	  可选. 节点关联的操作(uri地址). </td>
+</tr>
+<tr>
+	<td>eParent</td>
+	<td>Optional. The parent <code>WebFXTreeItem</code> or <code>WebFXTree</code> that the item
+		should be added to.<br />
+		可选. 当前节点要添加进去的父节点, 可以为 <code>WebFXTreeItem</code> 或者 <code>WebFXTree</code>.</td>
+</tr>
+<tr>
+	<td>sIcon</td>
+	<td>Optional. The icon image to use for this item. In case this item is a folder this
+		will be used when the folder is closed.<br />
+可选. 节点所使用的图标文件. 如果这个节点是个文件夹, 这个值将在节点被关闭的时候使用.</td>
+</tr>
+<tr>
+	<td>sOpenIcon</td>
+	<td>Optional. The icon image to use for this item when it is opened. This is only
+		used for folder items that are opened/expanded.<br />
+可选. 节点打开时使用的图标文件. 这个值仅仅对文件夹节点被打开或者展开的时候有效.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Properties 属性</h3>
+
+<table>
+  <tr>
+    <td>Name<br />
+      名称</td>
+    <td>Description<br />
+      描述</td>
+  </tr>
+<thead></thead>
+<tbody>
+<tr>
+	<td colspan="2">All properties from <code>WebFXTreeItem</code>. 继承自 <code>WebFXTreeItem</code> 的所有属性. </td>
+</tr>
+<tr>
+  <td>src</td>
+  <td>The source to the xml file that decribes the sub trees. Notice that this is
+    read-only after the xml file has started to load so any changes done to the
+    source are only valid before the loading of the first file.<br />
+    描述子树的xml文件的源路径. 注意这个值将在 xml 文件开始载入后变为只读, 所以任何对这个值的修改只在第一个文件载入之前生效.</td>
+</tr>
+<tr>
+  <td>loading</td>
+  <td>Read only. A boolean flag which is true if the xml file has started loading and not yet
+    finished.<br />
+    只读. 布尔变量, xml 文件开始加载但是尚未加载完的时候为 true.</td>
+</tr>
+<tr>
+  <td>loaded</td>
+  <td>Read only. A boolean flag which is true if the xml file has been loaded.<br />
+    只读. 布尔变量, xml 文件加载完成的时候为 true. </td>
+</tr>
+<tr>
+  <td>errorText</td>
+  <td>Read only String. If the loading for any reason failed the reason can be found in
+    the <code>errorText</code> property. If no error occured this is <code>&quot;&quot;</code> (an empty string).<br />
+    只读字符串. 如果加载因为任何原因失败, 这个原因可以在 errorText 属性中找到. 如果没有错误它的值时 &quot;&quot;(空字符串). </td>
+</tr>
+</tbody>
+</table>
+
+<h3>Methods 方法</h3>
+
+<table>
+<thead><tr>
+	<td>Name</td>
+	<td>Description</td>
+</tr></thead>
+<tbody>
+<tr>
+	<td>reload()</td>
+	<td>Reloads the XML file from the server and recreates the children of this node.<br />
+重新从服务器载入 XML 文件, 并重建这个节点的子节点.</td>
+</tr>
+<tr>
+	<td colspan="2">All methods from <code>WebFXTree</code>. 所有继承自 <code>WebFXTree</code> 的方法. </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>The xml format xml 格式</h2>
+
+<p>The only valid element in the xml file is the <code>tree</code> item. A <code>tree</code>
+item can contain zero, one or more <code>tree</code> items.</p>
+<p>xml 文件中唯一有效的元素就是 <code>tree</code> 节点. 一个<code>tree</code>节点可以包含零个,一个或者更多tree节点.</p>
+<h3>Attributes 属性</h3>
+
+<p>There are five valid attributes that you can provide on a <code>tree</code> item.</p>
+<p>您可以为一个 <code>tree</code> 节点提供 5 个有效的属性. </p>
+<table>
+<thead><tr>
+	<td>Name<br />
+	  名称</td>
+	<td>Description<br />
+	  描述</td>
+</tr></thead>
+<tbody>
+<tr>
+	<td>text</td>
+	<td>Required. The text label for the tree item.<br />
+	  必需.   	  树节点的文本标签.</td>
+</tr>
+<tr>
+	<td>xmlSrc</td>
+	<td>Optional. The source for the xml file to load when expanded.<br />
+	  可选.   	  当展开时要加载的xml文件的源路径.</td>
+</tr>
+<tr>
+	<td>action</td>
+	<td>Optional. The action (uri) associated with the tree item.<br />
+	  可选. 节点关联的操作(uri地址).</td>
+</tr>
+<tr>
+	<td>icon</td>
+	<td>Optional. The icon image to use for this item. In case this item is a folder this
+		will be used when the folder is closed.<br />
+可选. 节点所使用的图标文件. 如果这个节点是个文件夹, 这个值将在节点被关闭的时候使用.</td>
+</tr>
+<tr>
+	<td>openIcon</td>
+	<td>Optional. The icon image to use for this item when it is opened. This is only
+		used for folder items that are opened/expanded.<br />
+可选. 节点打开时使用的图标文件. 这个值仅仅对文件夹节点被打开或者展开的时候有效.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>DTD</h3>
+
+<p>The xml file does not have to be valid to work (only well formed) but if you want to
+ensure that you didn't do anything wrong you can use the <a href="tree.dtd">following
+document type definition</a>:</p>
+<p>xml 文件并不必须是有效的格式才能工作(只需要良好的组织起来), 但是如果你想确保你没有写错, 可以使用下面的<a href="tree.dtd">文档类型定义</a>:</p>
+<pre>
+&lt;!ELEMENT tree (tree*)&gt;
+&lt;!ATTLIST tree
+          text      CDATA   #REQUIRED
+          src       CDATA   #IMPLIED
+          action    CDATA   #IMPLIED
+          icon      CDATA   #IMPLIED
+          openIcon  CDATA   #IMPLIED&gt;
+</pre>
+
+<p>To use the dtd in your xml file add a <code>DOCTYPE</code> to the head of your
+xml file. Below is <a href="tree.dtd.xml">tree.dtd.xml</a> shown. This
+represents the same xml tree as in <a href="tree.xml">tree.xml</a> with a
+<code>DOCTYPE</code> declaration.</p>
+<p>在你的 xml 文件中使用这个 dtd 请在文件的开头包含一个 <code>DOCTYPE</code>. 下面显示的是 <a href="tree.dtd.xml">tree.dtd.xml</a> . 这个表示了和 <a href="tree.xml">tree.xml</a> 中相同的 xml 树, 只不过有一个 <code>DOCTYPE</code> 声明.</p>
+<pre>
+&lt;?xml version="1.0"?&gt;
+
+&lt;!DOCTYPE tree SYSTEM "tree.dtd"&gt;
+&lt;tree&gt;
+	&lt;tree text="Loaded Item 1" action="href://webfx.eae.net" /&gt;
+	&lt;tree text="Loaded Item 2"&gt;
+		&lt;tree text="Loaded Item 2.1" action="javascript:alert(2.1)" /&gt;
+	&lt;/tree&gt;
+	&lt;tree text="Load &amp;quot;tree1.xml&amp;quot;" src="tree1.xml" /&gt;
+&lt;/tree&gt;
+</pre>
+
+<p><a href="xloadtree.html">介绍</a><br />
+  <a href="usage.html">使用说明</a><br />
+  <a href="api.html">API</a><br />
+  <a href="implementation.html">实现</a><br />
+  <a href="demo.html">演示</a><br />
+  <a href="http://webfx.eae.net/download/xloadtree111.zip">下载</a> </p>
+
+<p class="author">作者: Erik Arvidsson<br />
+  中文翻译: <a href="mailto:beansoft@126.com">BeanSoft</a> </p>
+<!-- end webfx-main-body -->
+</div>
+
+</body>
+</html>

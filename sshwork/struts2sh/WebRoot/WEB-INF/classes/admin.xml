@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<!-- 管理员模块 -->
+	<package name="admin" namespace="/admin" extends="struts-default">
+
+		<action name="*" class="AdminAction" method="{1}">
+			<result name="viewUser">/admin/user_view.jsp</result>
+			<result name="message">/message.jsp</result>
+			<result name="userList">/admin/user_list.jsp</result>
+			<result name="editUser">/admin/user_edit.jsp</result>
+			<result name="roleList">/admin/role_list.jsp</result>
+			<result name="addResource">/admin/resource_add.jsp</result>
+			<result name="resourceList">/admin/resource_list.jsp</result>
+		</action>
+
+	</package>
+
+</struts>

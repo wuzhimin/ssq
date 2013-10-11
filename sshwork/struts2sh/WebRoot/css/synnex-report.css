@@ -1,0 +1,57 @@
+.grid-table {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: rgb(0,89,99); PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+.grid-tr-header {
+	FONT-WEIGHT: bold; BACKGROUND: rgb(189,207,206); LINE-HEIGHT: 18px; TEXT-ALIGN: center
+}
+.grid-td-header {
+	BORDER-RIGHT: rgb(0,89,99) 1px solid; BORDER-TOP: rgb(0,89,99) 1px solid; BORDER-LEFT: rgb(0,89,99) 1px solid; BORDER-BOTTOM: rgb(0,89,99) 1px solid
+}
+.grid-tr-footer {
+	BACKGROUND: #bdcfce; LINE-HEIGHT: 15px
+}
+.grid-tr-data {
+	BACKGROUND: #ffffff
+}
+.grid-tr-alt-data {
+	BACKGROUND: #eff7f7
+}
+.grid-td-data {
+	BORDER-RIGHT: rgb(0,89,99) 1px solid; PADDING-RIGHT: 6px; PADDING-LEFT: 6px; BORDER-TOP: rgb(0,89,99) 1px solid; BORDER-LEFT: rgb(0,89,99) 1px solid; BORDER-BOTTOM: rgb(0,89,99) 1px solid
+}
+.grid-td-alt-data {
+	BORDER-RIGHT: rgb(0,89,99) 1px solid; PADDING-RIGHT: 6px; PADDING-LEFT: 6px; BORDER-TOP: rgb(0,89,99) 1px solid; BORDER-LEFT: rgb(0,89,99) 1px solid; BORDER-BOTTOM: rgb(0,89,99) 1px solid
+}
+A.report {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: brown; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: underline
+}
+.grid-tr-header A:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.grid-tr-header A:active {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.grid-tr-header A:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.grid-tr-header A:hover {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #ff0000; TEXT-DECORATION: underline
+}
+.grid-tr-data A:link {
+	TEXT-DECORATION: underline
+}
+.grid-tr-data A:active {
+	TEXT-DECORATION: underline
+}
+.grid-tr-data A:visited {
+	TEXT-DECORATION: underline
+}
+.grid-tr-data A:hover {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #ff0000; TEXT-DECORATION: underline
+}
+.grid-tr-groupby {
+	BACKGROUND: #dfefef; LINE-HEIGHT: 15px
+}
+.grid-tr-subtotal {
+	BACKGROUND: #dfefef; LINE-HEIGHT: 15px
+}

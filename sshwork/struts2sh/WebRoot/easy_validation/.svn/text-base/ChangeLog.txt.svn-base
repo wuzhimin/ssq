@@ -1,0 +1,74 @@
+ v3.0
+ 
+ General
+ * validator重命名(以下重命名与以前版本保持兼容):
+ 	validate-int-range ==> int-range
+ 	validate-float-range ==> float-range
+ 	validate-length-range ==> length-range
+ 	validate-equals ==> equals
+ 
+ * 删除equals中的IsEmpty判断,容易使用户产生混淆
+ * 修改getArgumentsByClassName()增加返回一个参数singleArgument,例:validate-pattern-/[a-c]/gi,singleArgument值为/[a-c]/gi
+ * rename Validation.validate() to Validation.validateElement()
+ * 在validator中的options中增加ignoreEmptyValue(default=true)属性,避免IsEmpty需要重复判断
+ * 如果增加的是正则表达式的验证将极其简单,例如增加一个QQ验证: ['validate-qq',/^[1-9]\d{4,8}$/]
+ * 删除validate-date-cn与validate-date-au,使用validate-date代替
+ * 通过required-validate class自动绑定的form增加focusFirstElement()
+ * 增加Validation.Utils.fireSubmit()方法,用于模拟产生submit事件 (http://ajaxcn.org/space/start/2006-05-15/2 )
+ * 升级prototype.js至1.5版本,并修正与之的兼容问题
+ * 大量的重构
+ 
+ validate-date修改
+ * validate-date现在支持validate-date-$dateFormat自定义日期格式,例如validate-date-yyyy年MM月dd日,默认的日期格式为yyyy-MM-dd
+ 
+ validate-ajax修改
+ * 修改validate-ajax为validate-ajax-$validateUrl,删除需要validateUrl的依赖,例: validate-ajax-http://localhost:8080/validate-email.jsp
+ * validate-ajax现在使用非异步的get请求
+ * validate-ajax中增加传递参数what与value,如<input name="username" value="badqiu"/>,what为username,value为badqiu:
+ * validate-ajax显示的错误信息直接由服务器端返回
+ 
+ validate-pattern修改
+ * 现在支持非运算符，如： validate-pattern-!/^\d$/
+
+ validate-integer修改
+ * 现在00为非法的整数
+ 
+ New Validator
+ * validate-id-number,验证身份证号码
+ * validate-zip : 验证邮政编码
+ * validate-qq : 验证QQ号码
+ 
+ -----------------------------------------------------------------
+ * 新增验证:
+ * 增加min-value-number验证,例: 最小值为10.1 = min-value-10.1
+ * 增加max-value-number验证,例: 最大值为-100.1 = min-value--100.1
+ * 增加长度范围validate-length-range-minLength-maxLength验证,例: 最小长度为1,最大长度为10 = validate-length-range-1-10
+ * 增加整型数字范围validate-int-range-minValue-maxValue验证,例: 5至20 = validate-int-range-5-20
+ * 增加浮点数字范围validate-float-range-minValue-maxValue验证,例: -1.1至10 = validate-float-range--1.1-10
+ * 增加min-length-number验证,例: 最小长度为10 = min-length-10
+ * 增加max-length-number验证,例: 最大长度为10 = max-length-10
+ * 增加文件类型 validate-file-type1-type2-typeX 的验证,例: validate-file-zip-png-jpeg 将验证文件是否为zip,png,jpeg格式之一
+ * 增加中文日期验证 validate-date-cn
+ * 增加验证用户输入是是否中文,validate-chinese
+ * 增加IP验证: validate-ip
+ * 增加手机号码验证: validate-mobile-phone
+ * 增加电话号码验证: validate-phone
+ * 增加validate-pattern,Example: <input id='sex' class='validate-pattern-/^[fm]$/i'>
+ * 增加validate-ajax, Example: <input id='email' class='validate-ajax' validateUrl='http://localhost:8080/validate-email.jsp' validateFailedMessage='email already exists'>
+ * 增加validate-equals-otherInputFieldId 用于验证确认密码是否一至的应用.otherFieldId为另一个input的id 
+ *			例如:验证两个邮件地址email,confirmEmail是否一至,在confirmEmail中加入class=validate-equals-email
+ * 增加less-than-otherInputFieldId
+ * 增加great-than-otherInputFiledId
+ 
+ 
+ * 修改记录:
+ * 增加Validation._getInputValue() 取代$F()方法以对file input进行验证
+ * 修正Validation.isVisible() 中while循环中elm可能不存在为空的问题
+ * 修改Validation.get()方法使用indexOf()的匹配模式,以适应可以通过class传递参数
+ * 修改errorMsg可由方法返回
+ * 增加Validation._getErrorMsg()方法
+ * 修改advice可以动态修改
+ * 国际化
+ * 修改_getErrorMsg()中将useTitle可以在className中指定
+ * 增加Validation.autoBind()方法,可以通过在form中的class设置required-validate自动验证form
+ * 增加Validation.$()方法用于查找在Validation.autoBind()的validation

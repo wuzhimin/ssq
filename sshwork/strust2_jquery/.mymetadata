@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="strust2_jquery"
+  id="myeclipse.1334816283153"
+  context-root="/strust2_jquery"
+  j2ee-spec="6.0"
+  archive="strust2_jquery.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

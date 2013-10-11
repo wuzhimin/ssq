@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	
+	<package name="vendor" namespace="/vendor" extends="struts-default">
+        
+         <!-- 添加 -->
+        <action name="add" class="VendorAction" method="add">
+        	<result name="input">/vendor/add.jsp</result>
+        </action>
+        
+         <!-- 列表 -->
+        <action name="list" class="VendorAction" method="list">
+             <result >/vendor/list.jsp</result>
+        </action>
+        
+         <!-- 我的供应商列表 -->
+        <action name="mylist" class="VendorAction" method="myList">
+             <result >/vendor/list.jsp</result>
+        </action>
+
+         <!-- 根据名字查找供应商列表 -->
+        <action name="findListByName" class="VendorAction" method="findListByName">
+             <result >/vendor/list.jsp</result>
+        </action>
+        
+        <!-- 根据审核显示页面 -->
+        <action name="findListByAudited" class="VendorAction" method="findAllByAudited">
+             <result >/operator/vendor_list_audit.jsp</result>
+        </action>
+        
+        <!-- 根据ID进行审核 -->
+        <action name="audit_by_id" class="VendorAction" method="auditById">
+             <result>/message_new_win.jsp</result>
+        </action>
+        
+         <!-- 根据ID查看信息 -->
+        <action name="findById" class="VendorAction" method="findById">
+             <result>/vendor/viewInfoById.jsp</result>
+        </action>
+
+         <!-- 根据ID显示修改页面 -->
+        <action name="editById" class="VendorAction" method="findById">
+             <result>/vendor/edit.jsp</result>
+        </action>
+        
+        <!--  TODO 修改供应商信息 -->
+        
+        <!-- 根据ID进行审核 -->
+        <action name="viewDenductSum" class="VendorAction" method="viewDenductSum">
+             <result>/message_new_win.jsp</result>
+        </action>
+                
+	</package>	
+
+</struts>

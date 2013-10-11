@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="user" namespace="/user" extends="struts-default">
+
+         <!-- 用户登陆，保存信息到 session -->
+        <action name="login" class="UserAction" method="login">
+        	<result name="input">/login.jsp</result>
+            <result name="success" type="redirect">/welcome.jsp</result>
+            <result name="adminSuccess" type="redirect">/admin</result>
+        </action>
+        
+         <!-- 用户注册 -->
+        <action name="reg" class="UserAction" method="reg">
+        	<result name="input">/reg.jsp</result>
+            <result name="success">/reg.jsp</result>
+        </action>
+        
+         <!-- 用户注册信息 AJAX 验证 -->
+        <action name="ajaxValidate" class="UserAction" method="ajaxValidate">
+             <result >/ajax_response.jsp</result>
+        </action>
+        
+         <!-- 注册用户列表 -->
+        <action name="list" class="UserAction" method="list">
+             <result >/user/list.jsp</result>
+        </action>
+        
+         <!-- 查看用户信息 -->
+        <action name="findById" class="UserAction" method="findById">
+             <result>/user/viewInfoById.jsp</result>
+        </action>
+        
+         <!-- 修改密码 -->
+        <action name="changePassword" class="UserAction" method="changePassword">
+             <result>/user/changePassword.jsp</result>
+        </action>
+        
+         <!-- 修改用户资料 -->
+        <action name="update" class="UserAction" method="update">
+             <result name="input">/user/edit.jsp</result>
+        </action>
+        
+         <!-- 取回用户密码 -->
+        <action name="retrievePassword" class="UserAction" method="retrievePassword">
+             <result>/message.jsp</result>
+        </action>
+        
+        
+	</package>
+	
+
+
+</struts>

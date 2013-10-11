@@ -1,0 +1,462 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Validation Test</title>
+  <meta http-equiv="content-type" content="text/html; charset=gbk" />
+  <script src="../lib/prototype.js" type="text/javascript"></script>
+  <script src="../lib/unittest.js" type="text/javascript"></script>
+  <script src="../src/validation_cn.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="../styles/test.css" type="text/css" />
+  <link rel="stylesheet" href="../styles/style.css" type="text/css" />
+  <style type="text/css" media="screen">
+  /* <![CDATA[ */
+    #d1 { background-color: #fcb; width: 200px; height: 200px; float:left; }
+    #d2 { background-color: #cfb; font-size: 2em; width: 200px; height: 200px; float:left; }
+    #d3 { background-color: #bcf; font-size: 2em; width: 200px; height: 200px; float:left; }
+  /* ]]> */
+  </style>
+ 
+</head>
+<body> 
+	<form id='no-pass-form' class='required-validate'>
+		<div style='display:block'>测试使用</div>
+		<input id='username' type='text' value='123' style='display:block'/>
+		<input id='password-1' type='text' class='required min-length-20' style='display:block'/>
+	</form>
+	
+	<form id='pass-form' class='required-validate'>
+		<input id='password' type='text' value='13910001000' style='display:block'/>
+		<input id='repassword' type='text' class='required min-length-1 max-length-15 validate-equals-password validate-mobile-phone' value='13910001000' style='display:block'/>
+	</form>
+	
+	<input id='email' name='email' value='badqiu@gmail.com' class='validate-ajax' validateUrl='validate-email.jsp' />
+	
+	<form id="for-validate-one-required-form" class='required-validate'>
+		<input type="radio" name="sex1" value="f" />
+		<input id="for-validate-one-required-radio" type="radio" name="sex1" value="m" class="validate-one-required" />
+	</form>
+		
+	<div id="debug"> </div>
+
+	<!-- Log output -->
+	<div id="testlog"> </div>
+
+	<script>
+		var elm = {};
+		elm.getAttribute = function(name) {
+			return elm[name];
+		}
+		var Validation = Validation;
+		Validation.Utils.assert = function(condition,message) {
+			var errorMessage = message || ("assert failed error,condition="+condition);
+			if (!condition) throw new Error(errorMessage);
+			else return condition;
+		}
+		new Test.Unit.Runner({
+			setup : function() {
+				$('username').value = '123';
+				$('password-1').value = '';
+				$('password').value = '13910001000';
+				$('repassword').value = '13910001000';
+				$('email').value = 'badqiu@gmail.com';
+				$('for-validate-one-required-radio').checked = "";
+			},
+			teardown : function() {
+				
+			},
+			testRequired : function(){ with(this) {
+				elm.className = 'required';
+				var v = Validation.get('required');
+				assertEqual(false,v.test("",elm));
+				assertEqual(false,v.test(" ",elm));
+				assertEqual(true,v.test("a",elm));
+			}},
+			testValidateEmail : function(){ with(this) {
+				elm.className = 'validate-email';
+				var v = Validation.get('validate-email');
+				assertEqual(true,v.test("",elm),"empty value must true");
+				assertEqual(true,v.test("badqiu@gmail.com",elm));
+				assertEqual(false,v.test("bamail.com",elm));
+			}},
+			testValidateUrl : function(){ with(this) {
+				elm.className = 'validate-url';
+				var v = Validation.get('validate-url');
+				assertEqual(true,v.test("",elm),"empty value must true");
+				assertEqual(true,v.test("http://www.sf.net",elm));
+				assertEqual(false,v.test("www.sf.net",elm));
+			}},
+			testValidateAlpha : function(){ with(this) {
+				elm.className = 'validate-alpha';
+				var v = Validation.get('validate-alpha');
+				assertEqual(true,v.test("",elm),"empty value must true");
+				assertEqual(true,v.test("asdfasdfaer",elm));
+				assertEqual(false,v.test("%",elm));
+				assertEqual(false,v.test("6",elm));
+			}},
+			testValidateAlphanum : function(){ with(this) {
+				elm.className = 'validate-alphanum';
+				var v = Validation.get('validate-alphanum');
+				assertEqual(true,v.test("",elm),"empty value must true");
+				assertEqual(true,v.test("asdfasdfaer",elm));
+				assertEqual(true,v.test("6a",elm));
+				assertEqual(false,v.test("%a5",elm));
+			}},
+			testValidateNumber : function(){ with(this) {
+				elm.className = 'validate-number';
+				var v = Validation.get('validate-number');
+				assertEqual(true,v.test("",elm),"empty value must true");
+				assertEqual(true,v.test("0",elm));
+				assertEqual(true,v.test("2",elm));
+				assertEqual(true,v.test("2121",elm));
+				assertEqual(true,v.test("2121.12",elm));
+				assertEqual(true,v.test("+2121.12",elm));
+				assertEqual(true,v.test("-2121.12",elm));
+				assertEqual(true,v.test(" 0 ",elm));
+				assertEqual(false,v.test(" ",elm));
+				assertEqual(false,v.test("00",elm));
+				assertEqual(false,v.test("00.001",elm));
+				assertEqual(false,v.test("a2121.12",elm));
+				assertEqual(false,v.test("a",elm));
+			}},
+			testValidateDigits : function(){ with(this) {
+				elm.className = 'validate-digits';
+				var v = Validation.get('validate-digits');
+				assertEqual(true,v.test("",elm),"empty value must true");
+				assertEqual(true,v.test("1",elm));
+				assertEqual(true,v.test("9",elm));
+				assertEqual(true,v.test("11",elm));
+				assertEqual(false,v.test("1a",elm));
+				assertEqual(false,v.test("a1",elm));
+				assertEqual(false,v.test("+11",elm));
+				assertEqual(false,v.test("a",elm));
+			}},
+			testValidateOneRequired: function(){ with(this) {
+				assertEqual(false,Validation.$('for-validate-one-required-form').validate());
+				$('for-validate-one-required-radio').checked = "checked";
+				assertEqual(true,Validation.$('for-validate-one-required-form').validate())
+			}},
+			testMaxValue : function(){ with(this) {
+				elm.className = 'max-value--1.2';
+				var v = Validation.get('max-value');
+				assertEqual(true,v.test("",elm),"empty value must true");
+				assertEqual(true,v.test("-1.2",elm));
+				assertEqual(true,v.test("-2",elm));
+				assertEqual(false,v.test("-1.1",elm));
+				assertEqual(false,v.test("a",elm));
+			}},
+			testMinValue : function(){ with(this) {
+				elm.className = 'min-value-1';
+				var v = Validation.get('min-value');
+				assertEqual(true,v.test("",elm),"empty value must true");
+				assertEqual(true,v.test("1",elm));
+				assertEqual(true,v.test("1",elm));
+				assertEqual(false,v.test("a",elm));
+				assertEqual(false,v.test("-1.1",elm));
+				assertEqual(false,v.test("-1",elm));
+			}},
+			testMinLength : function(){ with(this) {
+				elm.className = 'min-length-3';
+				var v = Validation.get('min-length');
+				assertEqual(true,v.test("",elm),"empty value must true");
+				assertEqual(true,v.test("1111aa",elm));
+				assertEqual(false,v.test("a",elm));
+			}},
+			testMaxLength : function(){ with(this) {
+				elm.className = 'max-length-3';
+				var v = Validation.get('max-length');
+				assertEqual(true,v.test("",elm),"empty value must true");
+				assertEqual(true,v.test("2a",elm));
+				assertEqual(false,v.test("aaaaaa",elm));
+			}},
+			testValidateFile : function(){ with(this) {
+				elm.className = 'validate-file-png-jpg';
+				var v = Validation.get('validate-file');
+				assertEqual(true,v.test("",elm),"empty value must true");
+				assertEqual(true,v.test("c:/abc.png",elm));
+				assertEqual(true,v.test("c:/asdfad/asd.jpg",elm));
+				assertEqual(false,v.test("c:/asd/s/asdf",elm));
+			}},
+			testValidatePattern : function(){ with(this) {
+				elm.className = 'validate-pattern-/[a-c]/';
+				//elm.pattern = '[a-c]'
+				var v = Validation.get('validate-pattern');
+				assertEqual(true,v.test("",elm),"empty value must true");
+				assertEqual(true,v.test("a",elm));
+				assertEqual(true,v.test("c",elm));
+				assertEqual(false,v.test("A",elm));
+				elm.className = 'validate-pattern-/[a-c]/i';
+				assertEqual(true,v.test("A",elm));
+				
+				elm.className = 'validate-pattern-!/^\\d$/';
+				assertEqual(false,v.test("1",elm));
+				assertEqual(false,!/^\d$/.test("1"));
+				
+				assertEqual(true,v.test("11",elm));
+				
+				assertEqual(true,v.test("a",elm));
+				assertEqual(true,!/^\d$/.test("a"));
+				
+				elm.className = 'validate-pattern-[a-c]';
+				try {
+					assertEqual(true,v.test("a",elm));
+					fail();
+				}catch(expected){
+				}
+			}},
+			testValidateLengthRange : function(){ with(this) {
+				elm.className = 'validate-length-range-2-5';
+				var v = Validation.get('validate-length-range');
+				assertEqual(true,v.test("",elm),"empty value must true");
+				assertEqual(true,v.test("12",elm));
+				assertEqual(true,v.test("12345",elm));
+				assertEqual(true,v.test("abc",elm));
+				assertEqual(false,v.test("123456",elm));
+				assertEqual(false,v.test("1",elm));
+			}},
+			testValidateIntRange : function(){ with(this) {
+				elm.className = 'validate-int-range--1-1';
+				var v = Validation.get('validate-int-range');
+				assertEqual(true,v.test("",elm),"empty value must true");
+				assertEqual(true,v.test("-1",elm));
+				assertEqual(true,v.test("1",elm));
+				assertEqual(true,v.test("+1",elm));
+				assertEqual(true,v.test("0",elm));
+				assertEqual(false,v.test("0.1",elm));
+				assertEqual(false,v.test("1.1",elm));
+				assertEqual(false,v.test("-2",elm));
+				assertEqual(false,v.test("-0.8",elm));
+				assertEqual(false,v.test("-230.8",elm));
+			}},
+			testValidateFloatRange : function(){ with(this) {
+				elm.className = 'validate-float-range--1.1-1.1';
+				var v = Validation.get('validate-float-range');
+				assertEqual(true,v.test("",elm),"empty value must true");
+				assertEqual(true,v.test("-1.1",elm));
+				assertEqual(true,v.test("1.1",elm));
+				assertEqual(true,v.test("0.8",elm));
+				assertEqual(true,v.test("+0.8",elm));
+				assertEqual(false,v.test("-1.2",elm));
+				assertEqual(false,v.test("1.2",elm));
+				assertEqual(false,v.test("asd",elm));
+			}},
+			testValidateEquals : function(){ with(this) {
+				elm.className = 'validate-equals-username';
+				var v = Validation.get('validate-equals');
+				assertEqual(true,v.test("123",elm),'username input 与期待的值不相等');
+				assertEqual(false,v.test("abc",elm));
+				assertEqual(false,v.test("",elm));
+			}},
+			testValidateLessThan : function(){ with(this) {
+				elm.className = 'less-than-username';
+				var v = Validation.get('less-than');
+				assertEqual(true,v.test("",elm),"empty value must true");
+				assertEqual(true,v.test("1",elm));
+				assertEqual(true,v.test("33",elm));
+				assertEqual(false,v.test("12311",elm));
+			}},
+			testValidateGreatThan : function(){ with(this) {
+				elm.className = 'great-than-username';
+				var v = Validation.get('great-than');
+				assertEqual(true,v.test("",elm),"empty value must true");
+				assertEqual(true,v.test("12311",elm));
+				assertEqual(false,v.test("33",elm));
+				assertEqual(false,v.test("1",elm));
+			}},
+			testValidatePhone : function(){ with(this) {
+				elm.className = 'validate-phone';
+				var v = Validation.get('validate-phone');
+				assertEqual(true,v.test("",elm),"empty value must true");
+				assertEqual(true,v.test("0111-12345678",elm));
+				assertEqual(true,v.test("010-123456",elm));
+				assertEqual(true,v.test("0755-12345678",elm));
+				assertEqual(true,v.test("0755-12012312",elm));
+				assertEqual(true,v.test("80080012",elm));
+				assertEqual(true,v.test("801212",elm),"5");
+				assertEqual(false,v.test("030-12345678",elm));
+				assertEqual(false,v.test("12123",elm));
+				assertEqual(false,v.test("123456789",elm));
+				assertEqual(false,v.test("010-12123",elm));
+				assertEqual(false,v.test("010-123456789",elm));
+				assertEqual(false,v.test("03-12345678",elm));
+				assertEqual(false,v.test("08222-12345678",elm));
+				assertEqual(false,v.test("010-1234a56",elm));
+				assertEqual(false,v.test("01a-12345678",elm));
+				
+			}},
+			testValidateMobilePhone : function(){ with(this) {
+				elm.className = 'validate-mobile-phone';
+				var v = Validation.get('validate-mobile-phone');
+				assertEqual(true,v.test("",elm),"empty value must true");
+				assertEqual(true,v.test("013912345678",elm));
+				assertEqual(true,v.test("13112345678",elm));
+				assertEqual(true,v.test("15912345678",elm));
+				assertEqual(false,v.test("139123",elm));
+				assertEqual(false,v.test("139123456789",elm));
+				assertEqual(false,v.test("12112345678",elm));
+			}},
+			testValidateChinese : function(){ with(this) {
+				elm.className = 'validate-chinese';
+				var v = Validation.get('validate-chinese');
+				assertEqual(true,v.test("",elm),"empty value must true");
+				assertEqual(true,v.test("中文",elm));
+				assertEqual(false,v.test("中a文",elm));
+				assertEqual(false,v.test("abc",elm));
+			}},
+			testValidateDate : function(){ with(this) {
+				elm.className = 'validate-date';
+				var v = Validation.get('validate-date');
+				assertEqual(true,v.test("",elm),"empty value must true");
+				assertEqual(true,v.test("2005-10-11",elm));
+				assertEqual(true,v.test("2000-02-29",elm),'2000-02-29 must exist');
+				assertEqual(false,v.test("2000-02-30",elm),'2000-02-30 must not exist');
+				assertEqual(false,v.test("2000-1-1",elm));
+				assertEqual(false,v.test("1999-02-29",elm));
+				assertEqual(false,v.test("1999-02-12a",elm));
+				assertEqual(false,v.test("a1999-02-12",elm));
+				assertEqual(false,v.test("20a5-10-11",elm));
+				
+				elm.className = 'validate-date-yyyy/MM/dd';
+				assertEqual(false,v.test("2005-10-11",elm));
+				assertEqual(false,v.test("2005/10/11a",elm));
+				assertEqual(false,v.test("a2005/10/11",elm));
+				assertEqual(true,v.test("2005/10/11",elm));
+			}},
+			testValidateZip : function(){ with(this) {
+				elm.className = 'validate-zip';
+				var v = Validation.get('validate-zip');
+				assertEqual(true,v.test("",elm),"empty value must true");
+				assertEqual(true,v.test("123456",elm));
+				assertEqual(false,v.test("12345",elm));
+				assertEqual(false,v.test("1234567",elm));
+			}},
+			testValidateQQ : function(){ with(this) {
+				elm.className = 'validate-qq';
+				var v = Validation.get('validate-qq');
+				assertEqual(true,v.test("",elm),"empty value must true");
+				assertEqual(true,v.test("12345",elm));
+				assertEqual(true,v.test("123456789",elm));
+				assertEqual(false,v.test("1234",elm));
+				assertEqual(false,v.test("123456789123",elm));
+			}},
+			testValidateInteger : function(){ with(this) {
+				elm.className = 'validate-integer';
+				var v = Validation.get('validate-integer');
+				assertEqual(true,v.test("",elm),"empty value must true");
+				assertEqual(true,v.test("1",elm));
+				assertEqual(true,v.test("11",elm));
+				assertEqual(true,v.test("-101",elm));
+				assertEqual(true,v.test("+1011",elm));
+				assertEqual(false,v.test("00",elm));
+				assertEqual(false,v.test("abc",elm));
+				assertEqual(false,v.test("-10.1",elm));
+				assertEqual(false,v.test("+10.1",elm));
+			}},
+			testValidateIdNumber : function(){ with(this) {
+				elm.className = 'validate-id-number';
+				var v = Validation.get('validate-id-number');
+				assertEqual(true,v.test("",elm),"empty value must true");
+				assertEqual(true,v.test("500102800104029",elm));
+				assertEqual(true,v.test("500102198001040294",elm));
+				assertEqual(true,v.test("50010219800104069x",elm));
+				assertEqual(false,v.test("44301180110602",elm),"length 14");
+				assertEqual(false,v.test("4430118011060291",elm),"length 16");
+				assertEqual(false,v.test("993011801106029",elm),"99 is invald");
+				assertEqual(false,v.test("443011801306029",elm),"invald month=13");
+				assertEqual(false,v.test("443011801132029",elm),"invald day=32");
+				assertEqual(false,v.test("44301119801106029z",elm),"z is invalid");
+				assertEqual(false,v.test("4430111980110602911",elm),"length 19");
+				assertEqual(false,v.test("44301119801106029",elm),"length 17");
+			}},
+			testValidateAjax : function(){ with(this) {
+				new Element.ClassNames('email').set('validate-ajax-for_ajax_test/failedMessage.html');
+				assertEqual(false,Validation.validateElement('email'));
+				
+				new Element.ClassNames('email').set('validate-ajax-for_ajax_test/empty.html');
+				assertEqual(true,Validation.validateElement('email'));
+			}},
+			testErrorMethodOfValidator : function(){ with(this) {
+				elm.className = 'validate-integer max-length-1';
+				elm.title = 'validate error';
+				var v = Validation.get('validate-integer');
+				assertEqual(elm.title,v.error("aa",elm,true));
+				assertEqual(Validator.messages['validate-integer'],v.error("aa",elm,false));
+				v.options = {depends : ['required','validate-ip','max-length']};
+				assertEqual(Validator.messages['required'],v.error("",elm,false));
+				assertEqual(Validator.messages['validate-ip'],v.error("asdfasdf",elm,false));
+				assertEqual(elm.title,v.error("asdfasdf",elm,true));
+				assertEqual(Validation.Utils.format(Validator.messages['max-length'],[1,15]),v.error("255.255.255.255",elm,false));
+			}},
+			testGetArgumentsByClassName : function(){ with(this) {
+				assertEnumEqual([],Validation.Utils.getArgumentsByClassName('',''));
+				assertEnumEqual([],Validation.Utils.getArgumentsByClassName(''));
+				assertEnumEqual([],Validation.Utils.getArgumentsByClassName());
+				assertNotEqual(undefined,Validation.Utils.getArgumentsByClassName());
+				assertEnumEqual(['8'],Validation.Utils.getArgumentsByClassName('min-length','min-length-8'));
+				assertEnumEqual(['8','AA'],Validation.Utils.getArgumentsByClassName('min-length','min-length-8-AA'));
+				assertEnumEqual([],Validation.Utils.getArgumentsByClassName('min-length','min-length-'));
+				assertEnumEqual(['AA','-DD','BB'],Validation.Utils.getArgumentsByClassName('min-length','min-length-AA--DD-BB'));
+				assertEqual('AA--DD-BB',Validation.Utils.getArgumentsByClassName('min-length','min-length-AA--DD-BB').singleArgument);
+				assertEqual('http://www.javascud.org/',Validation.Utils.getArgumentsByClassName('min-length','min-length-http://www.javascud.org/').singleArgument);
+			}},
+			testGet : function(){ with(this) {
+				var v = Validation.methods['required'];
+				assertEqual(v,Validation.get('required'));
+				assertEqual(v,Validation.get('required-asdf'));
+				assertNotEqual(v,Validation.get('wr2323ong-asdfas'));
+				assertNotNull(Validation.get('raas34s-asdf'));
+				assertEqual(Validation.methods['validate-one-required'],Validation.get('validate-one-required'));
+			}},
+			testAddValidator : function(){ with(this) {
+				Validation.add('fortest',function(){},{testOption : "badqiu"});
+				assertNotNull(Validation.get('fortest'));
+				assertEqual("badqiu",Validation.get('fortest').options.testOption);
+			}},
+			testAddAllTheseValidator : function(){ with(this) {
+				Validation.addAllThese([
+					['fortest_addAllThese1',function(){},{testOption1 : 'badqiu'}],
+					['fortest_addAllThese2',function(){},{testOption2 : 'diy'}]
+				]);
+				assertNotNull(Validation.get('fortest_addAllThese1'));
+				assertNotNull(Validation.get('fortest_addAllThese2'));
+				assertEqual("badqiu",Validation.get('fortest_addAllThese1').options.testOption1);
+				assertEqual("diy",Validation.get('fortest_addAllThese2').options.testOption2);
+			}},
+			testTestMethodDepends : function(){ with(this) {
+				var v = new Validator();
+				assertEqual(true,v.test());
+				v.options.depends = ['required'];
+				assertEqual(true,v.test('1'))
+				assertEqual(false,v.test(''));
+			}},
+			testErrorMethodDepends : function(){ with(this) {
+				elm.className = 'validate-integer max-length-1';
+				var v = new Validator();
+				assertEqual(Validator.messages['validation-failed'],v.error('',elm));
+				v.options.depends = ['required'];
+				assertEqual(Validator.messages['required'],v.error('',elm));
+			}},
+			testErrorMethodMessages : function(){ with(this) {
+				elm.className = 'validate-file-png-jpeg';
+				var v = Validation.get('validate-file');
+				assertEqual(Validator.messages['validate-file'](v,elm,['png,jpeg']),v.error('sdsd',elm));
+			}},
+			testFormat : function(){ with(this) {
+				assertEqual('age=19',Validation.Utils.format('age=%s',[19,20]));
+				assertEqual('age=19 sex=f',Validation.Utils.format('age=%s sex=f',[19,'f']));
+				try{
+					assertEqual('age=%s',Validation.Utils.format('age=%s','10'));
+					fail();
+				}catch(e){
+					assert(true)
+				};
+			}},
+			testAutoBind : function(){ with(this) {
+				assertNotNull(Validation.$('no-pass-form'));
+				assertEqual(false,Validation.$('no-pass-form').validate());
+				assertEqual(true,Validation.$('pass-form').validate())
+			}}
+		},"testlog");
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+<title>XLoadTree (WebFX)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="local/webfxlayout.js"></script>
+</head>
+<body>
+<!-- WebFX Layout Include -->
+<script type="text/javascript">
+
+var articleMenu= new WebFXMenu;
+articleMenu.left  = 384;
+articleMenu.top   = 86;
+articleMenu.width = 140;
+articleMenu.add(new WebFXMenuItem("Introduction", "xloadtree.html"));
+articleMenu.add(new WebFXMenuItem("Usage", "usage.html"));
+articleMenu.add(new WebFXMenuItem("API", "api.html"));
+articleMenu.add(new WebFXMenuItem("Implementation", "implementation.html"));
+articleMenu.add(new WebFXMenuItem("Demo", "demo.html"));
+articleMenu.add(new WebFXMenuSeparator);
+articleMenu.add(new WebFXMenuItem("Download", "http://webfx.eae.net/download/xloadtree111.zip"));
+webfxMenuBar.add(new WebFXMenuButton("Article Menu", null, null, articleMenu));
+
+webfxLayout.writeTitle("XLoadTree");
+webfxLayout.writeMenu();
+webfxLayout.writeDesignedByEdger();
+
+</script>
+<div class="webfx-main-body">
+  <p>
+    <!-- end WebFX Layout Includes -->(2006-05-28) Changed license to Apache Software License   2.0.<br /> 
+    (2003-05-06) Added target attribute   support<br />
+  (2002-10-10) Added reload method  </p>
+  <p><span class="date">(2006-05-28)</span> 更改许可证为 Apache Software License 2.0. <br />
+    <span class="date">(2003-05-06)</span> 添加对 target 属性的支持<br/>
+  <span class="date">(2002-10-10)</span> 添加 reload 方法 </p>
+  <h2>Introduction 介绍</h2>
+
+<p>About a year ago Emil visited me while I was living in USA and he came up   with a brilliant idea for a next generation DHTML tree. After some discussions   about this it took shape and in the end it turned out to be one of the best   DHTML tree scripts I've ever seen.</p>
+<p>大概一年之前我还住在美国的时候 Emil 造访了我, 他带来了一个很炫的关于下一代的 DHTML 树组件的想法. 经过了一番讨论之后, 这个想法成型了, 最后它被证明是一个我所见过的最棒的 DHTML 树组件脚本.</p>
+<p>Since the original <a href="/dhtml/xtree/">xTree</a> script is implemented using
+Object Oriented JS it is very easy to extend and as soon as it started to take shape
+we got some wild ideas on how one could extend the tree. One idea that Emil implemented
+in the original tree was to add support for persistance. Another idea I had some time
+later was to allow subtrees to be loaded and populated at runtime. For this to work
+the <a href="/dhtml/xtree/">xTree</a> had to be updated a little to support data model
+changes at runtime. Emil added support for this after a while and now nothing was in my
+way to add the dynamic loading support.</p>
+<p>既然原来的 <a href="/dhtml/xtree/">xTree</a> 脚本是做作为面向对象的 JS 实现的, 所以它很容易的进行扩展, 当它刚刚成型的时候, 我们就有一些关于如何扩展它的疯狂的想法.其中的一个想法就是 Emil 对原来的树添加了持久化的实现. 另一个之后不久我提出的想法是允许运行的时候加载和填充子树. 对此 <a href="/dhtml/xtree/">xTree</a> 必须有点小小的更新来支持运行时候的数据模型的改变. 后来 Emil 对此添加了支持, 现在我所做的不过就是添加了动态加载的支持.</p>
+<p>译者注: 其实用的就是现在炒的很热的 AJAX 技术, 通过 XMLHttpRequest 读取内容, 通过 DOM 来解析 XML 内容.</p>
+<h3>Dynamic loading 动态加载</h3>
+
+<p>The XLoadTree is an extended version of the <a href="/dhtml/xtree/">xTree</a> and it
+allows you to define a source property for each tree item that points to an xml file
+that is then loaded, transformed using DOM and inserted using tree item methods. The
+basic mechanism for this has been working for a long time but since I wanted to cover the
+<a href="/dhtml/xmlextras/xmlextras.html">xml loading mechanisms</a> before writing
+this article it is not until now that I can publish this.</p>
+<p>LoadTree 是 <a href="/dhtml/xtree/">xTree</a> 的扩展版本, 它让你可以对每个树的节点定义一个 source 属性, 这个属性指向一个 xml 文件, 然后它可以被载入, 使用 DOM 转换, 插入, 这些都可以用树节点的方法来做. 相关的底层的机制已经使用了很长时间了, 因此我想在 <a href="/dhtml/xmlextras/xmlextras.html">xml 加载机制</a> 中介绍它, 这个文章在我写本文之前都已经发表了.</p>
+<h3>Known Issues 已知的问题 </h3>
+
+<p>The persistance from the original <a href="/dhtml/xtree/">xTree</a> is not
+sophisticated enough for dynamic loaded trees because the original persistance is
+dependent on the order of insertion and not the path. I will try to fix this in a later
+update.</p>
+<p>原来的 <a href="/dhtml/xtree/">xTree</a> 中的持久化机制对动态加载的树来说并不是十分灵活, 因为它依赖于树的插入顺序而不是路径. 我将尝试在后一更新版本中修正这个问题.</p>
+<p>The xml object has some issues when using the file protocol (in IE) so this one only
+works when located on a web server. I'll see what can be done about this.</p>
+<p>使用 file 协议的时候(在 IE中), xml 对象会有一些问题, 所以这个脚本将只能在服务器上加载的时候才能运行. 我将找找看怎么搞定这个问题.</p>
+<p>译者注:就是说在本机执行的时候, 在 Firefox, Opera, Mozilla 浏览器中, 使用 file 协议工作的很好, 但是 IE 浏览器下会弹出一个空的消息框, 无法载入子节点.</p>
+<p>
+<a href="xloadtree.html">介绍</a><br />
+<a href="usage.html">使用说明</a><br />
+<a href="api.html">API</a><br />
+<a href="implementation.html">实现</a><br />
+<a href="demo.html">演示</a><br />
+<a href="http://webfx.eae.net/download/xloadtree111.zip">下载</a>
+</p>
+
+<p class="author">作者: Erik Arvidsson<br />
+中文翻译: <a href="mailto:beansoft@126.com">BeanSoft</a> </p>
+</div>
+
+</body>
+</html>

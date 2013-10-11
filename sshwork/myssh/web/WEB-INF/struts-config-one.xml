@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >    
+ 
+  </form-beans>
+
+  <global-exceptions />
+  
+  <!-- =============全局变量（QJBL）=============  -->
+    <global-forwards>
+    </global-forwards>
+    
+  <action-mappings >
+     <!-- =============个人消息管理=============  -->
+     
+    </action-mappings>
+  <message-resources parameter="com.yourcompany.struts.ApplicationResources" />
+</struts-config>
+

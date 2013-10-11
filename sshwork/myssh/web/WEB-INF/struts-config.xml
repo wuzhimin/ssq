@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <form-bean name="bookmaForm" type="com.bookma.struts.form.BookmaForm" />
+    <form-bean name="loginForm" type="com.laodong.pub.login.LoginForm" />
+    <form-bean name="doginfoForm" type="com.doginfo.struts.form.DoginfoForm" />
+   </form-beans>
+
+  <global-exceptions />
+  
+  <!-- =============全局变量（QJBL）=============  -->
+    <global-forwards>
+       <forward name="MSG" path="/pub/util/message.jsp"/>
+       <forward name="FAILURE" path="/pub/util/Failure.jsp"/>
+    </global-forwards>
+    
+  <action-mappings >
+  <!-- =============登录=============  -->
+    <action
+      name="loginForm"
+      input="/login.jsp" 
+      path="/login"
+ parameter="method" 
+      scope="request"
+      type="com.laodong.pub.login.LoginAction"
+      validate="false">
+      <forward name="success" path="/index.jsp" />
+      <forward name="login" path="/login.jsp" />
+ 
+      <forward name="myindex" path="/topic/myindex.jsp" />
+      <forward name="updpassword" path="/updpassword.jsp" />
+    </action>
+   <action
+      name="bookmaForm"
+      input="/bookwh/filelist.jsp" 
+      path="/bookma" parameter="method"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false">
+      <forward name="booklist" path="/bookwh/booklist.jsp" />
+      <forward name="addbook" path="/bookwh/addbook.jsp" />
+      <forward name="updbook" path="/bookwh/updbook.jsp" />
+      <forward name="viewbook" path="/bookwh/viewbook.jsp" />
+   </action>
+   <action
+      name="doginfoForm"
+      input="/doginfo/doginfolist.jsp" 
+      path="/doginfo" parameter="method"
+      scope="request"
+      type="com.doginfo.struts.action.DoginfoAction"
+      validate="false">
+      <forward name="doginfolist" path="/doginfo/doginfolist.jsp" />
+      <forward name="adddoginfo" path="/doginfo/adddoginfo.jsp" />
+      <forward name="upddoginfo" path="/doginfo/upddoginfo.jsp" />
+      <forward name="viewdoginfo" path="/doginfo/viewdoginfo.jsp" />
+   </action>
+    </action-mappings>
+  <message-resources parameter="com.yourcompany.struts.ApplicationResources" />
+  <plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+    <set-property property="contextConfigLocation" value="/WEB-INF/classes/applicationContext.xml" />
+  </plug-in>
+</struts-config>
+

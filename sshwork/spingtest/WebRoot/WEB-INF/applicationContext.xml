@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd   http://www.springframework.org/schema/security   http://www.springframework.org/schema/security/spring-security-3.0.xsd ">
+
+    <bean id="securityService" class="springhttp.SecurityService">
+
+    </bean>
+
+    <security:http realm="SecRemoting">
+        <security:http-basic/>
+      
+        <security:intercept-url pattern="/securityService" access="ROLE_ADMIN" />
+    </security:http>
+
+    <security:authentication-manager alias="authenticationManager">
+        <security:authentication-provider>
+            <security:user-service id="uds">
+                <security:user name="jimi" password="jimi"
+                               authorities="ROLE_USER, ROLE_MANAGER" />
+                <security:user name="bob" password="bob"
+                               authorities="ROLE_USER,ROLE_ADMIN" />
+            </security:user-service>
+        </security:authentication-provider>
+    </security:authentication-manager>
+
+
+    <bean id="digestProcessingFilter"
+          class="org.springframework.security.web.authentication.www.DigestAuthenticationFilter">
+        <property name="userDetailsService" ref="uds" />
+        <property name="authenticationEntryPoint"
+                  ref="digestProcessingFilterEntryPoint" />
+    </bean>
+
+    <bean id="digestProcessingFilterEntryPoint"
+          class="org.springframework.security.web.authentication.www.DigestAuthenticationEntryPoint">
+        <property name="realmName" value="ThisIsTheDigestRealm" />
+        <property name="key" value="acegi" />
+        <property name="nonceValiditySeconds" value="10" />
+    </bean>
+
+    <bean id="springSecurityFilterChain"
+          class="org.springframework.security.web.FilterChainProxy">
+        <security:filter-chain-map path-type="ant">
+            <security:filter-chain pattern="/**"
+                                   filters="httpSessionContextIntegrationFilter,digestProcessingFilter,exceptionTranslationFilter,filterSecurityInterceptor" />
+        </security:filter-chain-map>
+    </bean>
+
+    <bean id="httpSessionContextIntegrationFilter"
+          class="org.springframework.security.web.context.HttpSessionContextIntegrationFilter" />
+    <bean id="accessDecisionManager" class="org.springframework.security.access.vote.UnanimousBased">
+        <property name="decisionVoters">
+            <list>
+
+                <bean class="org.springframework.security.access.vote.RoleVoter" />
+                <bean class="org.springframework.security.access.vote.AuthenticatedVoter" />
+            </list>
+        </property>
+    </bean>
+
+    <bean id="exceptionTranslationFilter"  class="org.springframework.security.web.access.ExceptionTranslationFilter">
+        <property name="authenticationEntryPoint"
+                  ref="digestProcessingFilterEntryPoint" />
+    </bean>
+    </beans>

@@ -1,0 +1,4 @@
+本设置向导由 beansoft@126.com (刘长炯) 开发制作
+基于 Netbeans 的向导模块: https://wizard.dev.java.net/ 完成.
+欢迎光临 Blog: http://beansoft.blogjava.net/
+2009年5月

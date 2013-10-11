@@ -1,0 +1,43 @@
+8
+
+dir
+91
+http://svn.javascud.org/svn/si/validation/trunk/test
+http://svn.javascud.org/svn/si
+
+
+
+2007-01-22T11:33:28.499897Z
+81
+badqiu
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+8f090554-7c24-0410-b02c-966d6ee192e4
+
+test.html
+file
+
+
+
+
+2007-03-26T01:58:48.000000Z
+f74cf70b1d1f25371b7666169feae282
+2007-01-22T11:33:28.499897Z
+81
+badqiu
+
+for_ajax_test
+dir
+

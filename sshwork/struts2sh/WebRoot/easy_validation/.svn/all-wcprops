@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/si/!svn/ver/85/validation/trunk
+END
+ChangeLog.txt
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/si/!svn/ver/82/validation/trunk/ChangeLog.txt
+END
+MIT-LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/si/!svn/ver/11/validation/trunk/MIT-LICENSE
+END
+Readme.txt
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/si/!svn/ver/68/validation/trunk/Readme.txt
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/si/!svn/ver/39/validation/trunk/build.xml
+END

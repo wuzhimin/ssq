@@ -1,0 +1,16 @@
+@charset "utf-8";
+div#qTip_1 {
+ padding: 3px;
+ border: 1px solid Black;
+ border-right-width: 2px;
+ border-bottom-width: 2px;
+ display: none;
+ width:225px;
+ background: #FAF0E6;
+ color: Teal;
+ font: 14px Verdana, Arial, Helvetica, sans-serif;
+ line-height:22px;
+ text-align: left;
+ position: absolute;
+ z-index: 1000;
+}

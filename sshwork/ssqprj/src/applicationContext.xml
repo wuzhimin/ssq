@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="   
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd   
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd   
+            http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd   
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd   
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+	<!-- <context:component-scan base-package="com.cssweb.tradeadmin.action"/> -->
+
+	<!-- 属性文件配置（属性文件未加密） -->
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
+		p:location="classpath:jdbc.properties" />
+
+	<!-- 数据源配置（c3p0） -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close" p:driverClass="${jdbc.driverClassName}"
+		p:jdbcUrl="${jdbc.url}" p:user="${jdbc.username}" p:password="${jdbc.password}" />
+
+	<!-- ADD PERSISTENCE SUPPORT HERE (jpa, hibernate, etc) -->
+	<!-- 配置 Hibernate SessionFactory -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean"
+		p:dataSource-ref="dataSource">
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+				<prop key="javax.persistence.validation.mode">${javax.persistence.validation.mode}</prop>
+			</props>
+		</property>
+
+		<!-- 如果持久是配置文件，用mappingResources -->
+		<!-- <property name="mappingResources"> <list> <value>com/cssweb/tradeadmin/model/UserBasicInfo.hbm.xml</value> 
+			</list> </property> -->
+
+		<!-- 如果持久是注解类，用annotatedClasses -->
+		<property name="annotatedClasses">
+			<list>
+				<value>com.wzm.server.entity.base.User</value>
+				
+				<value>com.wzm.server.entity.ssq.SsqRecord</value>
+				
+				<value>com.wzm.server.entity.ssq.SsqBaseStats</value>
+				
+				<value>com.wzm.server.entity.ssq.SsqBlueStats</value>
+				<value>com.wzm.server.entity.ssq.SsqMulBlueStats</value>
+				
+				<value>com.wzm.server.entity.ssq.SsqTailStats</value>
+				<value>com.wzm.server.entity.ssq.SsqMulTailStats</value>
+				
+				<!-- 红球质数 -->
+				<value>com.wzm.server.entity.ssq.SsqPrimeStats</value>
+				<value>com.wzm.server.entity.ssq.SsqMulPrimeStats</value>
+				
+				<!-- 红球冷热 -->
+				<value>com.wzm.server.entity.ssq.SsqColdHotStats</value>
+				<value>com.wzm.server.entity.ssq.SsqMulColdHotStats</value>
+				
+				<value>com.wzm.server.entity.ssq.SsqACAndSanduStats</value>
+				
+				<value>com.wzm.server.entity.ssq.SsqMulTailForcast</value>
+				<value>com.wzm.server.entity.ssq.SsqMulColdHotForcast</value>
+				
+				<!-- 行列遗失 -->
+				<value>com.wzm.server.entity.ssq.SsqColRowStats</value>
+				
+				<!-- 上期相同 -->
+				<value>com.wzm.server.entity.ssq.SsqLastSameStats</value>
+				
+				<value>com.wzm.server.entity.ssq.SsqStatsType</value>
+				
+				<!-- 公式相关 -->
+				<value>com.wzm.server.entity.formula.RedFormula</value>
+				<value>com.wzm.server.entity.formula.RedFormulaCacl</value>
+				<value>com.wzm.server.entity.formula.RedFormulaCaclVerify</value>
+				<value>com.wzm.server.entity.formula.RedFormulaCaclMulStats</value>
+				<value>com.wzm.server.entity.formula.RedFormulaCaclMulForcast</value>
+			</list>
+		</property>
+
+
+		<!-- merger一个游离对象到持久对象，如果是新增了一个实体，需注册下面的事件监听器，新增实体才有ID -->
+		<property name="eventListeners">
+			<map>
+				<entry key="merge">
+					<bean
+						class="org.springframework.orm.hibernate3.support.IdTransferringMergeEventListener" />
+				</entry>
+			</map>
+		</property>
+
+	</bean>
+
+	<!-- 事务管理 Transaction manager for a single Hibernate SessionFactory (alternative 
+		to JTA) -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager"
+		p:sessionFactory-ref="sessionFactory" />
+
+	<!-- Transaction manager that delegates to JTA (for a transactional JNDI 
+		DataSource) -->
+	<!-- <bean id="transactionManager" class="org.springframework.transaction.jta.JtaTransactionManager"/> -->
+
+
+	<!-- ========================= BUSINESS OBJECT DEFINITIONS ========================= -->
+
+	<!-- Activates various annotations to be detected in bean classes: Spring's 
+		@Required and @Autowired, as well as JSR 250's @Resource. -->
+	<context:annotation-config />
+
+	<!-- Instruct Spring to perform declarative transaction management automatically 
+		on annotated classes. -->
+	<tx:annotation-driven />
+
+	<!-- Exporter that exposes the Hibernate statistics service via JMX. Autodetects 
+		the service MBean, using its bean name as JMX object name. -->
+	<context:mbean-export />
+
+
+	<aop:aspectj-autoproxy />
+
+	<!-- hibernatetemplate配置 -->
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+
+	<!-- DAO配置 -->
+	<bean id="userDao" class="com.wzm.server.dao.base.UserDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	
+	<bean id="ssqRecordDao" class="com.wzm.server.dao.ssq.SsqRecordDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	
+	<bean id="ssqBaseStatsDao" class="com.wzm.server.dao.ssq.SsqBaseStatsDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	
+	<bean id="baseDao" class="com.wzm.server.dao.base.BaseDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	
+	<bean id="formulaDao" class="com.wzm.server.dao.formula.FormulaDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+
+
+	<!-- Service配置 -->
+	<bean id="userService" class="com.wzm.server.service.base.UserServiceImpl">
+		<property name="baseDao" ref="userDao" />
+	</bean>
+	
+	<bean id="ssqRecordService" class="com.wzm.server.service.ssq.SsqRecordServiceImpl">
+		<property name="baseDao" ref="ssqRecordDao" />
+	</bean>
+	
+	<bean id="ssqForcastService" class="com.wzm.server.service.ssq.SsqForcastServiceImpl">
+		<property name="baseDao" ref="baseDao" />
+		<property name="ssqRecordDao" ref="ssqRecordDao" />
+	</bean>
+	
+	<bean id="formulaService" class="com.wzm.server.service.formula.FormulaServiceImpl">
+		<property name="baseDao" ref="formulaDao" />
+		<property name="ssqRecordDao" ref="ssqRecordDao" />
+	</bean>
+	
+	<bean id="httpinvokeService1" class="com.wzm.invoker.impl.HttpinvokeInterfaceImpl">
+		<property name="ssqRecordDao" ref="ssqRecordDao" />
+	</bean>
+	
+</beans>  

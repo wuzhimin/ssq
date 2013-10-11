@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>EasyValidation guide and samples</title>
+	<meta content="http://wiki.javascud.org/display/si/Javascript_EasyValidation" name="homepate"></meta>
+	<meta content="AndrewTetlaw" name="author"></meta>
+	<meta content="BadQiu" name="author"></meta>
+	<meta content="IvanLi(http://ivanl.javaeye.com)" name="author"></meta>
+</head>
+
+<body>
+<style>
+	body {font-size:14px;line-height:18px;}
+	.{font-family:arial;}
+	h2 {cursor:pointer;font-size:20px;margin:30px 0px 40px 5px;line-height:10px}
+	h3 {cursor:pointer;font-weight:normal;color:black;text-decoration:underline;line-height:10px}
+	h4 {cursor:pointer;font-weight:normal;color:black;text-decoration:underline;line-height:10px}
+	a h4{
+		color:blue;
+		font-weight:bold;
+	}
+	.op {cursor:pointer;}
+	div.block {margin-left:5px;}
+	xmp {color:green;font-size:12px;margin:0px;font-family:courier;background-color:#e6e6fa;padding:2px}
+	li {margin-top:2px;}
+</style>
+<h2 >
+	<a href="http://wiki.javascud.org/display/si/Javascript_EasyValidation" target="_top" title="Visit EasyValidation home page">
+		EasyValidation
+	</a>用户指南
+</h2>
+	
+<div class="block">
+<!---  --->
+	<a name="mf"><h4>主要特征</h4></a>
+	<div style="display:show" class="block">
+		<li>基于prototype</li>
+		<li>无侵入性</li>
+		<li>支持国际化</li>
+		<li>易于扩展</li>
+		<li>Ajax支持</li>
+	</div>
+	
+	<a name="browsers"><h4>支持浏览器</h4></a>
+	<div style="display:show" class="block">
+		<li>IE 5.x 以上</li>
+		<li>Mozilla 1.4 以上</li>
+		<li>FireFox 0.9 以上</li>
+	</div>
+
+	
+<!--- 引用文件 --->
+	<a name="import"><h4 >引用文件</h4></a>
+	<div class="block">
+<xmp>
+<script src="prototype.js" type="text/javascript"></script>
+<script src="validation_cn.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="style_min.css"/>
+</xmp>
+		<li>prototype.js是所有的基础</li>
+		<li>validation_cn.js真正的验证框架文件</li>
+		<li>可以添加style_min.css中的样式声明,也可以把style_min.css中的样式声明引入到你的框架js文件中去.</li>
+	</div>
+<!--- Form绑定 --->
+	<a name="bindForm"><h4 >Form绑定</h4></a>
+	<div class="block">
+<xmp>
+<!-- 为form增加required-validate class,标识需要验证form -->
+<form id='helloworld' action="#" class='required-validate'>
+	helloworld:</br>
+	<!--通过class添加验证: required表示不能为空,min-length-15表示最小长度为15 -->
+	<textarea name='content' class='required min-length-2'></textarea></br>
+	<input type='submit' value='Submit'/> 
+	<input type='reset' value='Reset'/>
+</form>
+</xmp>
+		<li>要是某个form中的元素被验证可以这样给声明的form中加一个class='required-validate'的属性,框架会在load是自动绑定所有要验证的域.</li>
+		<li>在要检查的域中通过class属性来声明被检查域的限制条件,例如上面的class='required min-length-2'表示这是一个非空,并且最小长度是2的域,在编辑域失去焦点时,会自动检查,如果输入不满足上述条件,则产生错误提示.</li>
+	</div>
+<!--- 检查规则 --->
+	<a name="ruleIntro"><h4 >检查规则</h4></a>
+	<div class="block">
+		<li>required -- 非空域</li>
+		<li>validate-number -- 一个有效数</li>
+		<li>validate-digits -- 只能包含[0-9]任意个数字</li>
+		<li>validate-alpha -- 只能是字母[a-zA-Z]</li>
+		<li>validate-alphanum -- 只能是字母和数字的组合</li>
+		<li>validate-date -- 只能是日期</li>
+		<li>validate-email -- 只能是有效的email</li>
+		<li>validate-url -- 只能是有效的url地址</li>
+		<li>validate-date-au -- 日期的形式必须是dd/mm/yyyy</li>
+		<li>validate-one-required -- 至少有一个被选中,例如一组checkbox, radiobutton,它们最好包含在一个div和span中</li>
+		<li>validate-date-cn -- 日期的形式必须是yyyy/mm/dd</li>
+		<li>validate-integer -- 只能是整数,可以有正负号</li>
+		<li>validate-chinese -- 只能是中文</li>
+		<li>validate-ip -- 有效的IP地址</li>
+		<li>validate-phone -- 有效的电话(仅适用于中国)</li>
+		<li>validate-mobile-phone -- 有效的手机号(仅适用于中国)</li>
+		<li>validate-equals-$otherInputId -- 必须和某个input field相等例如 validate-equals-otherInputId(此处$some表示一个特定的值)</li>
+		<li>less-than-$otherInputId -- 小于某个input field less-than-otherInputId(此处$some表示一个特定的值)</li>
+		<li>great-than-$otherInputId -- 大于某个input field less-than-otherInputId(此处$some表示一个特定的值)</li>
+		<li>min-length-$number -- 最小长度是$number(此处$some表示一个特定的值)</li>
+		<li>max-length-$number -- 最大长度是$number(此处$some表示一个特定的值)</li>
+		<li>validate-file-$type1-$type2-$typeX -- file的input必须是声明的$type1 -- $typeX中的一种</li>
+		<li>validate-float-range-$minValue-$maxValue -- 必须是$minValue到$maxValue的一个浮点数</li>
+		<li>validate-int-range-$minValue-$maxValue -- 必须是$minValue到$maxValue的一个整数</li>
+		<li>validate-length-range-$minLength-$maxLength -- 输入字符串的长度必须在$minLength到$maxLength之间</li>
+		<li>max-value-$number -- 输入域的最大值是$number</li>
+		<li>min-value-$number -- 输入域的最小值是$number</li>
+		<li>validate-pattern-$patternAttributes -- 通过自定义pattern来验证输入域的正确性</li>
+		<li>validate-ajax -- 通过ajax来验证输入域 ,例如
+		<xmp><input id='email' class='validate-ajax' 
+		validateUrl='http://localhost:8080/validate-email.jsp' 
+		validateFailedMessage='email already exists'></xmp></li>
+	</div>
+<!--- Validation选项 --->
+	<a name="validationIntro"><h4 >Validation选项</h4></a>
+	<div class="block">
+		<li>可以手工指定要验证那个form,在指定是可以给定一些选项</li>
+<xmp>
+<script type="text/javascript">
+	var valid = new Validation('form-id', {onSubmit:false});
+	var result = valid.validate();
+</script>
+</xmp>
+		<strong>创建Valuedation是的参数说明</strong>
+		<li>onSubmit -- 是否绑定onSubmit函数, default - true</li>
+		<li>stopOnFirst -- 是否在检查到第一个错误时就停止检查 default- false</li>
+		<li>immediate -- 是否在被检测域失去焦点时就检查被检查域 default - false</li>
+		<li>focusOnError -- 是否把焦点移动到发生错误的域上 default - true</li>
+		<li>useTitles -- 是否使用提示 default - false</li>
+		<li>onFormValidate:当form被检测和的回调函数,有两个输入参数 arg[0]-检测form的结果true or false, arg[1]-form本身的id</li>
+		<li>onElementValidate:当没个element被检查后的回调函数,有两个输入参数 arg[0]-检测form的结果true or false, arg[1]-element本身的id</li>
+
+	</div>
+<!--- 添加自己的测试函数 --->
+	<a name="addUserFunc"><h4 >添加自己的测试函数</h4></a>
+	<div class="block">
+<xmp>
+Validation.add('class-name', 'Error message text', function(value [, element]) {
+     return /* do validation here */ 
+});
+//或者
+Validation.addAllThese([
+     ['required', 'This is a required field.', function(v) {
+       return !Validation.get('IsEmpty').test(v);
+     }],
+     ['validate-number', 'Please use numbers only in this field.', function(v) {
+       return Validation.get('IsEmpty').test(v) || !isNaN(v);
+     }],
+     ['validate-digits', 'Please use numbers only in this field.', function(v) {
+       return Validation.get('IsEmpty').test(v) ||  !/[^\d]/.test(v);
+     }]
+]); 
+</xmp>
+	</div>
+<!--- FAQ --->	
+	<a name="faq"><h4 >FAQ</h4></a>
+	<div class="block">
+		<strong>1. 我的网站现在使用的是UTF-8编码,怎么使用validation_cn.js显示中文会乱码?</strong>
+		<li>
+			答:validation_cn.js默认是使用GBK编码,使用可以改变文件编码的编辑器以UTF-8编码方式再保存,如保存为validation_cn_UTF-8.js
+		</li>
+		<br/>
+		<strong>2. 国际化怎么办?</strong>
+		<li>
+			答:动态修改Validator.messageSource即可
+		</li>
+		<br/>
+		<strong>3. 日期之间的比较怎么办,如结束日期要大于开始日期</strong>
+		<li>
+			答:先使用validate-date-cn验证输入的值是合法的日期,再加上"less-than"的比较即可
+		</li>
+		<br/>
+		<strong>4. select的验证</strong>
+		<li>
+			答:将Please Select..的值使用一个空格填充即可
+		</li>
+<xmp>
+<select id="test" name="test" class="required">
+	<option value=" ">Please Select..</option>
+	<option value="val1">Value 1</option>
+	<option value="val2">Value 2</option>
+</select>
+</xmp>
+		<strong>5. 在IE中提示"Unterminated string constant"或是"末结束的字符串常量"错误</strong>
+		<li>
+			答: 是由于你网页的编码问题,validation_cn.js默认是GBK编码,请转换成与你的网页想适应的编码
+		</li>
+
+	</div>
+</div>
+</body>
+</html>

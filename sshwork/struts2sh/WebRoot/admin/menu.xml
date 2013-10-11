@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<tree>
+	<tree text="用户管理" src="user_menu.xml" />
+	
+	<tree text="站点全局设置" action="app_config.jsp" target="body" />
+	<tree text="邮件发送设置(TODO)" />
+	<tree text="站点安全中心" src="security_menu.xml" />
+	
+	<tree text="关于后台管理系统">
+		<tree text="当前版本 1.0" />
+		<tree text="技术支持: BeanSoft" action="mailto:beansoft@126.com" />
+	</tree>
+
+	<tree text="帮助" action="help.html" target="body" icon="../images/icons/help.gif" />
+	<tree text="返回系统首页"  action="../index.jsp" target="_top" icon="../images/icons/back.gif" />
+	<tree text="退出管理系统并注销" action="../logout.jsp" target="_top"  icon="../images/icons/exit.png" />
+</tree>

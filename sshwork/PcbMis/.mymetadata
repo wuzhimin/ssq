@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="PcbMis"
+  id="myeclipse.1310693179515"
+  context-root="/PcbMis"
+  j2ee-spec="5.0"
+  archive="PcbMis.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

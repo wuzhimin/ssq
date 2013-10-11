@@ -1,0 +1,87 @@
+BODY {
+	COLOR: black; FONT-FAMILY: "宋体"; FONT-SIZE: 9pt
+}
+.row {
+	BORDER-BOTTOM: #000000 1px solid; FONT-SIZE: 11pt
+}
+.header {
+	BORDER-BOTTOM: 1px outset; BORDER-LEFT: 0px outset; BORDER-RIGHT: 0px outset; BORDER-TOP: #000000 0px outset
+}
+P {
+	FONT-FAMILY: "宋体", "Arial", "Times New Roman"; FONT-SIZE: 9pt; FONT-WEIGHT: normal
+}
+TABLE {
+	FONT-FAMILY: "宋体", "Arial", "Times New Roman"; FONT-SIZE: 9pt; FONT-WEIGHT: normal
+}
+LI {
+	FONT-FAMILY: "宋体", "Arial", "Times New Roman"; FONT-SIZE: 9pt; FONT-WEIGHT: normal
+}
+TD {
+	FONT-FAMILY: "宋体", "Arial", "Times New Roman"; FONT-SIZE: 9pt; FONT-WEIGHT: normal
+}
+P {
+	COLOR: black
+}
+LI {
+	COLOR: black
+}
+TABLE {
+	COLOR: black
+}
+TD {
+	COLOR: black
+}
+.10V {
+	FONT-FAMILY: "宋体"; FONT-SIZE: 10pt; FONT-WEIGHT: bold; LINE-HEIGHT: 16pt; TEXT-DECORATION: none
+}
+.12V {
+	FONT-FAMILY: "宋体"; FONT-SIZE: 11pt; FONT-STYLE: normal
+}
+.105v {
+	FONT-FAMILY: "宋体"; FONT-SIZE: 10.5pt; FONT-STYLE: normal
+}
+.7V {
+	FONT-FAMILY: "宋体"; FONT-SIZE: 9pt; TEXT-DECORATION: underline
+}
+A:visited {
+	COLOR: #000000; FONT-SIZE: 9pt; TEXT-DECORATION: underline
+}
+A:active {
+	COLOR: #CC0000; FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #CC0000; FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+.border-l-r {
+	BORDER-BOTTOM-COLOR: black; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-COLOR: #016563; BORDER-LEFT-WIDTH: 0px; BORDER-RIGHT-COLOR: #016563; BORDER-RIGHT-WIDTH: 1px; BORDER-TOP-COLOR: black; BORDER-TOP-WIDTH: 0px
+}
+.button-w {
+	BACKGROUND-COLOR: #ffffff; BORDER-BOTTOM: #660033 0px solid; BORDER-LEFT: #660033 0px solid; BORDER-RIGHT: #660033 0px solid; BORDER-TOP: #660033 0px solid; COLOR: #660033; CURSOR: hand; FONT-SIZE: 9pt; MARGIN-BOTTOM: 6px; MARGIN-TOP: 2px; VERTICAL-ALIGN: bottom; WIDTH: 48pt
+}
+.click {
+	BACKGROUND-COLOR: #ffffff; BORDER-BOTTOM: #660033 0px solid; BORDER-LEFT: #660033 2px solid; BORDER-RIGHT: #660033 2px solid; BORDER-TOP: #660033 1px solid; COLOR: #ff0000; CURSOR: hand; FONT-SIZE: 9pt; MARGIN-BOTTOM: 6px; MARGIN-TOP: 2px; VERTICAL-ALIGN: bottom; WIDTH: 48pt
+}
+.button-w- {
+	BACKGROUND-COLOR: #fdf3d5; BORDER-BOTTOM: #fdf3d5 0px solid; BORDER-LEFT: #fdf3d5 0px solid; BORDER-RIGHT: #fdf3d5 0px solid; BORDER-TOP: #fdf3d5 0px solid; COLOR: #660033; CURSOR: hand; FONT-SIZE: 9pt; MARGIN-BOTTOM: 0px; MARGIN-TOP: 0px; VERTICAL-ALIGN: bottom; WIDTH: 48pt
+}
+.click- {
+	BACKGROUND-COLOR: #009999; BORDER-BOTTOM: #009999 1px solid; BORDER-LEFT: #009999 1px solid; BORDER-RIGHT: #009999 1px solid; BORDER-TOP: #009999 2px solid; COLOR: #000000; CURSOR: hand; FONT-SIZE: 9pt; MARGIN-BOTTOM: 0px; MARGIN-TOP: 0px; VERTICAL-ALIGN: bottom; WIDTH: 48pt
+}
+.NetStars {
+	COLOR: #333333; FONT-SIZE: 9pt; LINE-HEIGHT: 21px; TEXT-DECORATION: none
+}
+.moretxt {
+	FONT-SIZE: 9pt; LINE-HEIGHT: 18px
+}
+.word {
+	COLOR: #000000; FONT-SIZE: 9pt; LETTER-SPACING: 2px; LINE-HEIGHT: 25px; WORD-SPACING: 10px
+}
+.help {
+	CURSOR: help
+}
+.lm {  
+	font-size: 12px; color: #000000
+}
+.navPoint {
+	COLOR: black; CURSOR: hand; FONT-FAMILY: Webdings; FONT-SIZE: 9pt;
+}

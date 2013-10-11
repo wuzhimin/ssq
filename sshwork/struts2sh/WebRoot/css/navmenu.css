@@ -1,0 +1,145 @@
+DIV#listmenu {
+	MIN-WIDTH: 800px; width:800px; PADDING-LEFT: 170px; FONT-WEIGHT: normal; FONT-SIZE: 10px; BORDER-TOP: #1f656f 1px solid; COLOR: #fff; BORDER-BOTTOM: #1f656f 1px solid; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #1f656f; TEXT-DECORATION: none
+	MIN-WIDTH: 800px; width:800px; PADDING-LEFT: 165px; FONT-WEIGHT: normal; FONT-SIZE: 10px; BORDER-TOP: #1f656f 1px solid; COLOR: #fff; BORDER-BOTTOM: #1f656f 1px solid; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #1f656f; TEXT-DECORATION: none
+}
+DIV#listmenu UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; VERTICAL-ALIGN: middle; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+DIV#listmenu LI {
+	BORDER-RIGHT: #1f656f 1px solid; PADDING-RIGHT: 7px; PADDING-LEFT: 7px; FLOAT: left; PADDING-BOTTOM: 4px; LINE-HEIGHT: normal; PADDING-TOP: 4px; LIST-STYLE-TYPE: none; BACKGROUND-COLOR: #1f656f
+}
+DIV#listmenu LI IMG {
+	VERTICAL-ALIGN: middle
+}
+DIV#listmenu LI.nohover:hover {
+	BACKGROUND-COLOR: #003d60
+}
+DIV#listmenu LI:hover {
+	BACKGROUND-COLOR: #3393a1
+}
+DIV#listmenu A {
+	FONT-WEIGHT: normal; COLOR: white; DISPLAY: block; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+DIV#listmenu A:hover {
+	COLOR: #befaff; TEXT-DECORATION: none
+}
+DIV#listmenu UL LI UL {
+	MARGIN-TOP: 4px; LEFT: -1px; POSITION: absolute; MARGIN-LEFT: -7px; WIDTH: 15em
+}
+DIV#listmenu UL LI UL STRONG {
+	COLOR: white
+}
+DIV#listmenu UL LI UL LI {
+	BORDER-RIGHT: black 1px solid; BORDER-LEFT: black 1px solid; WIDTH: 100%; BORDER-BOTTOM: black 1px solid
+}
+DIV#listmenu UL LI UL LI:first-child {
+	BORDER-TOP: black 1px solid
+}
+DIV#listmenu UL LI UL {
+	Z-INDEX: 10; DISPLAY: none
+}
+DIV#listmenu UL LI:hover UL {
+	LEFT: auto; DISPLAY: block
+}
+DIV#listmenu UL LI UL LI UL {
+	MARGIN-TOP: -18px; VISIBILITY: hidden; POSITION: absolute; MARGIN-LEFT: 175px
+}
+DIV#listmenu UL LI UL LI UL LI {
+	PADDING-LEFT: 20px
+}
+DIV#listmenu UL LI UL LI UL LI UL LI {
+	PADDING-LEFT: 30px
+}
+DIV#listmenu UL LI UL LI:hover UL {
+	VISIBILITY: visible
+}
+DIV#listmenu UL LI UL LI:hover UL LI UL {
+	VISIBILITY: hidden
+}
+DIV#listmenu UL LI UL LI UL LI:hover UL LI {
+	VISIBILITY: visible
+}
+DIV#listmenu UL LI UL LI UL LI:hover UL LI UL {
+	VISIBILITY: hidden
+}
+DIV#listmenu UL LI UL LI UL LI UL LI:hover UL {
+	DISPLAY: block; TOP: auto
+}
+* HTML DIV#listmenu UL {
+	FLOAT: left; MARGIN-LEFT: 1px
+}
+* HTML DIV#listmenu UL LI UL {
+	BORDER-LEFT-WIDTH: 0px; BORDER-TOP: #000 1px solid
+}
+#header {
+	MARGIN-TOP: 5px; BACKGROUND: white; FLOAT: left; WIDTH: 100%; CLEAR: both; HEIGHT: 30px
+}
+#header_table {
+	RIGHT: 2em; FLOAT: right; TOP: 2em
+}
+#header_table TD {
+	PADDING-RIGHT: 0.5em; PADDING-LEFT: 0.5em; PADDING-BOTTOM: 0.25em; PADDING-TOP: 0.25em
+}
+#header_table UL LI {
+	PADDING-RIGHT: 1em; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; DISPLAY: inline
+}
+.synnex_logo {
+	LEFT: 10px; FLOAT: left; POSITION: absolute; TOP: 3px
+}
+A IMG {
+	BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+:link IMG {
+	BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+:visited IMG {
+	BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+.arrow-right {
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BORDER-LEFT-WIDTH: 0px; FLOAT: right; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+A.linkHoverWithBlue:hover {
+	BACKGROUND: blue; COLOR: white; TEXT-DECORATION: none
+}
+#tabs {
+	PADDING-LEFT: 165px; FONT-SIZE: 11px; FLOAT: left; LINE-HEIGHT: normal
+}
+#tabs UL {
+	PADDING-RIGHT: 10px! important; PADDING-LEFT: 10px! important; PADDING-BOTTOM: 0px! important; MARGIN: 0px; PADDING-TOP: 10px! important; LIST-STYLE-TYPE: none
+}
+#tabs LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; DISPLAY: inline
+}
+#tabs A {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 5px; BACKGROUND: url(../images/tableftJ.gif) no-repeat left top; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; TEXT-DECORATION: none
+}
+#tabs A SPAN {
+	PADDING-RIGHT: 15px; PADDING-LEFT: 6px; FONT-WEIGHT: bold; FONT-SIZE: 12px; BACKGROUND: url(../images/tabrightJ.gif) no-repeat right top; FLOAT: left; PADDING-BOTTOM: 6px; COLOR: #24618e; PADDING-TOP: 6px; DISPLAY: block
+}
+#tabs .current A {
+	BACKGROUND-POSITION: 0% -42px
+}
+#tabs .current A SPAN {
+	BACKGROUND-POSITION: 100% -42px; COLOR: #fff
+}
+
+/** ±êÇ©Ò³Î´Ñ¡ÖÐ×´Ì¬ */
+#tabs .blur A {
+	BACKGROUND-POSITION: 0% 0px; color: #000
+}
+#tabs .blur A SPAN {
+	BACKGROUND-POSITION: 100% 0px; COLOR: #000
+}
+
+#tabs A SPAN {
+	FLOAT: none
+}
+#tabs A:hover SPAN {
+	COLOR: #fff
+}
+#tabs A:hover {
+	BACKGROUND-POSITION: 0% -84px
+}
+#tabs A:hover SPAN {
+	BACKGROUND-POSITION: 100% -84px
+}

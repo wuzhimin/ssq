@@ -1,0 +1,195 @@
+/******************************************************************************
+ * 文件名：tree.css
+ * 树型控件的格式定义，定义树型控件的各种样式，统一使用。
+ * 一般在jsp文件中通过：
+ * <LINK href="theme/tree.css" rel="stylesheet" type="text/css">
+ * 引用本文件的格式定义。
+ ******************************************************************************
+ */
+
+/******************************************************************************
+ * 树控件的页面体格式定义。考虑去掉默认格式的定义防止引入多个css的冲突。
+ ******************************************************************************
+ */
+
+/******************************************************************************
+ * 通用树页面的页面风格。
+ * @author YQM
+ * @time:2005-2-25
+ ******************************************************************************
+ */
+BODY{
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-buttom: 0px;
+	margin-right: 0px;
+	background:#efefef;
+	/* IE5.5以上可见滚动条样式 */
+    scrollbar-face-color:		#ffffff;
+	scrollbar-track-color:		#ffffff;
+	scrollbar-arrow-color:		#000;
+	scrollbar-highlight-color:	#000;
+	scrollbar-3dlight-color:	#ffffff;
+	scrollbar-shadow-color:		#000;
+	scrollbar-darkshadow-color:	#ffffff;
+	
+}
+
+/******************************************************************************
+ * 主界面菜单页面的页面风格。
+ * @author YQM
+ * @time:2005-2-25
+ ******************************************************************************
+ */
+BODY.menuTree{
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-buttom: 0px;
+	margin-right: 0px;
+	background-color: #8dccd2;
+	/* IE5.5以上可见滚动条样式 */
+    scrollbar-face-color:		#ffffff;
+	scrollbar-track-color:		#ffffff;
+	scrollbar-arrow-color:		#000;
+	scrollbar-highlight-color:	#000;
+	scrollbar-3dlight-color:	#ffffff;
+	scrollbar-shadow-color:		#000;
+	scrollbar-darkshadow-color:	#ffffff;
+	
+}
+
+/******************************************************************************
+ * 普通非叶节点的格式定义。
+ ******************************************************************************
+ */
+TD.treeFolderNormal {
+    height: 0pt;
+    padding: 0pt 2pt 0pt 2pt;
+}
+/******************************************************************************
+ * 非叶节点鼠标移动上去时的格式定义。
+ ******************************************************************************
+ */
+TD.treeFolderOver {
+    height: 0pt;
+    padding: 0pt 2pt 0pt 2pt;
+    border: 1pt solid #CECEC3;
+    background: buttonface;
+}
+/******************************************************************************
+ * 非叶节点鼠标选择时的格式定义。
+ ******************************************************************************
+ */
+TD.treeFolderSelected {
+    height:0pt;
+    padding:0pt 2pt 0pt 2pt;
+    border:1pt solid #7A98AF;
+    background:#C7F1F5;
+}
+/******************************************************************************
+ * 普通叶节点的格式定义。
+ ******************************************************************************
+ */
+TD.treeFileNormal {
+    height: 0pt;
+    padding: 0pt 2pt 0pt 2pt;
+}
+/******************************************************************************
+ * 叶节点鼠标移动上去时的格式定义。
+ ******************************************************************************
+ */
+TD.treeFileOver {
+    height: 0pt;
+    padding: 0pt 2pt 0pt 2pt;
+    border: 1pt solid #CECEC3;
+}
+/******************************************************************************
+ * 叶节点鼠标选择时的格式定义。
+ ******************************************************************************
+ */
+TD.treeFileSelected {
+    height:0pt;
+    padding:0pt 2pt 0pt 2pt;
+    border:1pt solid #7A98AF;
+    background:#C7F1F5;
+}
+
+
+img {
+	border:0;
+}
+
+
+/* 默认字体属性 */
+td {
+	font-size: 12px;
+	font-family: 宋体;
+	letter-spacing: 1px;
+}
+
+.innerDiv
+{
+    /*align: center;*/
+		text-align:center;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: #f5f5f5;
+}
+
+input.nochk{
+	border:0;
+}
+
+/*阿赖树的节点文字的样式*/
+.TreeNode 
+{ 
+	font-family: "宋体",Verdana, Arial;
+	font-size: 12px; 
+	color: black;	
+	padding-left: 3px;
+	text-decoration: none;
+}
+TD.Tree_FOLDER_Normal
+{
+ height:0pt;
+ padding:0pt 2pt 0pt 2pt;
+ 
+ }
+
+TD.Tree_FOLDER_Over
+{
+height:0pt;
+padding:0pt 2pt 0pt 2pt;
+border:1pt solid #CECEC3;
+background:buttonface;
+}
+
+TD.Tree_FOLDER_Selected
+{
+height:0pt;
+padding:0pt 2pt 0pt 2pt;
+border:1pt solid #7A98AF;
+background:#C7F1F5;
+}
+
+TD.Tree_FILE_Normal
+{
+height:0pt;
+padding:0pt 2pt 0pt 2pt;
+}
+
+TD.Tree_FILE_Over
+{
+height:0pt;
+padding:0pt 2pt 0pt 2pt;
+border:1pt solid #CECEC3;
+}
+
+TD.Tree_FILE_Selected
+{
+height:0pt;
+padding:0pt 2pt 0pt 2pt;
+border:1pt solid #7A98AF;
+background:#C7F1F5;
+}

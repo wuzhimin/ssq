@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts> 
+     <!--   打开开发模式  -->  
+     <constant name = "struts.devMode"  value= "true" /> 
+
+     <!--   包含struts -jquery.xml 文件，后面所有的action 都在这个文件中配置  -->  
+     <include  file = "struts_jquery.xml" />  
+
+     <!--   设置默认的action ，这个Action将跳转到首页  -->  
+     <package name = "default"  namespace= "/"  extends ="struts-default" > 
+         <default-action-ref  name = "index"  /> 
+         <action name = "index" > 
+             <result  type="redirectAction" >/index.jsp</result> 
+         </action>  
+     </package >  
+</struts > 

@@ -1,0 +1,11 @@
+<project name="validation" default="zip" basedir=".">
+	<property name="version" value="3.0"/>
+	<target name="zip" >
+		<delete dir="dist"/>
+		<mkdir dir="dist"/>
+		<zip destfile="dist/EasyValidation${version}.zip" basedir="${basedir}" excludes=".*">
+			<include name="**/**"/>
+			<exclude name="**/.*"/>
+		</zip>
+	</target>
+</project>

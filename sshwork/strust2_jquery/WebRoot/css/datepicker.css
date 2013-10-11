@@ -1,0 +1,15 @@
+.ui-datepicker .ui-datepicker-title select {font-size:12px; margin:1px 0; } 
+
+.ui-datepicker select.ui-datepicker-month-year {width: 100%;} 
+
+.ui-datepicker select.ui-datepicker-month, 
+
+.ui-datepicker select.ui-datepicker-year { width: 10%;} 
+
+.ui-datepicker .ui-datepicker-title select.ui-datepicker-year { float: left; }
+
+.ui-datepicker select.ui-datepicker-month { width: 30%;} 
+
+.ui-datepicker .ui-datepicker-title select.ui-datepicker-month { float: right; } 
+
+.ui-datepicker-div, .ui-datepicker-inline {font-size:12px}

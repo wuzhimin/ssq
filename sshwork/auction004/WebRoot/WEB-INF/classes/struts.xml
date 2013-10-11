@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+
+    <package name="default" namespace="/" extends="struts-default">
+        <default-action-ref name="index" />
+        <action name="index" class="ProductAction" method="showProductList">
+          <result>/showListProduct.jsp</result>
+          <result name="admin">/admin/showListProduct.jsp</result>
+        </action>
+        <action name="showProductDesc" class="ProductAction" method="showProductById">
+          <result>/showProductDesc.jsp</result>
+        </action>
+        <action name="addBid" class="ProductAction" method="addBid">         
+          <result>/success.jsp</result>    
+        </action>
+        
+        <action name="*Product" class="ProductAction" method="{1}Product">
+          <result  type="redirectAction">index</result>
+        </action>
+        
+        <action name="*Users" class="UsersAction" method="{1}Users">
+          <result name="error">/showListProduct.jsp</result>
+          <result name="success">/success.jsp</result>
+         
+        </action>
+       <action name="showProductById" class="ProductAction" method="showProductById">
+          <result >/admin/updateProduct.jsp</result>
+        </action>
+        
+        
+    </package>
+
+    <!-- Add packages here -->
+
+</struts>

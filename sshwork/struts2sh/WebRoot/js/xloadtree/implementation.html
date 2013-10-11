@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+<title>XLoadTree Implementation (WebFX)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="local/webfxlayout.js"></script>
+</head>
+<body>
+<!-- WebFX Layout Include -->
+<script type="text/javascript">
+
+var articleMenu= new WebFXMenu;
+articleMenu.left  = 384;
+articleMenu.top   = 86;
+articleMenu.width = 140;
+articleMenu.add(new WebFXMenuItem("Introduction", "xloadtree.html"));
+articleMenu.add(new WebFXMenuItem("Usage", "usage.html"));
+articleMenu.add(new WebFXMenuItem("API", "api.html"));
+articleMenu.add(new WebFXMenuItem("Implementation", "implementation.html"));
+articleMenu.add(new WebFXMenuItem("Demo", "demo.html"));
+articleMenu.add(new WebFXMenuSeparator);
+articleMenu.add(new WebFXMenuItem("Download", "http://webfx.eae.net/download/xloadtree111.zip"));
+webfxMenuBar.add(new WebFXMenuButton("Article Menu", null, null, articleMenu));
+
+webfxLayout.writeTitle("XLoadTree");
+webfxLayout.writeMenu();
+webfxLayout.writeDesignedByEdger();
+
+</script>
+<div class="webfx-main-body">
+<!-- end WebFX Layout Includes -->
+
+<h2>Implementation 实现</h2>
+
+<p>The main idea is to create sub classes to <code>WebFXTree</code> and
+<code>WebFXTreeItem</code> and overload the <code>expand</code> methods
+to start the loading of an xml file. Once the loading is done the xml file
+is tranformed into <code>WebFXTreeItem</code>s and <code>WebFXLoadTreeItem</code>s
+and inserted.</p>
+<p>主要的思路就是创建 <code>WebFXTree</code> 和 <code>WebFXTreeItem</code> 的子类, 并且重载 <code>expand</code> 方法来启动加载 xml 文件的过程. 一旦加载结束, xml 文件被转换成 <code>WebFXTreeItem</code>s 和 <code>WebFXLoadTreeItem</code>s, 然后添加到树上.</p>
+<p>译者注: 这里就是面向对象的好处了, 我也用重载或者添加新方法的思路实现了动态添加子节点, 添加失败则回复到原来状态, 成功则加入新的子节点.</p>
+<h2>WebFXLoadTree</h2>
+
+<p>First we create a new constructor and inside this we call the super constructor
+to make sure that the instance will be correctly initiated. After that we set some
+property values and finally we check whether the tree is open, if it is we start to
+load the sub trees. If not, we add a dummy tree item that displays the loading
+text.</p>
+<p>首先我们创建了一个新的构造器, 在这个方法里面我们首先调用父类的构造器来确保每个实例可以被正确的初始化. 在此之后我们设置一些属性值, 最后我们检查树是否已经被打开, 如果这样的话我们就开始加载树的子节点. 反之, 我们向树节点中添加一个临时的显示正在加载文本的树节点.</p>
+<p>After the constructor is created we set the protype to a new
+<code>WebFXTree</code>.</p>
+
+<pre>
+function WebFXLoadTree(sText, sXmlSrc, sAction, sBehavior, sIcon, sOpenIcon) {
+   // call super
+   this.WebFXTree = WebFXTree;
+   this.WebFXTree(sText, sAction, sBehavior, sIcon, sOpenIcon);
+
+   // setup default property values
+   this.src = sXmlSrc;
+   this.loading = false;
+   this.loaded = false;
+   this.errorText = "";
+
+   // check start state and load if open
+   if (this.open)
+      _startLoadXmlTree(this.src, this);
+   else {
+      // and create loading item if not
+      this._loadingItem = new WebFXTreeItem(webFXTreeConfig.loadingText);
+      this.add(this._loadingItem);
+   }
+}
+
+WebFXLoadTree.prototype = new WebFXTree;
+</pre>
+
+<p>The constructor is fairly straight forward and does not do much. Notice however
+how super is called by binding <code>WebFXTree</code> as a method and then
+calling it.</p>
+<p>这个构造器是相当的直接, 并没有做太多事. 尽管如此请注意我们是如何将父类绑定为了一个方法然后调用它的.</p>
+<p>Next we need to override the <code>expand</code> method but since we still need
+to be able to call the original <code>expand</code> method we create a new method
+called <code>_webfxtree_expand</code> that points to the function object used
+by <code>WebFXTree</code> objects. This is the standard way to access super methods
+but the first few times it might look a bit odd.</p>
+<p>现在我们需要重载 <code>expand</code> 方法, 但是我们依然需要调用原来的 <code>expand</code> 方法, 因此我们创建了一个新方法<code>_webfxtree_expand</code>来指向<code>WebFXTree</code>的原来的那个 expand 方法对象. 这是个标准的调用父类的方法, 但是最初的几次看起来似乎是有点多余.</p>
+<p>The logic in the <code>expand</code> method is really simple. We just check if
+we should start loading the xml file and then we expand it using the super
+expand (<code>_webfxtree_expand</code>) method.</p>
+<p><code>expand</code> 方法的逻辑是相当的简单. 我们只是检查是否应该开始载入 xml 文件, 然后使用父类的expand方法(<code>_webfxtree_expand</code>)来展开它.</p>
+<pre>
+// override the expand method to load the xml file
+WebFXLoadTree.prototype._webfxtree_expand = WebFXTree.prototype.expand;
+WebFXLoadTree.prototype.expand = function() {
+   if (!this.loaded &amp;&amp; !this.loading) {
+      // load
+      _startLoadXmlTree(this.src, this);
+   }
+   this._webfxtree_expand();
+};
+</pre>
+
+<h2>WebFXLoadTreeItem</h2>
+
+<p>This class is too similar to <code>WebFXLoadTree</code> for me to be entirely
+comfortable. Since JavaScript does not support multiple inheritance, and I did
+not want to fake it using expandos, we just have to repeat the code. For everyone
+that are interested, the code for this can be found in
+<a href="xloadtree.js">xloadtree.js</a>.</p>
+<p>这个类和<code>WebFXLoadTree</code>太相似了, 对我来说是完全的相同. 因为 JavaScript 不提供多重继承, 我也不想使用 expandos 来欺骗它, 我们只是不得不重复代码. 如果您对此感兴趣, 这些代码可以在 <a href="xloadtree.js">xloadtree.js</a> 中找到.</p>
+<h2>Loading the Tree 载入树</h2>
+
+<p>As you can see in the code above there is a function called
+<code>_startLoadXmlTree</code> that is called to load the actual xml file. This function uses
+an <code>XmlHttp</code> object to do the actual loading. The loading of the xml
+file is done asynchronously to prevent the UI to lock up while the file is
+being loaded and therefore we wait for the <code>onreadystatechange</code>
+event to fire before we continue. See the
+<a href="/dhtml/xmlextras/xmlextras.html">Xml Extras article</a> for a more detailed
+description about the <code>XmlHttp</code> object.</p>
+<p>你可以看到上面已经有了个方法叫 <code>_startLoadXmlTree</code>, 它将被用来加载实际的 xml 文件. 这个方法使用了严格 <code>XmlHttp</code> 对象来执行真正的加载. 对 xml 文件的载入使用了异步方式来防止文件正在读取的时候 UI 被锁定, 因此我们等待 <code>onreadystatechange</code>事件被触发之后才继续进行. 请阅读
+  <a href="/dhtml/xmlextras/xmlextras.html">Xml 增强文章 </a> 来了解关于 <code>XmlHttp</code> 对象的更多信息.</p>
+<pre>
+// creates the xmlhttp object and starts the load of the xml document
+function _startLoadXmlTree(sSrc, jsNode) {
+   jsNode.loading = true;
+   var xmlHttp = XmlHttp.create();
+   xmlHttp.open("GET", sSrc, true);	// async
+   xmlHttp.onreadystatechange = function () {
+      if (xmlHttp.readyState == 4)
+         _xmlFileLoaded(xmlHttp.responseXML, jsNode);
+   };
+   // call in new thread to allow ui to update
+   window.setTimeout(function () {
+      xmlHttp.send(null);
+   }, 10);
+}
+</pre>
+
+<p>Once the xml file has finished loading we call the function <code>_xmlFileLoaded</code>.
+This function checks that we got an xml document back and if we did it goes through the
+document and recursively converts the xml elements to js <code>WebFXTreeItem</code> and
+inserts them. Once the xml elements have been converted and inserted we remove the
+dummy tree item that was only used to show that we were loading the contents.</p>
+<p>一旦 xml 文件加载完毕, 我们调用方法 <code>_xmlFileLoaded</code>. 这个方法检查我们得到的 xml 文件, 如果得到了文件内容我们将递归转换 xml 元素到 js 的 <code>WebFXTreeItem</code> 对象, 然后添加他们. 一旦 xml 元素转换并添加完毕, 我们将删除那个临时的只不过是用来显示正在加载内容的树节点.</p>
+<pre>
+// Inserts an xml document as a subtree to the provided node
+function _xmlFileLoaded(oXmlDoc, jsParentNode) {
+   var bIndent = false;
+   var bAnyChildren = false;
+   jsParentNode.loaded = true;
+   jsParentNode.loading = false;
+
+   // check that the load of the xml file went well
+   if( oXmlDoc == null || oXmlDoc.documentElement == null) {
+      jsParentNode.errorText = parseTemplateString(webFXTreeConfig.loadErrorTextTemplate,
+                                                   jsParentNode.src);
+   }
+   else {
+      // there is one extra level of tree elements
+      var root = oXmlDoc.documentElement;
+
+      // loop through all tree children
+      var cs = root.childNodes;
+      var l = cs.length;
+      for (var i = 0; i &lt; l; i++) {
+         if (cs[i].tagName == "tree") {
+            bAnyChildren = true;
+            bIndent = true;
+            jsParentNode.add( _xmlTreeToJsTree(cs[i]), true);
+         }
+      }
+
+      // if no children we got an error
+      if (!bAnyChildren)
+         jsParentNode.errorText = parseTemplateString(webFXTreeConfig.emptyErrorTextTemplate,
+                                                      jsParentNode.src);
+   }
+
+   // remove dummy
+   if (jsParentNode._loadingItem != null) {
+      jsParentNode._loadingItem.remove();
+      bIndent = true;
+   }
+
+   if (bIndent) {
+      // indent now that all items are added
+      jsParentNode.indent();
+   }
+
+   // show error in status bar
+   if (jsParentNode.errorText != "")
+      window.status = jsParentNode.errorText;
+}
+</pre>
+
+<p>A few more things happen in this function but nothing really important. There is some
+code that checks the errors and a few properties are set to reflect the state of the
+<code>WebFXLoadTree</code> or <code>WebFXLoadTreeItem</code> object.</p>
+<p>其它一些这个方法中发生更多的事情并不是很重要. 有一些代码来检查错误, 一些属性被设置, 来显示 <code>WebFXLoadTree</code> 和 <code>WebFXLoadTreeItem</code> 的状态. </p>
+<h2>Converting the Xml 转换 Xml </h2>
+
+<p>The only important thing left to do is to convert the xml tree item to a js
+<code>WebFXTreeItem</code>. This is done in the function <code>_xmlTreeToJsTree</code>.
+Here we retreive the xml attributes and if there was a <code>src</code> attribute
+defined we create a new <code>WebFXLoadTreeItem</code> and otherwise a
+<code>WebFXTreeItem</code>. Once that is created we go through all the
+<code>childNodes</code> of the xml node and convert and add those as well.</p>
+<p>剩下的唯一要做的重要的事情就是转换 xml 树节点为 js <code>WebFXTreeItem</code> 对象. 这在方法 <code>_xmlTreeToJsTree</code> 中完成. 在这里读取 xml 属性值, 如果有 <code>src</code> 属性我们就创建一个 <code>WebFXLoadTreeItem </code>对象, 否则就创建 <code>WebFXTreeItem</code>. 一旦创建完成, 我们就遍历所有 xml 节点的 <code>childNodes</code>, 转换并添加他们.</p>
+<pre>
+// Converts an xml tree to a js tree. See article about xml tree format
+function _xmlTreeToJsTree(oNode) {
+	// retreive attributes
+   var text = oNode.getAttribute("text");
+   var action = oNode.getAttribute("action");
+   var parent = null;
+   var icon = oNode.getAttribute("icon");
+   var openIcon = oNode.getAttribute("openIcon");
+   var src = oNode.getAttribute("src");
+
+   // create jsNode
+   var jsNode;
+   if (src != null &amp;&amp; src != "")
+      jsNode = new WebFXLoadTreeItem(text, src, action, parent, icon, openIcon);
+   else
+      jsNode = new WebFXTreeItem(text, action, parent, icon, openIcon);
+
+   // go through childNOdes
+   var cs = oNode.childNodes;
+   var l = cs.length;
+   for (var i = 0; i &lt; l; i++) {
+      if (cs[i].tagName == "tree")
+         jsNode.add( _xmlTreeToJsTree(cs[i]), true );
+   }
+
+   return jsNode;
+}
+</pre>
+
+
+<p><a href="xloadtree.html">介绍</a><br />
+  <a href="usage.html">使用说明</a><br />
+  <a href="api.html">API</a><br />
+  <a href="implementation.html">实现</a><br />
+  <a href="demo.html">演示</a><br />
+  <a href="http://webfx.eae.net/download/xloadtree111.zip">下载</a> </p>
+
+<p class="author">作者: Erik Arvidsson<br />
+  中文翻译: <a href="mailto:beansoft@126.com">BeanSoft</a> </p>
+<!-- end webfx-main-body -->
+</div>
+
+</body>
+</html>

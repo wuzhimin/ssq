@@ -1,0 +1,327 @@
+.cpNavigationRow {
+	BORDER-RIGHT: #000000 1px solid; FONT-SIZE: 12px; BORDER-TOP: #000000 1px solid; MARGIN: 0px; BORDER-LEFT: #000000 1px solid; WIDTH: 100%; CURSOR: default; COLOR: #ffffff; BORDER-BOTTOM: #000000 1px solid; FONT-FAMILY: arial,helvetica,sans-serif; HEIGHT: 24px; BACKGROUND-COLOR: #b22222; TEXT-ALIGN: center
+}
+.cpMonthNavImages {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 4px; PADDING-BOTTOM: 1px; CURSOR: hand; PADDING-TOP: 1px
+}
+.cpYearNavImages {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 4px; PADDING-BOTTOM: 1px; CURSOR: hand; PADDING-TOP: 1px
+}
+.cpYearNavigation {
+	FONT-WEIGHT: bold; MARGIN: 0px; COLOR: #ffffff; PADDING-TOP: 2px; HEIGHT: 21px; BACKGROUND-COLOR: #b22222; TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+.cpMonthNavigation {
+	FONT-WEIGHT: bold; MARGIN: 0px; COLOR: #ffffff; PADDING-TOP: 2px; HEIGHT: 21px; BACKGROUND-COLOR: #b22222; TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+.cpYearNavigationSelect {
+	PADDING-RIGHT: 1px; PADDING-LEFT: 1px; FONT-WEIGHT: bold; PADDING-BOTTOM: 1px; MARGIN: 2px; COLOR: #000000; PADDING-TOP: 1px; HEIGHT: 18px; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+.cpMonthNavigationSelect {
+	PADDING-RIGHT: 1px; PADDING-LEFT: 1px; FONT-WEIGHT: bold; PADDING-BOTTOM: 1px; MARGIN: 2px; COLOR: #000000; PADDING-TOP: 1px; HEIGHT: 18px; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+.cpYearNavigation {
+	FONT-SIZE: 12px; FONT-FAMILY: arial
+}
+.cpMonthNavigation {
+	FONT-SIZE: 12px; FONT-FAMILY: arial
+}
+.cpYearNavigationSelect {
+	FONT-SIZE: 12px; FONT-FAMILY: arial
+}
+.cpMonthNavigationSelect {
+	FONT-SIZE: 12px; FONT-FAMILY: arial
+}
+.cpTodayText {
+	FONT-SIZE: 12px; FONT-FAMILY: arial
+}
+.cpTodayTextDisabled {
+	FONT-SIZE: 12px; FONT-FAMILY: arial
+}
+.cpText {
+	FONT-SIZE: 12px; FONT-FAMILY: arial
+}
+.cpCurrentMonthDate {
+	FONT-SIZE: 12px; FONT-FAMILY: arial
+}
+.cpWeekEndDate {
+	FONT-SIZE: 12px; FONT-FAMILY: arial
+}
+cpWeekEndDateDisabled {
+	FONT-SIZE: 12px; FONT-FAMILY: arial
+}
+.cpCurrentMonthDateDisabled {
+	FONT-SIZE: 12px; FONT-FAMILY: arial
+}
+.cpOtherMonthDate {
+	FONT-SIZE: 12px; FONT-FAMILY: arial
+}
+.cpOtherMonthDateDisabled {
+	FONT-SIZE: 12px; FONT-FAMILY: arial
+}
+.cpCurrentDate {
+	FONT-SIZE: 12px; FONT-FAMILY: arial
+}
+.cpCurrentDateWeekEnd {
+	FONT-SIZE: 12px; FONT-FAMILY: arial
+}
+.cpCurrentDateDisabled {
+	FONT-SIZE: 12px; FONT-FAMILY: arial
+}
+.cpCurrentDateWeekEndDisabled {
+	FONT-SIZE: 12px; FONT-FAMILY: arial
+}
+.cpDayColumnHeader {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-WEIGHT: bold; FONT-SIZE: 11px; PADDING-BOTTOM: 2px; COLOR: #000000; PADDING-TOP: 2px; TEXT-ALIGN: center
+}
+.cpBodyTable {
+	BORDER-RIGHT: #000000 1px solid; TABLE-LAYOUT: fixed; BORDER-TOP: #000000 1px solid; MARGIN: 0px; BORDER-LEFT: #000000 1px solid; WIDTH: 100%; CURSOR: default; BORDER-BOTTOM: #000000 1px solid; BORDER-COLLAPSE: separate
+}
+.cpHeaderRow {
+	VERTICAL-ALIGN: middle; CURSOR: default; COLOR: #ffffff; FONT-FAMILY: arial,helvetica,sans-serif; HEIGHT: 18px; BACKGROUND-COLOR: #008800; TEXT-ALIGN: center
+}
+.cpDataRow {
+	VERTICAL-ALIGN: middle; HEIGHT: 18px; TEXT-ALIGN: center
+}
+TD.cpDayColumnHeader {
+	BORDER-RIGHT: #c0c0c0 thin solid; BORDER-TOP: #c0c0c0 thin solid; BORDER-LEFT: #c0c0c0 thin solid; BORDER-BOTTOM: #c0c0c0 thin solid; TEXT-ALIGN: center
+}
+.cpCurrentMonthDate {
+	TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+.cpWeekEndDate {
+	TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+.cpOtherMonthDate {
+	TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+.cpCurrentDate {
+	TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+.cpCurrentDateWeekEnd {
+	TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+A.cpCurrentMonthDate {
+	TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+A.cpWeekEndDate {
+	TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+A.cpOtherMonthDate {
+	TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+A.cpCurrentDate {
+	TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+A.cpCurrentDateWeekEnd {
+	TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+A.cpCurrentMonthDate:visited {
+	TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+A.cpWeekEndDate:visited {
+	TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+A.cpOtherMonthDate:visited {
+	TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+A.cpCurrentDate:visited {
+	TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+A.cpCurrentDateWeekEnd:visited {
+	TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+A.cpCurrentMonthDate:hover {
+	TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+A.cpWeekEndDate:hover {
+	TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+A.cpOtherMonthDate:hover {
+	TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+A.cpCurrentDate:hover {
+	TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+A.cpCurrentDateWeekEnd:hover {
+	TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+.cpCurrentMonthDateDisabled {
+	TEXT-ALIGN: center; TEXT-DECORATION: line-through
+}
+.cpOtherMonthDateDisabled {
+	TEXT-ALIGN: center; TEXT-DECORATION: line-through
+}
+.cpCurrentDateDisabled {
+	TEXT-ALIGN: center; TEXT-DECORATION: line-through
+}
+.cpWeekEndDateDisabled {
+	TEXT-ALIGN: center; TEXT-DECORATION: line-through
+}
+.cpCurrentDateWeekEndDisabled {
+	TEXT-ALIGN: center; TEXT-DECORATION: line-through
+}
+A.cpCurrentMonthDateDisabled {
+	TEXT-ALIGN: center; TEXT-DECORATION: line-through
+}
+A.cpOtherMonthDateDisabled {
+	TEXT-ALIGN: center; TEXT-DECORATION: line-through
+}
+A.cpCurrentDateDisabled {
+	TEXT-ALIGN: center; TEXT-DECORATION: line-through
+}
+A.cpWeekEndDateDisabled {
+	TEXT-ALIGN: center; TEXT-DECORATION: line-through
+}
+A.cpCurrentDateWeekEndDisabled {
+	TEXT-ALIGN: center; TEXT-DECORATION: line-through
+}
+A.cpCurrentMonthDateDisabled:visited {
+	TEXT-ALIGN: center; TEXT-DECORATION: line-through
+}
+A.cpOtherMonthDateDisabled:visited {
+	TEXT-ALIGN: center; TEXT-DECORATION: line-through
+}
+A.cpCurrentDateDisabled:visited {
+	TEXT-ALIGN: center; TEXT-DECORATION: line-through
+}
+A.cpWeekEndDateDisabled:visited {
+	TEXT-ALIGN: center; TEXT-DECORATION: line-through
+}
+A.cpCurrentDateWeekEndDisabled:visited {
+	TEXT-ALIGN: center; TEXT-DECORATION: line-through
+}
+A.cpCurrentMonthDateDisabled:hover {
+	TEXT-ALIGN: center; TEXT-DECORATION: line-through
+}
+A.cpOtherMonthDateDisabled:hover {
+	TEXT-ALIGN: center; TEXT-DECORATION: line-through
+}
+A.cpCurrentDateDisabled:hover {
+	TEXT-ALIGN: center; TEXT-DECORATION: line-through
+}
+A.cpWeekEndDateDisabled:hover {
+	TEXT-ALIGN: center; TEXT-DECORATION: line-through
+}
+A.cpCurrentDateWeekEndDisabled:hover {
+	TEXT-ALIGN: center; TEXT-DECORATION: line-through
+}
+.cpCurrentMonthDate {
+	COLOR: #000000
+}
+.cpCurrentDate {
+	COLOR: #000000
+}
+A.cpCurrentMonthDate {
+	COLOR: #000000
+}
+A.cpCurrentDate {
+	COLOR: #000000
+}
+A.cpCurrentMonthDate:visited {
+	COLOR: #000000
+}
+A.cpCurrentDate:visited {
+	COLOR: #000000
+}
+A.cpCurrentMonthDate:hover {
+	COLOR: #000000
+}
+A.cpCurrentDate:hover {
+	COLOR: #000000
+}
+.cpOtherMonthDate {
+	COLOR: #adaa9c
+}
+A.cpOtherMonthDate {
+	COLOR: #adaa9c
+}
+A.cpOtherMonthDate:visited {
+	COLOR: #adaa9c
+}
+A.cpOtherMonthDate:hover {
+	COLOR: #adaa9c
+}
+.cpWeekEndDate {
+	COLOR: #990000
+}
+.cpCurrentDateWeekEnd {
+	COLOR: #990000
+}
+.cpWeekEndDateDisabled {
+	COLOR: #990000
+}
+.cpCurrentDateWeekEndDisabled {
+	COLOR: #990000
+}
+A.cpWeekEndDate {
+	COLOR: #990000
+}
+A.cpCurrentDateWeekEnd {
+	COLOR: #990000
+}
+A.cpWeekEndDateDisabled {
+	COLOR: #990000
+}
+A.cpCurrentDateWeekEndDisabled {
+	COLOR: #990000
+}
+A.cpWeekEndDate:visited {
+	COLOR: #990000
+}
+A.cpCurrentDateWeekEnd:visited {
+	COLOR: #990000
+}
+A.cpWeekEndDateDisabled:visited {
+	COLOR: #990000
+}
+A.cpCurrentDateWeekEndDisabled:visited {
+	COLOR: #990000
+}
+A.cpWeekEndDate:hover {
+	COLOR: #990000
+}
+A.cpCurrentDateWeekEnd:hover {
+	COLOR: #990000
+}
+A.cpWeekEndDateDisabled:hover {
+	COLOR: #990000
+}
+A.cpCurrentDateWeekEndDisabled:hover {
+	COLOR: #990000
+}
+TD.cpCurrentDate {
+	BORDER-RIGHT: #800000 1px solid; BORDER-TOP: #800000 1px solid; BORDER-LEFT: #800000 1px solid; COLOR: #000000; BORDER-BOTTOM: #800000 1px solid; BACKGROUND-COLOR: #ffffff
+}
+TD.cpCurrentDateWeekEnd {
+	BORDER-RIGHT: #800000 1px solid; BORDER-TOP: #800000 1px solid; BORDER-LEFT: #800000 1px solid; COLOR: #000000; BORDER-BOTTOM: #800000 1px solid; BACKGROUND-COLOR: #ffffff
+}
+TD.cpCurrentDateDisabled {
+	BORDER-RIGHT: #ffaaaa thin solid; BORDER-TOP: #ffaaaa thin solid; BORDER-LEFT: #ffaaaa thin solid; BORDER-BOTTOM: #ffaaaa thin solid
+}
+TD.cpTodayText {
+	BORDER-RIGHT: #c0c0c0 thin solid; BORDER-TOP: #c0c0c0 thin solid; BORDER-LEFT: #c0c0c0 thin solid; BORDER-BOTTOM: #c0c0c0 thin solid
+}
+TD.cpTodayTextDisabled {
+	BORDER-RIGHT: #c0c0c0 thin solid; BORDER-TOP: #c0c0c0 thin solid; BORDER-LEFT: #c0c0c0 thin solid; BORDER-BOTTOM: #c0c0c0 thin solid
+}
+A.cpTodayText {
+	HEIGHT: 18px
+}
+SPAN.cpTodayTextDisabled {
+	HEIGHT: 18px
+}
+A.cpTodayText:link {
+	BORDER-RIGHT: #000000 1px outset; PADDING-RIGHT: 9px; MARGIN-TOP: 0px; PADDING-LEFT: 8px; FONT-SIZE: 12px; BORDER-TOP: #eae8e4 2px outset; BACKGROUND: #d4d0c8; MARGIN-BOTTOM: 1px; VERTICAL-ALIGN: middle; BORDER-LEFT: #eae8e4 2px outset; COLOR: #000000; BORDER-BOTTOM: #000000 1px outset; HEIGHT: 18px; TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+A.cpTodayText:active {
+	BORDER-RIGHT: #000000 1px outset; PADDING-RIGHT: 9px; MARGIN-TOP: 0px; PADDING-LEFT: 8px; FONT-SIZE: 12px; BORDER-TOP: #eae8e4 2px outset; BACKGROUND: #d4d0c8; MARGIN-BOTTOM: 1px; VERTICAL-ALIGN: middle; BORDER-LEFT: #eae8e4 2px outset; COLOR: #000000; BORDER-BOTTOM: #000000 1px outset; HEIGHT: 18px; TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+A.cpTodayText:visited {
+	BORDER-RIGHT: #000000 1px outset; PADDING-RIGHT: 9px; MARGIN-TOP: 0px; PADDING-LEFT: 8px; FONT-SIZE: 12px; BORDER-TOP: #eae8e4 2px outset; BACKGROUND: #d4d0c8; MARGIN-BOTTOM: 1px; VERTICAL-ALIGN: middle; BORDER-LEFT: #eae8e4 2px outset; COLOR: #000000; BORDER-BOTTOM: #000000 1px outset; HEIGHT: 18px; TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+.cpTodayTextDisabled {
+	COLOR: #d0d0d0
+}
+.cpBorder {
+	TABLE-LAYOUT: fixed; WIDTH: 172px
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="jquery" extends="struts-default,json-default"
+		namespace="/">
+		<action name="themes">
+			<result> /localtab.jsp </result>
+		</action>
+		<action name="remote" class="com.jquerytest.action.RemoteAction">
+			<result name="content"> /tabContent.jsp </result>
+			<result name="table" type="json" /> 
+		</action>
+	</package>
+
+</struts> 

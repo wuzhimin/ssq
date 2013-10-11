@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="myssq"
+  id="myeclipse.1370955466849"
+  context-root="/myssq"
+  j2ee-spec="5.0"
+  archive="myssq.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

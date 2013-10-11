@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+<title>管理功能菜单</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="../js/xloadtree/xtree.js"></script>
+<script type="text/javascript" src="../js/xloadtree/xmlextras.js"></script>
+<script type="text/javascript" src="../js/xloadtree/xloadtree.js"></script>
+<link type="text/css" rel="stylesheet" href="../js/xloadtree/xtree.css" />
+
+<style type="text/css">
+
+body {
+	background:	white;
+	color:		black;
+}
+
+</style>
+</head>
+<body>
+<img src="images/console.png" align="absmiddle" title="系统管理员专用">控制面板<br>
+<hr size=1 width=80%>
+
+<input type=button onclick="tree.expandAll()" value="全部展开">
+<input type=button onclick="tree.collapseAll()" value="全部折叠">
+<br>
+
+<FIELDSET>
+<LEGEND>管理功能菜单</LEGEND>
+<script type="text/javascript">
+
+/// XP Look
+webFXTreeConfig.rootIcon		= "../js/xloadtree/images/xp/folder.png";
+webFXTreeConfig.openRootIcon	= "../js/xloadtree/images/xp/openfolder.png";
+webFXTreeConfig.folderIcon		= "../js/xloadtree/images/xp/folder.png";
+webFXTreeConfig.openFolderIcon	= "../js/xloadtree/images/xp/openfolder.png";
+webFXTreeConfig.fileIcon		= "../js/xloadtree/images/xp/file.png";
+webFXTreeConfig.lMinusIcon		= "../js/xloadtree/images/xp/Lminus.png";
+webFXTreeConfig.lPlusIcon		= "../js/xloadtree/images/xp/Lplus.png";
+webFXTreeConfig.tMinusIcon		= "../js/xloadtree/images/xp/Tminus.png";
+webFXTreeConfig.tPlusIcon		= "../js/xloadtree/images/xp/Tplus.png";
+webFXTreeConfig.iIcon			= "../js/xloadtree/images/xp/I.png";
+webFXTreeConfig.lIcon			= "../js/xloadtree/images/xp/L.png";
+webFXTreeConfig.tIcon			= "../js/xloadtree/images/xp/T.png";
+
+var tree = new WebFXLoadTree("选择一个类别", "menu.xml");
+
+
+document.write(tree);
+
+</script>
+</FIELDSET>
+</body>
+</html>

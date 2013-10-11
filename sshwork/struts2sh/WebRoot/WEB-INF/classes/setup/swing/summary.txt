@@ -1,0 +1,4 @@
+欢迎使用struts2sh项目配置向导, 该向导将对数据库连接
+等参数进行配置, 并将Web应用发布到 Tomcat 目录下.
+
+Powered by BeanSoft

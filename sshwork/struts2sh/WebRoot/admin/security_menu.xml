@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<tree>
+	<tree text="添加新角色" action="role_add.jsp" target="body" icon="../images/icons/plus.gif" />
+	<tree text="浏览所有角色" action="../admin/roleList.action" target="body" icon="../images/icons/list.gif" />
+	<tree text="添加资源访问许可" action="../admin/toAddResource.action" target="body" icon="../images/icons/plus.gif" />
+	<tree text="浏览所有资源访问许可" action="../admin/resourceList.action" target="body" icon="../images/icons/list.gif" />
+</tree>

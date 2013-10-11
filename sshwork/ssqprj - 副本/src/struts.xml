@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!-- 打开开发模式 -->
+	<constant name="struts.devMode" value="true" />
+	
+	<constant name="struts.i18n.encoding" value="UTF-8"/> 
+
+	<!-- true,false（默认值依赖于struts.devMode），是否自动重新加载本地的资源文件 -->
+	<constant name="struts.i18n.reload" value="false" />
+
+	<!-- true,false（默认值依赖于struts.devMode）是否自动重新加载XML配置文件 -->
+	<constant name="struts.configuration.xml.reload" value="false" />
+
+	<!-- 设置用户自定义的资源文件路径列表（用，隔开） -->
+	<constant name="struts.custom.i18n.resources" value="globalMessages" />
+
+	<!-- 设置struts的Action请求的后缀，支持多个时以逗号隔开 -->
+	<constant name="struts.action.extension" value="action,," />
+
+	<!-- 约定Action 类的根包（这个包是Java 类的包，而不是Struts.xml中配置的<package>节点） -->
+	<constant name="struts.convention.package.locators.basePackage"
+		value="com.wzm.web.action" />
+
+	<constant name="struts.convention.result.path" value="/" />
+
+	<!-- <constant name="struts.freemarker.manager.classname" value="customFreemarkerManager" 
+		/> -->
+
+	<!--  （默认false） 设置是否支持静态资源请求（要求url在struts或static下）  -->
+	<constant name="struts.serve.static" value="true" />
+	
+	<!-- 默认false） 是否在静态资源响应中设置缓存。只有在支持静态资源时有效 -->
+	<constant name="struts.serve.static.browserCache" value="false" />
+
+	<!-- 包含struts -jquery.xml 文件，后面所有的action 都在这个文件中配置 -->
+	<!-- <include file = "struts_jquery.xml" /> -->
+
+	<!-- 设置默认的action ，这个Action将跳转到首页 -->
+
+		
+		
+	<!-- 拦截器 -->
+<package name="mydefault" extends="struts-default">
+	
+	<interceptors>
+	
+		<interceptor name="login"
+	
+			class="com.wzm.web.interceptor.LoginInterceptor" />
+	
+		<interceptor-stack name="loginStack">
+	
+			<interceptor-ref name="login" />
+	
+			<interceptor-ref name="defaultStack" />
+	
+		</interceptor-stack>
+	
+	</interceptors>
+
+	<default-interceptor-ref name="loginStack" />
+	
+	<default-action-ref name="index" />
+	<action name="index">
+		<result type="redirectAction">/index.jsp</result>
+	</action>
+</package>		
+</struts> 

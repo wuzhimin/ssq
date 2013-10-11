@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="cart" namespace="/cart" extends="struts-default">
+		<!-- 购物车商品列表 -->
+		<action name="list" class="CartAction" method="list">
+			<result>/cart/list.jsp</result>
+		</action>
+		
+        <!-- AJAX 方式向购物车加入商品 -->
+        <action name="ajaxAddProduct" class="CartAction" method="ajaxAddProduct">
+             <result>/ajax_response.jsp</result>
+        </action>
+        
+        <!-- 清空购物车 -->
+        <action name="empty" class="CartAction" method="emtpyCart">
+        </action>
+        
+        <!-- AJAX 方式修改商品数目 -->
+        <action name="ajaxChangeAmout" class="CartAction" method="ajaxChangeAmout">
+             <result>/ajax_response.jsp</result>
+        </action>
+        
+        <!-- AJAX 方式从购物车清除商品 -->
+        <action name="ajaxRemoeOutProduct" class="CartAction" method="ajaxRemoeOutProduct">
+             <result>/ajax_response.jsp</result>
+        </action>
+        
+        <!-- AJAX 方式从购物车清除商品 -->
+        <action name="createOrder" class="CartAction" method="createOrder">
+             <result>/message.jsp</result>
+        </action>
+        
+        <!-- AJAX 方式显示购物车物品总数 -->
+        <action name="count" class="CartAction" method="count">
+             <result>/ajax_response.jsp</result>
+        </action>
+        
+        
+	</package>
+</struts>

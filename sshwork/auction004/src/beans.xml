@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+           http://www.springframework.org/schema/tx 
+           http://www.springframework.org/schema/tx/spring-tx-2.5.xsd" >
+	<!--
+		<context:annotation-config /> <context:component-scan
+		base-package="com.bjsxt" />
+	--><!-- 配置SessionFactory -->
+	<bean id="sf"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean" >
+		<property name="configLocation">
+			<value>classpath:hibernate.cfg.xml</value>
+		</property>
+	</bean>	
+	<bean id="txManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sf" />
+	</bean>
+
+	<aop:config>
+		<aop:pointcut id="bussinessService"
+			expression="execution(public * com.lgy.server.*.*(..))" />
+		<aop:advisor pointcut-ref="bussinessService" advice-ref="txAdvice" />
+	</aop:config>
+
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+		<tx:attributes>
+			<!--<tx:method name="show*" read-only="true" />
+			--><tx:method name="*" propagation="REQUIRED" />
+		</tx:attributes>
+	</tx:advice>
+	
+	
+	<bean id="bidimpl" class="com.lgy.dao.impl.BidImpl">
+		<property name="sessionFactory" ref="sf" />
+	</bean>
+	<bean id="bidserver" class="com.lgy.server.BidServer">
+		<property name="bidImpl" ref="bidimpl" />
+	</bean>
+	<!--<bean id="bidAction" class="com.lgy.dao.action.BidAction" scope="prototype">
+		<property name="bidServer" ref="bidserver"/>
+	</bean>
+	
+	--><bean id="userimpl" class="com.lgy.dao.impl.UsersImpl">
+		<property name="sessionFactory" ref="sf" />
+	</bean>
+	<bean id="productimpl" class="com.lgy.dao.impl.ProductImpl">
+		<property name="sessionFactory" ref="sf" />
+	</bean>
+	<bean id="productserver" class="com.lgy.server.ProductServer">
+		<property name="productImpl" ref="productimpl" />
+	</bean>
+	<bean id="usersserver" class="com.lgy.server.UserServer">
+		<property name="usersImpl" ref="userimpl" />
+	</bean>
+		
+	<bean id="ProductAction" class="com.lgy.dao.action.ProductAction" scope="prototype">
+	
+		<property name="productServer" ref="productserver" />
+		<property name="bidServer" ref="bidserver"/>
+	</bean>
+	
+	
+	<bean id="UsersAction" class="com.lgy.dao.action.UsersAction" scope="prototype">
+		<property name="userServer" ref="usersserver" />
+	</bean>
+	
+	
+	
+	
+
+  </beans>

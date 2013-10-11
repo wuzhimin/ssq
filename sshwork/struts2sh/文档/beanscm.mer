@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ERDiagram version="1.1">
+  <Connection session="mysql local" database="beanscm" />
+  <Drawing gridVisible="false" snapOn="true" fastRouting="false" labelsVisible="true" />
+  <Tables>
+    <Table name="app_config">
+      <Drawing expanded="true" location="500,360" dimensions="211,150" />
+      <Columns>
+        <Column name="id" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="int" size="11" />
+        </Column>
+        <Column name="app_title" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="varchar" size="200" />
+        </Column>
+        <Column name="badwords" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="text" size="65535" />
+        </Column>
+        <Column name="affiche_title" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="200" />
+        </Column>
+        <Column name="affiche_content" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="text" size="65535" />
+        </Column>
+        <Column name="copyright" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="255" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="product">
+      <Drawing expanded="true" location="61,310" dimensions="201,330" />
+      <Columns>
+        <Column name="ID" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="bigint" size="20" />
+        </Column>
+        <Column name="NAME" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="varchar" size="200" />
+        </Column>
+        <Column name="amount" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="int" size="11" />
+        </Column>
+        <Column name="audit_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="date" size="10" />
+        </Column>
+        <Column name="audited" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIT" size="1" />
+        </Column>
+        <Column name="auditor" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="bigint" size="20" />
+        </Column>
+        <Column name="catalog" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="200" />
+        </Column>
+        <Column name="description" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="200" />
+        </Column>
+        <Column name="photo" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="200" />
+        </Column>
+        <Column name="price" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="double" size="22" />
+        </Column>
+        <Column name="rate" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="double" size="22" />
+        </Column>
+        <Column name="rebate" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="double" size="22" />
+        </Column>
+        <Column name="totalSold" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="int" size="11" />
+        </Column>
+        <Column name="add_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="timestamp" size="19" />
+        </Column>
+        <Column name="vendor_id" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="bigint" size="20" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="scm_order_item">
+      <Drawing expanded="true" location="152,0" dimensions="198,210" />
+      <Columns>
+        <Column name="ID" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="bigint" size="20" />
+        </Column>
+        <Column name="order_id" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="bigint" size="20" />
+        </Column>
+        <Column name="product_id" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="bigint" size="20" />
+        </Column>
+        <Column name="add_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="timestamp" size="19" />
+        </Column>
+        <Column name="amount" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="int" size="11" />
+        </Column>
+        <Column name="price" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="double" size="22" />
+        </Column>
+        <Column name="rebate" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="double" size="22" />
+        </Column>
+        <Column name="rate" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="double" size="22" />
+        </Column>
+        <Column name="deduct" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="double" size="22" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="scm_order">
+      <Drawing expanded="true" location="257,810" dimensions="206,130" />
+      <Columns>
+        <Column name="ID" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="bigint" size="20" />
+        </Column>
+        <Column name="add_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="timestamp" size="19" />
+        </Column>
+        <Column name="cost" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="double" size="22" />
+        </Column>
+        <Column name="customer_id" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="bigint" size="20" />
+        </Column>
+        <Column name="status" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="int" size="11" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="scm_resource">
+      <Drawing expanded="true" location="508,0" dimensions="190,130" />
+      <Columns>
+        <Column name="ID" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="bigint" size="20" />
+        </Column>
+        <Column name="role_id" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="int" size="11" />
+        </Column>
+        <Column name="uri" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="200" />
+        </Column>
+        <Column name="add_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="timestamp" size="19" />
+        </Column>
+        <Column name="note" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="200" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="scm_role">
+      <Drawing expanded="true" location="510,230" dimensions="185,70" />
+      <Columns>
+        <Column name="ID" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="int" size="11" />
+        </Column>
+        <Column name="role_name" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="200" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="scm_user">
+      <Drawing expanded="true" location="86,1110" dimensions="201,490" />
+      <Columns>
+        <Column name="ID" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="bigint" size="20" />
+        </Column>
+        <Column name="NAME" primary_key="false" foreign_key="false" required="true" unique="true">
+          <Data type="varchar" size="200" />
+        </Column>
+        <Column name="real_Name" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="varchar" size="200" />
+        </Column>
+        <Column name="password" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="varchar" size="200" />
+        </Column>
+        <Column name="address" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="varchar" size="200" />
+        </Column>
+        <Column name="post_code" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="varchar" size="200" />
+        </Column>
+        <Column name="home_phone" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="200" />
+        </Column>
+        <Column name="gender" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="int" size="11" />
+        </Column>
+        <Column name="cell_phone" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="200" />
+        </Column>
+        <Column name="office_phone" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="200" />
+        </Column>
+        <Column name="birthday" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="date" size="10" />
+        </Column>
+        <Column name="login_count" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="int" size="11" />
+        </Column>
+        <Column name="buy_count" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="int" size="11" />
+        </Column>
+        <Column name="pay_num" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="double" size="22" />
+        </Column>
+        <Column name="email" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="200" />
+        </Column>
+        <Column name="website" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="200" />
+        </Column>
+        <Column name="im" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="200" />
+        </Column>
+        <Column name="user_type" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="int" size="11" />
+        </Column>
+        <Column name="note" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="200" />
+        </Column>
+        <Column name="photo" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="200" />
+        </Column>
+        <Column name="reg_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="datetime" size="19" />
+        </Column>
+        <Column name="tempcode" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="200" />
+        </Column>
+        <Column name="active" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="bit" size="1" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="vendor">
+      <Drawing expanded="true" location="0,740" dimensions="196,270" />
+      <Columns>
+        <Column name="ID" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="bigint" size="20" />
+        </Column>
+        <Column name="NAME" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="varchar" size="200" />
+        </Column>
+        <Column name="address" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="varchar" size="200" />
+        </Column>
+        <Column name="audit_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="date" size="10" />
+        </Column>
+        <Column name="audited" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="BIT" size="1" />
+        </Column>
+        <Column name="auditor" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="bigint" size="20" />
+        </Column>
+        <Column name="catalog" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="200" />
+        </Column>
+        <Column name="note" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="200" />
+        </Column>
+        <Column name="photo" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="200" />
+        </Column>
+        <Column name="reg_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="timestamp" size="19" />
+        </Column>
+        <Column name="user_id" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="bigint" size="20" />
+        </Column>
+        <Column name="website" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="200" />
+        </Column>
+      </Columns>
+    </Table>
+  </Tables>
+  <Relationships>
+    <Relationship name="product_ibfk_2">
+      <Details primary_table="vendor" foreign_table="product">
+        <PrimaryKeys>
+          <ColumnName name="ID" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="vendor_id" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="product_ibfk_1">
+      <Details primary_table="scm_user" foreign_table="product">
+        <PrimaryKeys>
+          <ColumnName name="ID" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="auditor" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="scm_order_item_ibfk_1">
+      <Details primary_table="scm_order" foreign_table="scm_order_item">
+        <PrimaryKeys>
+          <ColumnName name="ID" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="order_id" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="scm_order_item_ibfk_2">
+      <Details primary_table="product" foreign_table="scm_order_item">
+        <PrimaryKeys>
+          <ColumnName name="ID" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="product_id" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="scm_order_ibfk_1">
+      <Details primary_table="scm_user" foreign_table="scm_order">
+        <PrimaryKeys>
+          <ColumnName name="ID" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="customer_id" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="scm_resource_ibfk_1">
+      <Details primary_table="scm_role" foreign_table="scm_resource">
+        <PrimaryKeys>
+          <ColumnName name="ID" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="role_id" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="vendor_ibfk_2">
+      <Details primary_table="scm_user" foreign_table="vendor">
+        <PrimaryKeys>
+          <ColumnName name="ID" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="user_id" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="vendor_ibfk_1">
+      <Details primary_table="scm_user" foreign_table="vendor">
+        <PrimaryKeys>
+          <ColumnName name="ID" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="auditor" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+  </Relationships>
+</ERDiagram>
+

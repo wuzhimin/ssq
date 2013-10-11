@@ -1,0 +1,34 @@
+<!--
+document.writeln("<table width=\"760\" height=\"20\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" background=\"./images/synnex_header_images/blue_bar.gif\">");
+document.writeln("  <tr>");
+document.writeln("    <td height=\"20\" align=\"center\"><a href=\"javascript:legal()\" class=\"footerbar\">Legal");
+document.writeln("        Information</a>&nbsp;&nbsp;&nbsp;&nbsp;<font color=\"#FFFFFF\" size=\"1\">&gt;</font>&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"javascript:privacy()\" class=\"footerbar\">Privacy");
+document.writeln("        Policy</a>&nbsp;&nbsp;&nbsp;&nbsp;<font color=\"#FFFFFF\" size=\"1\">&gt;</font>&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"javascript:terms()\" class=\"footerbar\">Terms");
+document.writeln("        &amp; Conditions</a>&nbsp;&nbsp;&nbsp;&nbsp;<font color=\"#FFFFFF\" size=\"1\">&gt;</font>&nbsp;&nbsp;&nbsp;<a href=\"javascript:copyright()\" class=\"footerbar\">Copyright");
+document.writeln("    Policy</a></td>");
+document.writeln("  </tr>");
+document.writeln("</table>");
+document.writeln("<table width=\"760\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\">");
+document.writeln("  <tr>");
+document.writeln("    <td align=\"center\">&nbsp;</td>");
+document.writeln("  </tr>");
+document.writeln("  <tr>");
+document.writeln("    <td class=\"footer\"><p>Copyright 2008 SYNNEX");
+document.writeln("            Corporation. All rights reserved. SYNNEX, the SYNNEX Logo, COMPUTERLAND,");
+document.writeln("            DATAGO, ENEX, LICENSE ONLINE, MOBILE NOTETAKER, NEXCONCEPTS, the");
+document.writeln("            NEXCONCEPTS Logo, PC NOTETAKER, SUPPLIESLINE, the SUPPLIESLINE Logo,");
+document.writeln("            the TSD Logo and all other SYNNEX company, product and services names");
+document.writeln("            and slogans are trademarks or registered trademarks of SYNNEX Corporation.");
+document.writeln("            SYNNEX, the SYNNEX Logo, COMPUTERLAND, DATAGO and LICENSE ONLINE");
+document.writeln("            Reg. U.S. Pat. &amp;   Tm. Off. Other names and marks are the property");
+document.writeln("    of their respective owners.</p></td>");
+document.writeln("  </tr>");
+document.writeln("  <tr>");
+document.writeln("    <td align=\"center\">&nbsp;</td>");
+document.writeln("  </tr>");
+document.writeln("  <tr>");
+document.writeln("    <td align=\"center\"><img src=\"./images/GTDC2.gif\" width=\"25\" height=\"18\"> <a href=\"http://www.gtdc.org/\" class=\"footer\">SYNNEX");
+document.writeln("    is a Member of the Global Technology Distribution Council</a>.</td>");
+document.writeln("  </tr>");
+document.writeln("</table>");
+//-->

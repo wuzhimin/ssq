@@ -1,0 +1,171 @@
+<html>
+	<head>
+		<META http-equiv="Content-Type" content="text/html; charset=GB2312">
+		<script src="../lib/prototype.js" type="text/javascript"></script>
+		<script src="../lib/effects.js" type="text/javascript"></script>
+		<script src="../src/validation_cn.js" type="text/javascript"></script>
+		<link rel="stylesheet" type="text/css" href="../styles/style_min.css" />
+		<style>
+		body td {
+			color: #333;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 10pt;
+		}
+		.validation-advice {
+			margin: 5px 0;
+			padding: 5px;
+			background-color: #DFF3FB;
+			color : #FF3300;
+			font-weight: bold;
+		}
+		</style>
+	</head>
+	<body>
+		
+<form action="#" enctype="multipart/form-data" class='required-validate' id='helloworld'>
+  <table width="100%" border="1">
+    <tr> 
+      <td valign="top" width="20%">required</td>
+      <td><input type="text" name="textfield" class="required"><br>
+        <select name="select" class="required">
+          <option value=" ">Please Select</option>
+          <option value="f">f</option>
+          <option value="m">m</option>
+        </select> </td>
+    </tr>
+    <tr> 
+      <td valign="top">validate-number</td>
+      <td><input type="text" name="textfield2" class="validate-number"></td>
+    </tr>
+    <tr> 
+      <td valign="top">validate-digits</td>
+      <td><input type="text" name="textfield3" class="validate-digits"></td>
+    </tr>
+    <tr> 
+      <td valign="top">validate-alpha</td>
+      <td><input type="text" name="textfield4" class="validate-alpha"></td>
+    </tr>
+    <tr> 
+      <td valign="top">validate-alphanum</td>
+      <td><input type="text" name="textfield5" class="validate-alphanum"></td>
+    </tr>
+    <tr> 
+      <td valign="top">validate-email</td>
+      <td><input type="text" name="textfield6" class="validate-email"></td>
+    </tr>
+    <tr> 
+      <td valign="top">validate-url</td>
+      <td><input type="text" name="textfield7" class="validate-url"></td>
+    </tr>
+    <tr> 
+      <td valign="top">validate-one-required</td>
+      <td>男<input type="radio" name="radiobutton" value="f" class="validate-one-required">女 <input type="radio" name="radiobutton" value="m"> 
+        </td>
+    </tr>
+    <tr> 
+      <td valign="top">validate-integer</td>
+      <td><input type="text" name="textfield8" class="validate-integer"></td>
+    </tr>
+    <tr> 
+      <td valign="top">validate-pattern-!/^\d$/</td>
+      <td><input type="text" name="textfield9" class="validate-pattern-!/^\d$/"></td>
+    </tr>
+    <tr> 
+      <td valign="top">validate-ip</td>
+      <td><input type="text" name="textfield10" class="validate-ip"></td>
+    </tr>
+    <tr> 
+      <td valign="top">min-value-10</td>
+      <td><input type="text" name="textfield11" class="min-value-10" value="9"></td>
+    </tr>
+    <tr> 
+      <td valign="top">max-value--10</td>
+      <td><input type="text" name="textfield12" class="max-value--10"></td>
+    </tr>
+    <tr> 
+      <td valign="top">min-length-2</td>
+      <td><input type="text" name="textfield13" class="min-length-2" value="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top">max-length-5</td>
+      <td><input type="text" name="textfield14" class="max-length-5"></td>
+    </tr>
+    <tr> 
+      <td valign="top">int-range-1-5</td>
+      <td><input type="text" name="textfield15" class="int-range-1-5"></td>
+    </tr>
+    <tr> 
+      <td valign="top">float-range--1.1-10</td>
+      <td><input type="text" name="textfield16" class="float-range--1.1-10" value="-1.2"></td>
+    </tr>
+    <tr> 
+      <td valign="top">length-range-5-8</td>
+      <td><input type="text" name="textfield17" class="length-range-5-8"></td>
+    </tr>
+    <tr> 
+      <td valign="top">equals-password</td>
+      <td>
+      	<input type="password" name="password" id="password" value="a">(id=password)<br> 
+      	<input type="password" name="confirmPassword" class="equals-password"> 
+      </td>
+    </tr>
+    <tr> 
+      <td valign="top">less-than-value1</td>
+      <td>
+      	<input type="text" name="value1" id="value1" value="1">(id=value1)<br> 
+      	<input type="text" name="textfield21" class="less-than-value1">
+      </td>
+    </tr>
+    <tr> 
+      <td valign="top">great-than-beginDate</td>
+      <td>
+      	开始日期:<input type="text" name="beginDate" id="beginDate" value="2005-10-10" class="validate-date">(id=beginDate)<br> 
+      	结束日期:<input type="text" name="textfield23" value="2005-10-09" class="validate-date great-than-beginDate">
+      </td>
+    </tr>
+    <tr> 
+      <td valign="top">validate-date-yyyy年MM月dd日</td>
+      <td><input type="text" name="textfield24" class="validate-date-yyyy年MM月dd日" value="2006年02月29日"></td>
+    </tr>
+    <tr> 
+      <td valign="top">validate-file-png-jpg</td>
+      <td><input type="file" name="file" class="validate-file-png-jpg"></td>
+    </tr>
+    <tr> 
+      <td valign="top">validate-id-number</td>
+      <td><input type="text" name="textfield25" class="validate-id-number"></td>
+    </tr>
+    <tr> 
+      <td valign="top">validate-chinese</td>
+      <td><input type="text" name="textfield26" class="validate-chinese"></td>
+    </tr>
+    <tr> 
+      <td valign="top">validate-phone</td>
+      <td><input type="text" name="textfield27" class="validate-phone"></td>
+    </tr>
+    <tr> 
+      <td valign="top">validate-mobile-phone</td>
+      <td><input type="text" name="textfield28" class="validate-mobile-phone"></td>
+    </tr>
+    <tr> 
+      <td valign="top">validate-zip</td>
+      <td><input type="text" name="textfield29" class="validate-zip"></td>
+    </tr>
+    <tr> 
+      <td valign="top">validate-qq</td>
+      <td><input type="text" name="textfield30" class="validate-qq"></td>
+    </tr>
+    <tr> 
+      <td colspan="2"> 
+	    <div align="center"> 
+          <input type="submit" name="Submit" value="提交">&nbsp;&nbsp;&nbsp;
+          <input type="reset" name="Submit2" value="重置">
+        </div>
+		</td>
+    </tr>
+  </table>
+
+</form>
+		
+	</body>
+</html>
