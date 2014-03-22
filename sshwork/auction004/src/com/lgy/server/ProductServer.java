@@ -45,15 +45,15 @@ public class ProductServer {
 	 * 2011-10-16
 	 */
 	public String delProduct(Product product) {
-		String fag ="error";
+		String dog ="error";
 		try {
 			productImpl.delProduct(product);
-			fag="success";
+			dog="success";
 		} catch (Exception e) {
-			fag="error";
+			dog="error";
 		}
 		
-		return fag;
+		return dog;
 	}
 	/**
 	 * 作者：陆广有
@@ -64,14 +64,14 @@ public class ProductServer {
 	 */
 	public String updateProduct(Product product) {
 	      
-		String fag ="error";
+		String dog ="error";
 		try {
 			productImpl.updateProduct(product);
-			fag="success";
+			dog="success";
 		} catch (Exception e) {
-			fag="error";
+			dog="error";
 		}
-		return fag;
+		return dog;
 	}
 	public void addProduct(Product product) {
 		productImpl.addProduct(product);		
